@@ -1,112 +1,253 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raihan Rafif - Full-Stack Developer Portfolio</title>
+    <title>Raihan Rafif</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <!-- AOS Animate On Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F0F4F8; /* Light sky blue */
+            background-color: #111827;
         }
+
         .hero-section {
-            background: linear-gradient(180deg, #a8d0e6 0%, #f8f9fa 100%);
-            position: relative; /* Needed for positioning the animation */
-            overflow-x: hidden; /* Hide horizontal overflow */
+            background-color: #1F2937;
+            position: relative;
+            overflow-x: hidden;
         }
+
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .card-hover:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
+
         .tag {
             display: inline-block;
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
             font-weight: 500;
             font-size: 0.75rem;
+            transition: background-color 0.2s ease-in-out;
         }
+
         .modal-backdrop {
             transition: opacity 0.3s ease-in-out;
         }
+
         .modal-content {
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
-        /* Typing cursor effect */
+
         .typed-cursor {
             opacity: 1;
             animation: blink 0.7s infinite;
         }
+
         @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
-        /* Button Glow Effect */
+
         .glow-on-hover {
             transition: box-shadow 0.3s ease;
         }
+
         .glow-on-hover:hover {
-            box-shadow: 0 0 15px rgba(56, 189, 14, 0.6);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
         }
+
         .pokemon-card-bg {
-            background-color: #ffffff;
+            background-color: #374151;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 224px; /* same as h-56 */
+            height: 224px;
             width: 100%;
             overflow: hidden;
             position: relative;
         }
+
         .pokemon-card-bg svg {
             width: 60%;
             height: 60%;
             object-fit: contain;
             z-index: 10;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
         }
+
         .pokeball-bg {
             position: absolute;
             width: 80%;
             height: 80%;
-            opacity: 0.05;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='4'%3E%3C/circle%3E%3Cline x1='2' y1='12' x2='22' y2='12'%3E%3C/line%3E%3C/svg%3E");
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='4'%3E%3C/circle%3E%3Cline x1='2' y1='12' x2='22' y2='12'%3E%3C/line%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
         }
-        
-        /* --- NEW POKEMON ANIMATION --- */
+
         .flying-pokemon {
             position: absolute;
             top: 15%;
-            left: -200px; /* Start off-screen */
+            right: 200px;
             width: 150px;
             height: auto;
-            z-index: 0; /* Behind the text content */
-            opacity: 0.6;
+            z-index: 0;
+            opacity: 0.4;
+            filter: brightness(0.9);
             animation: flyAcross 30s linear infinite;
+        }
+
+        /* Chat Icon Styling */
+        #chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s, background-color 0.2s;
+            z-index: 9998;
+            overflow: hidden;
+            /* Crucial for the peek effect */
+        }
+
+        #chat-icon:hover {
+            transform: scale(1.1);
+            background-color: #0056b3;
+        }
+
+        #chat-icon .chat-character {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            animation: peek-animation 6s infinite ease-in-out;
+            animation-delay: 1s;
+        }
+
+        #chat-icon:hover .chat-character {
+            animation-play-state: paused;
+            /* Pause animation on hover */
+        }
+
+        #chat-icon #chat-close-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Chat Window Container Styling */
+        #chat-window {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 90%;
+            max-width: 400px;
+            height: 60%;
+            max-height: 500px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: none;
+            /* Hidden by default */
+            flex-direction: column;
+            background-color: #fff;
+            z-index: 9999;
+        }
+
+        #chat-window.open {
+            display: flex;
+            /* Show the window */
+            animation: slide-up-animation 0.3s ease-out;
+        }
+
+        #chat-root {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        /* Keyframe animation for the window opening */
+        @keyframes slide-up-animation {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Keyframe animation for the character peeking */
+        @keyframes peek-animation {
+
+            0%,
+            100% {
+                transform: translateY(100%);
+            }
+
+            10%,
+            90% {
+                transform: translateY(100%);
+            }
+
+            /* Stay hidden */
+            30%,
+            70% {
+                transform: translateY(15%);
+            }
+
+            /* Peek out */
+            50% {
+                transform: translateY(15%);
+            }
+
+            /* Hold the peek */
         }
 
         @keyframes flyAcross {
             from {
-                transform: translateX(0px);
+                transform: translateX(200px);
             }
+
             to {
-                transform: translateX(calc(100vw + 200px));
+                transform: translateX(-100vw);
             }
         }
 
-        /* Hide on mobile to prevent clutter */
         @media (max-width: 768px) {
             .flying-pokemon {
                 display: none;
@@ -114,344 +255,222 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
 
-    <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+<body class="text-gray-300">
+    <header class="bg-gray-900/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-700/80">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900">
-                Raihan Rafif
-            </a>
+            <a href="#" class="text-2xl font-bold text-white">Raihan Rafif</a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#projects" class="text-gray-600 hover:text-green-600">Projects</a>
-                <a href="#skills" class="text-gray-600 hover:text-green-600">Skills</a>
-                <a href="#contact" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors glow-on-hover">Contact Me</a>
+                <a href="#projects" class="text-gray-300 hover:text-green-400">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-green-400">Skills</a>
+                <a href="#contact"
+                    class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-500 transition-colors glow-on-hover">Contact
+                    Me</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
             </button>
         </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#projects" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Projects</a>
-            <a href="#skills" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Skills</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-green-600 font-semibold hover:bg-gray-100">Contact Me</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-700">
+            <a href="#projects" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">Projects</a>
+            <a href="#skills" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-800">Skills</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-green-400 font-semibold hover:bg-gray-800">Contact
+                Me</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="py-20 md:py-32 bg-white overflow-hidden hero-section">
-            <!-- Flying Pokemon Animation -->
-            <svg class="flying-pokemon" viewBox="0 0 256 192" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#F97316" d="M192 64C192 42.667 181.333 21.333 160 0L144 16C160 32 160 48 160 64H128L96 32L80 48L112 80H80C69.333 80 58.667 85.333 48 96L64 112C80 96 96 96 112 96H128V112C128 122.667 122.667 133.333 112 144L128 160C149.333 138.667 160 117.333 160 96V80H192V64ZM80 112L64 96L48 112L32 96L16 112L0 96L16 80L32 96L48 80L64 96L80 80L96 96L80 112ZM160 160L176 176L192 160L208 176L224 160L240 176L256 160L240 144L224 160L208 144L192 160L176 144L160 160Z"/>
-            </svg>
 
+        <section class="py-20 md:py-32 overflow-hidden hero-section">
+            <img src="./assets/images/shadow-lugia.gif" class="flying-pokemon" alt="">
             <div class="container mx-auto px-6 text-center relative z-10">
                 <div class="max-w-4xl mx-auto">
-                    <span class="text-green-700 font-semibold" data-aos="fade-down">FULL-STACK WEBSITE DEVELOPER</span>
-                    <h1 class="text-4xl md:text-6xl font-black text-gray-900 mt-2 mb-6 leading-tight" data-aos="fade-up">Crafting <span id="typed-text"></span></h1>
-                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">Like a Pokémon Trainer on a journey, I explore new technologies to build and evolve digital solutions. With five years of experience, I specialize in creating dynamic websites using ReactJS and Node.js.</p>
+                    <span class="text-green-400 font-semibold" data-aos="fade-down">AI & FULL-STACK DEVELOPER</span>
+                    <h1 class="text-4xl md:text-6xl font-black text-white mt-2 mb-6 leading-tight" data-aos="fade-up">
+                        Crafting <span id="typed-text"></span></h1>
+                    <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-3xl mx-auto" data-aos="fade-up"
+                        data-aos-delay="200">I build intelligent, full-stack solutions that solve real-world problems.
+                        Specializing in integrating powerful AI capabilities into robust and user-friendly web
+                        applications using React, Node.js, and Python.</p>
                     <div class="flex justify-center space-x-4" data-aos="fade-up" data-aos-delay="400">
-                        <a href="#projects" class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-green-700 transition-all transform hover:scale-105 glow-on-hover">Explore My Projects</a>
-                        <a href="#contact" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-300 transition-all">Let's Team Up</a>
+                        <a href="#projects"
+                            class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-green-500 transition-all transform hover:scale-105 glow-on-hover">Explore
+                            My Projects</a>
+                        <a href="#contact"
+                            class="bg-gray-700 text-gray-200 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-600 transition-all">Let's
+                            Team Up</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="py-20">
+            <!-- Chat Icon that toggles the window -->
+            <div id="chat-icon">
+                <!-- Animated Character SVG -->
+                <div class="chat-character">
+                    <svg viewBox="0 0 100 80">
+                        <path fill="#FFC107"
+                            d="M50,80 C77.61,80 100,62.09 100,40 C100,17.91 77.61,0 50,0 C22.39,0 0,17.91 0,40 C0,62.09 22.39,80 50,80 Z" />
+                        <circle fill="#333" cx="35" cy="35" r="6" />
+                        <circle fill="#333" cx="65" cy="35" r="6" />
+                        <path fill="#333" d="M50,55 C40,65 60,65 50,55 Z" />
+                    </svg>
+                </div>
+                <!-- Close Icon SVG (Initially hidden) -->
+                <svg id="chat-close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    style="display: none;">
+                    <path
+                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                </svg>
+            </div>
+
+            <!-- Chat Window - The React app will be rendered inside #chat-root -->
+            <div id="chat-window">
+                <div id="chat-root"></div>
+            </div>
+
+
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Featured Projects</h2>
-                    <p class="text-lg text-gray-600 mt-2">A look into my Pokédex of completed works.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
+                    <p class="text-lg text-gray-400 mt-2">A look into my Pokedex of completed works.</p>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Project Card 1: Nakayama Iron Works -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover" data-aos="fade-up" data-aos-delay="100">
-                        <div class="pokemon-card-bg bg-blue-100">
-                            <div class="pokeball-bg"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3B82F6"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.09-.34.13-.53.13s-.37-.04-.53-.13l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.09.34-.13.53-.13s.37-.04.53-.13l7.9 4.44c.32.17.53.5.53.88v9zm-9-11.34l-6.27 3.53L12 12.22l6.27-3.53L12 5.16zm.53 13.62l6.27-3.52v-7.06l-6.27 3.52v7.06zm-1.06 0v-7.06L5.2 8.18v7.06l6.27 3.54z"/></svg>
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <span class="text-sm font-semibold text-blue-600">DATA VISUALIZATION & ROBOTICS</span>
-                            <h3 class="text-xl font-bold mt-2 mb-3">Real-Time Monitoring & Control</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Developed multiple systems, including a real-time energy data visualization website and a LiDAR monitoring interface for robotic navigation.</p>
-                            <button onclick="openModal('modal-nakayama')" class="mt-auto w-full text-center font-semibold text-blue-600 hover:text-blue-800 py-2 rounded-lg bg-blue-50 hover:bg-blue-100 transition-colors">View Case Study &rarr;</button>
-                        </div>
-                    </div>
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
 
-                    <!-- Project Card 2: Cakra Motor -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover" data-aos="fade-up" data-aos-delay="200">
-                        <div class="pokemon-card-bg bg-orange-100">
-                            <div class="pokeball-bg"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#F97316"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v2h-2zm0 4h2v6h-2z"/></svg>
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <span class="text-sm font-semibold text-orange-600">E-COMMERCE & AUTOMATION</span>
-                            <h3 class="text-xl font-bold mt-2 mb-3">Marketplace Sync & Bundling</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Engineered an item bundling feature and a data synchronization system to align product listings across major marketplaces like Tokopedia and Shopee.</p>
-                            <button onclick="openModal('modal-cakra')" class="mt-auto w-full text-center font-semibold text-orange-600 hover:text-orange-800 py-2 rounded-lg bg-orange-50 hover:bg-orange-100 transition-colors">View Case Study &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3: LuxSpace -->
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pokemon-card-bg bg-green-100">
-                            <div class="pokeball-bg"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#22C55E"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <span class="text-sm font-semibold text-green-600">PERSONAL PROJECT</span>
-                            <h3 class="text-xl font-bold mt-2 mb-3">LuxSpace E-Commerce PWA</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Developed a responsive e-commerce website with Progressive Web App (PWA) capabilities for a seamless, fast, and offline-capable shopping experience.</p>
-                            <button onclick="openModal('modal-luxspace')" class="mt-auto w-full text-center font-semibold text-green-600 hover:text-green-800 py-2 rounded-lg bg-green-50 hover:bg-green-100 transition-colors">View Case Study &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 4: Cilsy Fiolution -->
-                     <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col card-hover" data-aos="fade-up" data-aos-delay="400">
-                        <div class="pokemon-card-bg bg-red-100">
-                            <div class="pokeball-bg"></div>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#EF4444"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-2h2v2h-2zm0-4V7h2v6h-2z"/></svg>
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <span class="text-sm font-semibold text-red-600">E-COMMERCE PLATFORM</span>
-                            <h3 class="text-xl font-bold mt-2 mb-3">Full-Stack E-commerce Dev</h3>
-                            <p class="text-gray-600 mb-4 flex-grow">Built a complete e-commerce solution, engineering a dynamic frontend with React and a robust backend with Node.js, connected to a PostgreSQL database.</p>
-                            <button onclick="openModal('modal-cilsy')" class="mt-auto w-full text-center font-semibold text-red-600 hover:text-red-800 py-2 rounded-lg bg-red-50 hover:bg-red-100 transition-colors">View Case Study &rarr;</button>
-                        </div>
-                    </div>
+        <section id="skills" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">My Skill Set</h2>
+                    <p class="text-lg text-gray-400 mt-2">The moves I've mastered on my journey.</p>
+                </div>
+                <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12" data-aos="fade-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">My Skill Set</h2>
-                    <p class="text-lg text-gray-600 mt-2">The moves I've mastered on my journey.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                        <h3 class="text-xl font-bold mb-4">Frontend</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>JavaScript (ES6+) & TypeScript</li>
-                            <li>ReactJS, Next.js, Vue.js</li>
-                            <li>React Native, ElectronJs</li>
-                            <li>HTML, SCSS, TailwindCSS, Bootstrap</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                        <h3 class="text-xl font-bold mb-4">Backend</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>Node.js (Express, HapiJs)</li>
-                            <li>Go (Gin-Gonic, Gorm)</li>
-                            <li>PHP (Laravel, Filament)</li>
-                            <li>Python</li>
-                            <li>SQL (PostgreSQL, MySQL)</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
-                        <h3 class="text-xl font-bold mb-4">Tools & Specialized</h3>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>RESTful APIs & Postman</li>
-                            <li>Progressive Web Apps (PWA)</li>
-                            <li>Robotics (ROS, Arduino, C)</li>
-                            <li>Android Dev (Capacitor)</li>
-                            <li>Git, GitHub, Vercel</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
         <section id="contact" class="py-20">
             <div class="container mx-auto px-6">
-                <div class="bg-gray-800 text-white rounded-xl p-10 md:p-16 text-center max-w-4xl mx-auto" data-aos="zoom-in" style="background-color: #3d4a5d;">
-                    <h2 class="text-3xl md:text-4xl font-bold">Ready for a new adventure?</h2>
-                    <p class="text-lg md:text-xl mt-4 mb-8 opacity-90">Let's discuss how I can help you achieve your goals. I'm ready for the next challenge.</p>
-                    <a href="mailto:raihanrafif1202@gmail.com" class="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-green-600 transition-all transform hover:scale-105 inline-block glow-on-hover">Start a Conversation</a>
+                <div class="bg-gray-800 rounded-xl p-10 md:p-16 text-center max-w-4xl mx-auto border border-gray-700"
+                    data-aos="zoom-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Ready for a new adventure?</h2>
+                    <p class="text-lg md:text-xl mt-4 mb-8 text-gray-400">Let's discuss how I can help you achieve your
+                        goals. I'm ready for the next challenge.</p>
+                    <a href="mailto:raihanrafif1202@gmail.com"
+                        class="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-green-500 transition-all transform hover:scale-105 inline-block glow-on-hover">Start
+                        a Conversation</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-white py-8" style="background-color: #2c3542;">
+    <footer class="text-white py-8" style="background-color: #1F2937;">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; <span id="year"></span> Raihan Rafif. All Rights Reserved.</p>
+            <p class="text-gray-400">&copy; <span id="year"></span> Raihan Rafif. All Rights Reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="text-gray-400 hover:text-white">GitHub</a>
-                <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+                <a href="https://github.com/RaihanRafif" class="text-gray-400 hover:text-white">GitHub</a>
+                <a href="https://www.linkedin.com/in/raihan-rafif-756809202/"
+                    class="text-gray-400 hover:text-white">LinkedIn</a>
                 <a href="#" class="text-gray-400 hover:text-white">Portfolio</a>
             </div>
         </div>
     </footer>
 
-    <!-- Modals (same as before) -->
-    <!-- Nakayama Modal -->
-    <div id="modal-nakayama" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden modal-backdrop">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto modal-content transform scale-95 opacity-0">
-            <div class="p-8">
-                <div class="flex justify-between items-start">
-                    <h2 class="text-2xl font-bold text-gray-900">Real-Time Monitoring & Robotics Control</h2>
-                    <button onclick="closeModal('modal-nakayama')" class="text-gray-500 hover:text-gray-800">&times;</button>
-                </div>
-                <span class="text-sm font-semibold text-blue-600">CLIENT: NAKAYAMA IRON WORKS, LTD.</span>
-                <img src="https://placehold.co/800x400/1d2b53/ffffff?text=Project+Detail" alt="Project Detail" class="w-full h-64 object-cover rounded-lg my-6">
-                <h3 class="font-bold text-lg mb-2">Project Overview</h3>
-                <p class="text-gray-600 mb-6">As an Intern Researcher, I was tasked with several high-impact projects, including reviving stalled initiatives and developing new systems from scratch. I successfully transformed Figma designs into functional web apps and created critical interfaces for data monitoring and robotic control.</p>
-                <h3 class="font-bold text-lg mb-2">Key Contributions</h3>
-                <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
-                    <li>Completed a 3-month stalled Energy Monitoring System website in just one week using PHP and Python.</li>
-                    <li>Revived a 10-month delayed robotics project in three weeks using Python, C, and ROS.</li>
-                    <li>Developed a LiDAR monitoring interface to visualize maps and command robotic navigation.</li>
-                    <li>Integrated ROS Web Tools to enable real-time interaction between web UI and robotic systems.</li>
-                </ul>
-                <h3 class="font-bold text-lg mb-2">Technology Stack</h3>
-                <div>
-                    <span class="tag bg-sky-100 text-sky-800">React.js</span>
-                    <span class="tag bg-slate-100 text-slate-800">Next.js</span>
-                    <span class="tag bg-orange-100 text-orange-800">PHP</span>
-                    <span class="tag bg-cyan-100 text-cyan-800">Python</span>
-                    <span class="tag bg-rose-100 text-rose-800">C</span>
-                    <span class="tag bg-gray-100 text-gray-800">ROS</span>
-                    <span class="tag bg-amber-100 text-amber-800">Chart.js</span>
-                    <span class="tag bg-lime-100 text-lime-800">jQuery</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Cakra Modal -->
-    <div id="modal-cakra" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden modal-backdrop">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto modal-content transform scale-95 opacity-0">
-             <div class="p-8">
-                <div class="flex justify-between items-start">
-                    <h2 class="text-2xl font-bold text-gray-900">E-Commerce Automation Tools</h2>
-                    <button onclick="closeModal('modal-cakra')" class="text-gray-500 hover:text-gray-800">&times;</button>
-                </div>
-                <span class="text-sm font-semibold text-orange-600">CLIENT: CAKRA MOTOR COMPANY (FREELANCE)</span>
-                <img src="https://placehold.co/800x400/f97316/ffffff?text=Project+Detail" alt="Project Detail" class="w-full h-64 object-cover rounded-lg my-6">
-                <h3 class="font-bold text-lg mb-2">Project Overview</h3>
-                <p class="text-gray-600 mb-6">As a freelance developer, I was hired to build custom features to enhance sales strategies and expand market reach. The primary goals were to enable product bundling and automate data synchronization with major online marketplaces.</p>
-                <h3 class="font-bold text-lg mb-2">Key Contributions</h3>
-                <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
-                    <li>Developed an "Item Bundling" feature to allow dynamic product packaging from the existing database.</li>
-                    <li>Built a synchronization system to align company product data with Tokopedia, Shopee, and Bukalapak.</li>
-                    <li>Ensured consistent product listings and pricing across all platforms, expanding market presence.</li>
-                </ul>
-                <h3 class="font-bold text-lg mb-2">Technology Stack</h3>
-                <div>
-                    <span class="tag bg-sky-100 text-sky-800">React.js</span>
-                    <span class="tag bg-emerald-100 text-emerald-800">Node.js</span>
-                    <span class="tag bg-slate-100 text-slate-800">Express.js</span>
-                    <span class="tag bg-gray-100 text-gray-800">Handlebars</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- LuxSpace Modal -->
-    <div id="modal-luxspace" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden modal-backdrop">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto modal-content transform scale-95 opacity-0">
-             <div class="p-8">
-                <div class="flex justify-between items-start">
-                    <h2 class="text-2xl font-bold text-gray-900">LuxSpace E-Commerce PWA</h2>
-                    <button onclick="closeModal('modal-luxspace')" class="text-gray-500 hover:text-gray-800">&times;</button>
-                </div>
-                <span class="text-sm font-semibold text-green-600">PERSONAL PROJECT</span>
-                <img src="https://placehold.co/800x400/22c55e/ffffff?text=Project+Detail" alt="Project Detail" class="w-full h-64 object-cover rounded-lg my-6">
-                <h3 class="font-bold text-lg mb-2">Project Overview</h3>
-                <p class="text-gray-600 mb-6">This project was a self-driven initiative to explore and implement modern web technologies. I developed a fully responsive e-commerce website enhanced with Progressive Web App (PWA) capabilities to provide a seamless, app-like shopping experience on any device.</p>
-                <h3 class="font-bold text-lg mb-2">Key Features</h3>
-                <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
-                    <li>Fast load times and optimized performance.</li>
-                    <li>Offline functionality enabled by Service Workers.</li>
-                    <li>Cross-device compatibility and responsive design.</li>
-                    <li>Modern, intuitive user interface built with Tailwind CSS.</li>
-                </ul>
-                <h3 class="font-bold text-lg mb-2">Technology Stack</h3>
-                <div>
-                    <span class="tag bg-cyan-100 text-cyan-800">PWA</span>
-                    <span class="tag bg-violet-100 text-violet-800">Service Workers</span>
-                    <span class="tag bg-gray-100 text-gray-800">Vercel</span>
-                    <span class="tag bg-teal-100 text-teal-800">Tailwind CSS</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Cilsy Fiolution Modal -->
-    <div id="modal-cilsy" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden modal-backdrop">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto modal-content transform scale-95 opacity-0">
-             <div class="p-8">
-                <div class="flex justify-between items-start">
-                    <h2 class="text-2xl font-bold text-gray-900">Full-Stack E-commerce Platform</h2>
-                    <button onclick="closeModal('modal-cilsy')" class="text-gray-500 hover:text-gray-800">&times;</button>
-                </div>
-                <span class="text-sm font-semibold text-red-600">CLIENT: CILSY FIOLUTION</span>
-                <img src="https://placehold.co/800x400/3b82f6/ffffff?text=Project+Detail" alt="Project Detail" class="w-full h-64 object-cover rounded-lg my-6">
-                <h3 class="font-bold text-lg mb-2">Project Overview</h3>
-                <p class="text-gray-600 mb-6">In this role, I was responsible for the end-to-end development of an e-commerce platform. I handled everything from the user interface to the server-side logic and database management, creating a cohesive and functional online store.</p>
-                <h3 class="font-bold text-lg mb-2">Key Contributions</h3>
-                <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
-                    <li>Built a dynamic and responsive UI using React.js.</li>
-                    <li>Engineered a robust backend with Node.js and Express.js for RESTful APIs.</li>
-                    <li>Managed and optimized a PostgreSQL database for high-speed transactions.</li>
-                    <li>Integrated third-party services and ensured seamless data flow.</li>
-                </ul>
-                <h3 class="font-bold text-lg mb-2">Technology Stack</h3>
-                <div>
-                    <span class="tag bg-sky-100 text-sky-800">React.js</span>
-                    <span class="tag bg-emerald-100 text-emerald-800">Node.js</span>
-                    <span class="tag bg-slate-100 text-slate-800">Express.js</span>
-                    <span class="tag bg-rose-100 text-rose-800">PostgreSQL</span>
-                    <span class="tag bg-blue-100 text-blue-800">Bootstrap</span>
-                </div>
-            </div>
+    <div id="project-modal"
+        class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden modal-backdrop">
+        <div
+            class="bg-gray-800 text-gray-300 border border-gray-700 rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto modal-content transform scale-95 opacity-0">
+            <div id="modal-content-container" class="p-8"></div>
         </div>
     </div>
 
-
-    <!-- AOS Animate On Scroll Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Typed.js for typing effect -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
+    <script src="./assets/js/data.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800, // values from 0 to 3000, with step 50ms
-            once: false, // whether animation should happen only once - while scrolling down
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectsGrid = document.getElementById('projects-grid');
+            const skillsGrid = document.getElementById('skills-grid');
+            if (typeof portfolioData === 'undefined') { console.error("Portfolio data not found."); return; }
+            portfolioData.projects.forEach((project, index) => {
+                const aosDelay = (index % 3 + 1) * 100;
+                const card = `
+                    <div class="bg-gray-800 rounded-xl border border-gray-700/80 overflow-hidden flex flex-col card-hover" data-aos="fade-up" data-aos-delay="${aosDelay}">
+                        <div class="pokemon-card-bg ${project.theme.bg}">
+                            <div class="pokeball-bg"></div>
+                            ${project.icon.replace('{FILL_COLOR}', project.theme.fill)}
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <span class="text-sm font-semibold ${project.theme.text}">${project.category}</span>
+                            <h3 class="text-xl font-bold text-white mt-2 mb-3">${project.title}</h3>
+                            <p class="text-gray-400 mb-4 flex-grow">${project.summary}</p>
+                            <button onclick="openModal('${project.id}')" class="mt-auto w-full text-center font-semibold ${project.theme.text} ${project.theme.hover} py-2 rounded-lg ${project.theme.buttonBg} ${project.theme.buttonHover} transition-colors">View Case Study &rarr;</button>
+                        </div>
+                    </div>`;
+                projectsGrid.innerHTML += card;
+            });
+            portfolioData.skills.forEach((skillCategory, index) => {
+                const skillList = skillCategory.items.map(item => `<li class="flex items-start"><svg class="w-4 h-4 mr-2 mt-1 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span>${item}</span></li>`).join('');
+                const skillCard = `
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-700/60" data-aos="fade-up" data-aos-delay="${(index + 1) * 100}">
+                        <h3 class="text-xl font-bold text-white mb-4">${skillCategory.title}</h3>
+                        <ul class="space-y-3 text-gray-300">${skillList}</ul>
+                    </div>`;
+                skillsGrid.innerHTML += skillCard;
+            });
         });
 
-        // Initialize Typed.js
-        var typed = new Typed('#typed-text', {
-            strings: ['Dynamic Solutions.', 'Robust Backends.', 'Intuitive Frontends.', 'Impactful Web Apps.'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2000,
-            loop: true,
-            cursorChar: '|',
+        AOS.init({ duration: 800, once: false, });
+        new Typed('#typed-text', {
+            strings: ['Intelligent Solutions.', 'Robust Backends.', 'Conversational AI.', 'Impactful Web Apps.'],
+            typeSpeed: 50, backSpeed: 30, backDelay: 2000, loop: true, cursorChar: '|',
         });
-
-        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Set current year in footer
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         document.getElementById('year').textContent = new Date().getFullYear();
+        const modal = document.getElementById('project-modal');
+        const modalContentContainer = document.getElementById('modal-content-container');
+        const modalContent = modal.querySelector('.modal-content');
 
-        // Modal functionality
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            const modalContent = modal.querySelector('.modal-content');
+        function openModal(projectId) {
+            const project = portfolioData.projects.find(p => p.id === projectId);
+            if (!project) return;
+            const contributionsHTML = project.contributions.map(item => `<li>${item}</li>`).join('');
+            const techHTML = project.tech.map(item => `<span class="tag bg-gray-700 text-gray-300">${item}</span>`).join('');
+
+            // --- BARU: Logika untuk membuat tombol link ---
+            let linksHTML = '';
+            if (project.liveUrl) {
+                linksHTML += `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="tag bg-green-600 text-white hover:bg-green-500">Live Demo</a>`;
+            }
+            if (project.repoUrl) {
+                linksHTML += `<a href="${project.repoUrl}" target="_blank" rel="noopener noreferrer" class="tag bg-gray-600 text-gray-200 hover:bg-gray-500">GitHub Repo</a>`;
+            }
+            const linksSectionHTML = linksHTML ? `<h3 class="font-bold text-lg mt-6 mb-2 text-white">Project Links</h3><div class="flex flex-wrap gap-2">${linksHTML}</div>` : '';
+
+            const modalHTML = `
+                <div class="flex justify-between items-start">
+                    <h2 class="text-2xl font-bold text-white">${project.title}</h2>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+                </div>
+                <span class="text-sm font-semibold ${project.theme.text}">${project.client}</span>
+                <img src="https://placehold.co/800x400/${project.theme.fill.substring(1)}/1F2937?text=Project+Detail" alt="${project.title}" class="w-full h-auto max-h-64 object-cover rounded-lg my-6 border border-gray-700">
+                <h3 class="font-bold text-lg mb-2 text-white">Project Overview</h3>
+                <p class="text-gray-400 mb-6">${project.overview}</p>
+                <h3 class="font-bold text-lg mb-2 text-white">${project.contributions[0].startsWith('Fast') ? 'Key Features' : 'Key Contributions'}</h3>
+                <ul class="list-disc list-inside text-gray-400 space-y-2 mb-6">${contributionsHTML}</ul>
+                <h3 class="font-bold text-lg mb-2 text-white">Technology Stack</h3>
+                <div class="flex flex-wrap gap-2">${techHTML}</div>
+                ${linksSectionHTML} 
+            `;
+            modalContentContainer.innerHTML = modalHTML;
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
             setTimeout(() => {
@@ -460,30 +479,207 @@
             }, 10);
         }
 
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            const modalContent = modal.querySelector('.modal-content');
+        function closeModal() {
             modal.classList.add('opacity-0');
             modalContent.classList.add('scale-95', 'opacity-0');
             setTimeout(() => {
                 modal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
+                modalContentContainer.innerHTML = '';
             }, 300);
         }
-        
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                document.querySelectorAll('.modal-backdrop:not(.hidden)').forEach(modal => {
-                    closeModal(modal.id);
-                });
+
+        const chatIcon = document.getElementById('chat-icon');
+        const chatWindow = document.getElementById('chat-window');
+        const character = document.querySelector('.chat-character');
+        const closeIcon = document.getElementById('chat-close-icon');
+
+        chatIcon.addEventListener('click', () => {
+            const isOpen = chatWindow.classList.toggle('open');
+            if (character) {
+                character.style.display = isOpen ? 'none' : 'block';
             }
+            closeIcon.style.display = isOpen ? 'block' : 'none';
         });
 
-        window.addEventListener('click', (event) => {
-            if (event.target.classList.contains('modal-backdrop')) {
-                closeModal(event.target.id);
-            }
-        });
+        window.addEventListener('keydown', (event) => event.key === 'Escape' && closeModal());
+        window.addEventListener('click', (event) => event.target === modal && closeModal());
+    </script>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // --- Helper: Icon Components ---
+        const UserIcon = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white bg-blue-500 rounded-full p-1.5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+        );
+
+        const BotIcon = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-white bg-green-500 rounded-full p-1.5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15 8V4H9v4H5v12h14V8h-4zM9 6h6v2H9V6zm10 14H5v-3h14v3zm-1-6H6v-2h12v2z" />
+            </svg>
+        );
+
+        const SendIcon = () => (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+            </svg>
+        );
+
+        // --- Formatted Message Component for Markdown ---
+        const FormattedMessage = ({ text, isStreaming }) => {
+            const formatText = (txt) => {
+                // Replace **bold** with <strong>
+                let formatted = txt.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                // Replace * list items with <ul><li>
+                formatted = formatted.replace(/^\* (.*$)/gm, '<ul><li class="ml-4 list-disc">$1</li></ul>');
+                // Clean up multiple <ul> tags
+                formatted = formatted.replace(/<\/ul>\n<ul>/g, '');
+                return { __html: formatted };
+            };
+
+            return <p className={`whitespace-pre-wrap break-words ${isStreaming ? 'typing-cursor' : ''}`} dangerouslySetInnerHTML={formatText(text)} />;
+        };
+
+        // --- Main App Component ---
+        const App = () => {
+            const [messages, setMessages] = useState([]);
+            const [inputValue, setInputValue] = useState('');
+            const [isLoading, setIsLoading] = useState(false);
+            const chatEndRef = useRef(null);
+
+            // The URL for your backend server.
+            const BACKEND_URL = 'http://localhost:3001/api/chat';
+
+            useEffect(() => {
+                chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+            }, [messages]);
+
+            useEffect(() => {
+                setMessages([{
+                    text: `Hello! 
+mosi mosi konnichiwa いらっしゃいませ, 
+Iam Raihan Rafif Personal Assistant. 
+What can i help you?
+😗😗😗`,
+                    isUser: false
+                }]);
+            }, []);
+
+            const handleInputChange = (e) => {
+                setInputValue(e.target.value);
+            };
+
+            // --- Formatted Message Component for Markdown ---
+        const FormattedMessage = ({ text, isStreaming }) => {
+            const formatText = (txt) => {
+                // Replace **bold** with <strong>
+                let formatted = txt.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                // Replace * list items with <ul><li>
+                formatted = formatted.replace(/^\* (.*$)/gm, '<ul><li class="ml-4 list-disc">$1</li></ul>');
+                // Clean up multiple <ul> tags
+                formatted = formatted.replace(/<\/ul>\n<ul>/g, '');
+                return { __html: formatted };
+            };
+
+            return <p className={`whitespace-pre-wrap break-words ${isStreaming ? 'typing-cursor' : ''}`} dangerouslySetInnerHTML={formatText(text)} />;
+        };
+
+            const handleSendMessage = async (e) => {
+                e.preventDefault();
+                const trimmedInput = inputValue.trim();
+                if (!trimmedInput || isLoading) return;
+
+                const userMessage = { text: trimmedInput, isUser: true };
+                setMessages(prev => [...prev, userMessage]);
+                setInputValue('');
+                setIsLoading(true);
+
+                try {
+                    const response = await fetch(BACKEND_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ query: trimmedInput }),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Backend request failed with status: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+                    const botMessage = { text: data.response, isUser: false };
+                    setMessages(prev => [...prev, botMessage]);
+
+                } catch (error) {
+                    console.error("Error fetching bot response:", error);
+                    const errorMessage = { text: "Sorry, I'm having trouble connecting to the server. Please ensure the backend is running and try again.", isUser: false };
+                    setMessages(prev => [...prev, errorMessage]);
+                } finally {
+                    setIsLoading(false);
+                }
+            };
+
+            return (
+                <div className="flex flex-col h-full bg-gray-100 font-sans">
+                    <header className="bg-white shadow-md p-4 flex-shrink-0">
+                        <h1 className="text-xl font-bold text-gray-800 text-center">Raihan's Slave</h1>
+                    </header>
+                    <main className="flex-1 p-4 overflow-y-auto">
+                        <div className="space-y-4">
+                            {messages.map((msg, index) => (
+                                <div key={msg.id} className={`flex items-start gap-3 ${msg.isUser ? 'justify-end' : 'justify-start'}`}>
+                                    {!msg.isUser && <BotIcon />}
+                                    <div className={`max-w-xs md:max-w-md p-3 rounded-2xl ${msg.isUser ? 'bg-blue-600 text-white rounded-br-none shadow-md' : 'bg-white text-gray-700 rounded-bl-none shadow-md'}`}>
+                                        <FormattedMessage text={msg.text} isStreaming={isLoading && index === messages.length - 1} />
+                                    </div>
+                                    {msg.isUser && <UserIcon />}
+                                </div>
+                            ))}
+                            {isLoading && (
+                                <div className="flex items-start gap-3 justify-start">
+                                    <BotIcon />
+                                    <div className="max-w-lg p-3 rounded-2xl bg-white text-gray-800 rounded-bl-none shadow-sm">
+                                        <div className="flex items-center space-x-2">
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.3s]"></div>
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.15s]"></div>
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                            <div ref={chatEndRef} />
+                        </div>
+                    </main>
+                    <footer className="bg-white border-t border-gray-200 p-2 md:p-4 flex-shrink-0">
+                        <form onSubmit={handleSendMessage} className="flex items-center gap-2">
+                            <input
+                                type="text"
+                                value={inputValue}
+                                onChange={handleInputChange}
+                                placeholder="Ask a question..."
+                                className="flex-1 p-3 text-black border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                                disabled={isLoading}
+                            />
+                            <button
+                                type="submit"
+                                className="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 disabled:bg-blue-300 disabled:cursor-not-allowed transition"
+                                disabled={isLoading || !inputValue.trim()}
+                            >
+                                <SendIcon />
+                            </button>
+                        </form>
+                    </footer>
+                </div>
+            );
+        };
+
+        // Mount the React application into the #chat-root div
+        const container = document.getElementById('chat-root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<App />);
     </script>
 </body>
+
 </html>
