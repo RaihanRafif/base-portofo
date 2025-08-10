@@ -2,28 +2,49 @@
 const portfolioData = {
     projects: [
         {
-            id: 'ai-chatbot',
-            title: 'AI Customer Support Chatbot',
-            category: 'AI & CUSTOMER EXPERIENCE',
-            summary: 'Built an intelligent AI chatbot with a RAG architecture that reduces the support team\'s workload by providing instant, accurate answers directly from internal company documents.',
-            client: 'TokoKopi (Personal Showcase)',
-            overview: 'Faced with repetitive customer inquiries, a fictional e-commerce store needed an automated, 24/7 support solution. I developed a smart chatbot that leverages Retrieval-Augmented Generation (RAG) to understand and answer specific questions by consulting an internal knowledge base (e.g., product menus, FAQ documents), ensuring contextually relevant responses.',
-            contributions: [
-                'Implemented a Retrieval-Augmented Generation (RAG) architecture for high-accuracy, contextually-aware answers.',
-                'Designed and developed an intuitive admin dashboard for non-technical users to independently manage the knowledge base (PDF, TXT files).',
-                'Enabled conversational memory (chat history) to allow for natural and effective follow-up dialogues.',
-                'Integrated real-time response streaming to increase engagement and deliver a premium, ChatGPT-like user experience.'
+            "id": "ai-chatbot",
+            "title": "AI Customer Support Suite",
+            "category": "AI & CUSTOMER EXPERIENCE",
+            "summary": "Developed an end-to-end AI customer service platform with an intelligent RAG-based chatbot integrated with knowledge management and real-time stock, enabling non-technical staff to manage content and data.",
+            "client": "KopaKopi (Personal Showcase)",
+            "overview": "Facing repetitive customer inquiries and inaccurate stock information, this platform was developed for 'KopaKopi'. The solution is an integrated suite with a smart RAG-based chatbot that provides accurate answers from internal documents and real-time stock data. An intuitive admin dashboard was also created to empower non-technical staff to independently update the knowledge base and stock data.",
+            "contributions": [
+                "Implemented a Retrieval-Augmented Generation (RAG) architecture for highly accurate and context-aware answers.",
+                "Designed and developed an intuitive admin dashboard for non-technical users to independently manage the knowledge base (PDF, TXT files).",
+                "Enabled conversational memory to allow for natural and effective follow-up dialogues, and implemented a conversation history feature as a basic CRM.",
+                "Integrated a real-time database to enable the chatbot to provide always-accurate product stock information.",
+                "Implemented response streaming to enhance user interaction and deliver a premium, ChatGPT-like user experience."
             ],
-            tech: ['React', 'Next.js', 'Python', 'Node.js', 'OpenAI API', 'Vector DB', 'RAG'],
-            liveUrl: '#', // <-- REPLACE WITH YOUR LIVE DEMO URL
-            repoUrl: '#', // <-- REPLACE WITH YOUR GITHUB REPO URL
-            theme: {
-                bg: 'bg-gray-700',
-                text: 'text-purple-400', hover: 'hover:text-purple-300',
-                buttonBg: 'bg-white/5', buttonHover: 'hover:bg-white/10',
-                fill: '#A78BFA'
+            "assets": {
+                "video": null,
+                "youtubeId": null,
+                "images": [
+                    './assets/projects/kopakopi/1.png',
+                    './assets/projects/kopakopi/2.png',
+                ]
             },
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM12.5 13.5L11 15.8V12H9v5h2v-2.8l1.5-2.2H15V17h2v-5h-4.5zM9.5 9.5l1.5-2.2L13 9.8V7h2v5h-2v-2.8l-1.5 2.2H9V7h2v2.8L9.5 9.5z"/></svg>`
+            "tech": [
+                "React",
+                "Next.js",
+                "Node.js",
+                "Express.js",
+                "PostgreSQL",
+                "Prisma",
+                "Pinecone/ChromaDB",
+                "OpenAI API",
+                "RAG"
+            ],
+            "liveUrl": "#",
+            "repoUrl": "#",
+            "theme": {
+                "bg": "bg-gray-700",
+                "text": "text-purple-400",
+                "hover": "hover:text-purple-300",
+                "buttonBg": "bg-white/5",
+                "buttonHover": "hover:bg-white/10",
+                "fill": "#A78BFA"
+            },
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"{FILL_COLOR}\"><path d=\"M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM12.5 13.5L11 15.8V12H9v5h2v-2.8l1.5-2.2H15V17h2v-5h-4.5zM9.5 9.5l1.5-2.2L13 9.8V7h2v5h-2v-2.8l-1.5 2.2H9V7h2v2.8L9.5 9.5z\"/></svg>"
         },
         {
             id: 'semantic-search',
