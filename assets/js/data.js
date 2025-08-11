@@ -34,8 +34,8 @@ const portfolioData = {
                 "OpenAI API",
                 "RAG"
             ],
-            "liveUrl": "#",
-            "repoUrl": "#",
+            "liveUrl": "http://103.250.11.76:3000/",
+            "repoUrl": "https://github.com/RaihanRafif/coffeeshop-chatbot-porto",
             "theme": {
                 "bg": "bg-gray-700",
                 "text": "text-purple-400",
