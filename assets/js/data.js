@@ -47,28 +47,37 @@ const portfolioData = {
             "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"{FILL_COLOR}\"><path d=\"M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM12.5 13.5L11 15.8V12H9v5h2v-2.8l1.5-2.2H15V17h2v-5h-4.5zM9.5 9.5l1.5-2.2L13 9.8V7h2v5h-2v-2.8l-1.5 2.2H9V7h2v2.8L9.5 9.5z\"/></svg>"
         },
         {
-            id: 'semantic-search',
-            title: 'Semantic Product Search',
-            category: 'AI & E-COMMERCE',
-            summary: 'Designed a semantic search system that understands user intent to deliver highly relevant results and increase sales conversions.',
-            client: 'Fashion Store (Personal Showcase)',
-            overview: 'Standard keyword search often fails to capture user intent, leading to poor product discovery. For a fictional fashion store, I built a semantic search engine that uses vector embeddings to understand the *meaning* behind a query like "warm clothes for rainy season," returning relevant items like waterproof jackets and wool sweaters, even if the keywords don\'t match exactly.',
-            contributions: [
+            "id": 'semantic-search',
+            "title": 'Semantic Product Search',
+            "category": 'AI & E-COMMERCE',
+            "summary": 'Designed a semantic search system that understands user intent to deliver highly relevant results and increase sales conversions.',
+            "client": 'Fashion Store (Personal Showcase)',
+            "overview": 'Standard keyword search often fails to capture user intent, leading to poor product discovery. For a fictional fashion store, I built a semantic search engine that uses vector embeddings to understand the *meaning* behind a query like "warm clothes for rainy season," returning relevant items like waterproof jackets and wool sweaters, even if the keywords don\'t match exactly.',
+            "contributions": [
                 'Implemented semantic search using OpenAI\'s embedding models to convert product descriptions into meaningful vectors.',
                 'Built a backend service to perform efficient vector similarity searches using FAISS.',
                 'Developed a "You might also like" recommendation feature based on semantic product similarity, not just popularity.',
                 'Revolutionized product discovery, directly increasing sales conversion opportunities through a superior shopping experience.'
             ],
-            tech: ['Next.js', 'Laravel', 'OpenAI Embeddings', 'Vector Search', 'FAISS'],
-            liveUrl: '#', // <-- REPLACE WITH YOUR LIVE DEMO URL
-            repoUrl: '#', // <-- REPLACE WITH YOUR GITHUB REPO URL
-            theme: {
-                bg: 'bg-gray-700',
-                text: 'text-indigo-400', hover: 'hover:text-indigo-300',
-                buttonBg: 'bg-white/5', buttonHover: 'hover:bg-white/10',
-                fill: '#818CF8'
+            "assets": {
+                "video": null,
+                "youtubeId": null,
+                "images": [
+                    './assets/projects/fashong/1.png',
+                    './assets/projects/fashong/2.png',
+                    './assets/projects/fashong/3.png',
+                ]
             },
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>`
+            "tech": ['Next.js', 'Laravel', 'OpenAI Embeddings', 'Vector Search', 'FAISS'],
+            "liveUrl": 'http://103.250.11.76:3005/', // <-- REPLACE WITH YOUR LIVE DEMO URL
+            "repoUrl": 'https://github.com/RaihanRafif/fashong-porto', // <-- REPLACE WITH YOUR GITHUB REPO URL
+            "theme": {
+                "bg": 'bg-gray-700',
+                "text": 'text-indigo-400', "hover": 'hover:text-indigo-300',
+                "buttonBg": 'bg-white/5', "buttonHover": 'hover:bg-white/10',
+                "fill": '#818CF8'
+            },
+            "icon": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>`
         },
         {
             id: 'content-generator',
