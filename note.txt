@@ -3,3 +3,5 @@ coffee-backend : 3001
 chatbot : 3003 
 fashong-backend : 3004
 fashong-frontned : 3005
+ai-dig-backend : 3006
+ai-dig-frontend : 3007

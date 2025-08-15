@@ -80,28 +80,39 @@ const portfolioData = {
             "icon": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>`
         },
         {
-            id: 'content-generator',
-            title: 'AI Content Generator',
-            category: 'AI & MARKETING AUTOMATION',
-            summary: 'Built an AI dashboard that helps marketing teams drastically reduce content creation time by transforming long-form text into various social media formats.',
-            client: 'Digital Creator (Personal Showcase)',
-            overview: 'Digital creators and marketing teams spend hours repurposing content for different platforms. This tool solves that problem. By inputting a long article or text, my application uses AI to generate a variety of content formats, saving time and ensuring brand consistency across platforms.',
-            contributions: [
+            "id": 'content-generator',
+            "title": 'AI Content Generator',
+            "category": 'AI & MARKETING AUTOMATION',
+            "summary": 'Built an AI dashboard that helps marketing teams drastically reduce content creation time by transforming long-form text into various social media formats.',
+            "client": 'Digital Creator (Personal Showcase)',
+            "overview": 'Digital creators and marketing teams spend hours repurposing content for different platforms. This tool solves that problem. By inputting a long article or text, my application uses AI to generate a variety of content formats, saving time and ensuring brand consistency across platforms.',
+            "contributions": [
                 'Generates concise, easy-to-read bullet-point summaries of long articles.',
                 'Creates multiple engaging Instagram caption variants, complete with relevant hashtag suggestions.',
                 'Automatically formats content into a post-ready Twitter/X thread structure.',
                 'Allows for output customization based on a "persona" (e.g., "witty," "professional") to maintain brand voice consistency.'
             ],
-            tech: ['React', 'Node.js', 'AI APIs', 'Tailwind CSS'],
-            liveUrl: '#', // <-- REPLACE WITH YOUR LIVE DEMO URL
-            repoUrl: '#', // <-- REPLACE WITH YOUR GITHUB REPO URL
-            theme: {
-                bg: 'bg-gray-700',
-                text: 'text-teal-400', hover: 'hover:text-teal-300',
-                buttonBg: 'bg-white/5', buttonHover: 'hover:bg-white/10',
-                fill: '#5EEAD4'
+            "assets": {
+                "video": null,
+                "youtubeId": null,
+                "images": [
+                    './assets/projects/atherium/1.png',
+                    './assets/projects/atherium/2.png',
+                    './assets/projects/atherium/3.png',
+                    './assets/projects/atherium/4.png',
+                    './assets/projects/atherium/5.png',
+                ]
             },
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6zM8 15h8v2H8v-2zm0-4h8v2H8v-2z"/></svg>`
+            "tech": ['React', 'Node.js', 'AI APIs', 'Tailwind CSS'],
+            "liveUrl": 'http://103.250.11.76:3007/', // <-- REPLACE WITH YOUR LIVE DEMO URL
+            "repoUrl": 'https://github.com/RaihanRafif/AI-digital-marketer-assistan', // <-- REPLACE WITH YOUR GITHUB REPO URL
+            "theme": {
+                "bg": 'bg-gray-700',
+                "text": 'text-teal-400', "hover": 'hover:text-teal-300',
+                "buttonBg": 'bg-white/5', "buttonHover": 'hover:bg-white/10',
+                "fill": '#5EEAD4'
+            },
+            "icon": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6zM8 15h8v2H8v-2zm0-4h8v2H8v-2z"/></svg>`
         },
         {
             id: 'nakayama',
