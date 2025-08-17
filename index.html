@@ -123,49 +123,6 @@
             animation: flyAcross 30s linear infinite;
         }
 
-        /* Chat related styles... */
-        #chat-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-            transition: transform 0.2s, background-color 0.2s;
-            z-index: 9998;
-            overflow: hidden;
-        }
-
-        #chat-icon:hover {
-            transform: scale(1.1);
-            background-color: #0056b3;
-        }
-
-        #chat-icon .chat-character {
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            bottom: 0;
-            animation: peek-animation 6s infinite ease-in-out;
-            animation-delay: 1s;
-        }
-
-        #chat-icon:hover .chat-character {
-            animation-play-state: paused;
-        }
-
-        #chat-icon #chat-close-icon {
-            width: 32px;
-            height: 32px;
-        }
-
         #chat-window {
             position: fixed;
             bottom: 90px;
@@ -249,6 +206,291 @@
         @media (max-width: 768px) {
             .flying-pokemon {
                 display: none;
+            }
+        }
+
+/* ------- CHAT SECTION ------- */
+        #chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9998;
+            overflow: visible;
+            /* Changed from hidden to visible */
+            animation: pulse-ring 2s infinite ease-out;
+        }
+
+        #chat-icon::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            border-radius: 50%;
+            z-index: -1;
+            animation: ping 2s infinite;
+        }
+
+        #chat-icon:hover {
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(16, 185, 129, 0.6);
+        }
+
+        #chat-icon:hover::before {
+            animation-play-state: paused;
+        }
+
+        /* Notification badge */
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #EF4444;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: bounce 1s infinite;
+            border: 2px solid white;
+        }
+
+        /* Floating message tooltip */
+        .chat-tooltip {
+            position: absolute;
+            right: 80px;
+            bottom: 10px;
+            background: white;
+            color: #374151;
+            padding: 12px 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            animation: tooltip-appear 8s ease-in-out infinite;
+        }
+
+        .chat-tooltip::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid white;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .chat-tooltip.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Welcome message bubble */
+        .welcome-message {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 20px 20px 5px 20px;
+            max-width: 280px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+            font-size: 14px;
+            line-height: 1.4;
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9997;
+            animation: welcome-appear 12s ease-in-out infinite;
+        }
+
+        .welcome-message::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 15px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #059669;
+        }
+
+        /* Sparkle effects */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FDE047;
+            border-radius: 50%;
+            animation: sparkle 2s infinite ease-in-out;
+        }
+
+        .sparkle:nth-child(1) {
+            top: 10px;
+            left: 15px;
+            animation-delay: 0s;
+        }
+
+        .sparkle:nth-child(2) {
+            top: 25px;
+            right: 10px;
+            animation-delay: 0.5s;
+        }
+
+        .sparkle:nth-child(3) {
+            bottom: 15px;
+            left: 20px;
+            animation-delay: 1s;
+        }
+
+        /* Enhanced animations */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes ping {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            75%,
+            100% {
+                opacity: 0;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-5px);
+            }
+
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        @keyframes tooltip-appear {
+
+            0%,
+            85% {
+                opacity: 0;
+                transform: translateX(10px);
+            }
+
+            90%,
+            95% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateX(10px);
+            }
+        }
+
+        @keyframes welcome-appear {
+
+            0%,
+            80% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8);
+            }
+
+            85%,
+            95% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.9);
+            }
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Update existing chat character animation */
+        #chat-icon .chat-character {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            animation: float 3s ease-in-out infinite;
+            /* Replace peek-animation */
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-3px);
             }
         }
     </style>
@@ -361,25 +603,62 @@
         </div>
     </div>
 
+    <!-- --------- CHAT SECTION ----------- -->
     <div id="chat-icon">
+        <!-- Add these new elements -->
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+
+        <div class="notification-badge">💬</div>
+
+        <div class="chat-tooltip">
+            Need help? Click to chat! 💭
+        </div>
+
+        <!-- Keep your existing character SVG -->
         <div class="chat-character">
             <svg viewBox="0 0 100 80">
-                <path fill="#FFC107"
-                    d="M50,80 C77.61,80 100,62.09 100,40 C100,17.91 77.61,0 50,0 C22.39,0 0,17.91 0,40 C0,62.09 22.39,80 50,80 Z" />
-                <circle fill="#333" cx="35" cy="35" r="6" />
-                <circle fill="#333" cx="65" cy="35" r="6" />
-                <path fill="#333" d="M50,55 C40,65 60,65 50,55 Z" />
+                <defs>
+                    <linearGradient id="pikachu-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFE135" />
+                        <stop offset="100%" style="stop-color:#FFC107" />
+                    </linearGradient>
+                </defs>
+                <!-- Enhanced Pikachu character -->
+                <ellipse cx="50" cy="45" rx="25" ry="20" fill="url(#pikachu-gradient)" />
+                <circle cx="42" cy="38" r="3" fill="#333" />
+                <circle cx="58" cy="38" r="3" fill="#333" />
+                <circle cx="43" cy="37" r="1" fill="white" />
+                <circle cx="59" cy="37" r="1" fill="white" />
+                <circle cx="50" cy="45" r="1.5" fill="#333" />
+                <path d="M47 50 Q50 53 53 50" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                <circle cx="35" cy="48" r="4" fill="#FF6B6B" opacity="0.7" />
+                <circle cx="65" cy="48" r="4" fill="#FF6B6B" opacity="0.7" />
+                <ellipse cx="42" cy="28" rx="3" ry="8" fill="url(#pikachu-gradient)" transform="rotate(-20 42 28)" />
+                <ellipse cx="58" cy="28" rx="3" ry="8" fill="url(#pikachu-gradient)" transform="rotate(20 58 28)" />
+                <ellipse cx="40" cy="22" rx="2" ry="3" fill="#333" transform="rotate(-20 40 22)" />
+                <ellipse cx="60" cy="22" rx="2" ry="3" fill="#333" transform="rotate(20 60 22)" />
             </svg>
         </div>
+
+        <!-- Keep your existing close icon -->
         <svg id="chat-close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
             style="display: none;">
             <path
                 d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
         </svg>
     </div>
+
+    <!-- Add the welcome message bubble -->
+    <div class="welcome-message">
+        Hi! 👋 I'm Raihan's assistant. Ask me anything about his projects and skills!
+    </div>
     <div id="chat-window">
         <div id="chat-root"></div>
     </div>
+
+    <!-- ----------- -->
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
@@ -636,6 +915,75 @@
         const container = document.getElementById('chat-root');
         const root = ReactDOM.createRoot(container);
         root.render(<App />);
+    </script>
+
+    <script>
+        // Enhanced chat icon interactions - ADD to your existing JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatIcon = document.getElementById('chat-icon');
+            const tooltip = document.querySelector('.chat-tooltip');
+            const welcomeMessage = document.querySelector('.welcome-message');
+            const notificationBadge = document.querySelector('.notification-badge');
+
+            let hasInteracted = false;
+
+            // Show tooltip on hover
+            if (chatIcon && tooltip) {
+                chatIcon.addEventListener('mouseenter', () => {
+                    tooltip.classList.add('show');
+                });
+
+                chatIcon.addEventListener('mouseleave', () => {
+                    tooltip.classList.remove('show');
+                });
+            }
+
+            // Enhanced click handler - modify your existing click event
+            const originalClickHandler = chatIcon.onclick;
+            chatIcon.onclick = function (e) {
+                // Remove notification badge after first interaction
+                if (!hasInteracted && notificationBadge) {
+                    notificationBadge.style.animation = 'none';
+                    notificationBadge.style.transform = 'scale(0)';
+                    setTimeout(() => {
+                        if (notificationBadge.parentNode) {
+                            notificationBadge.remove();
+                        }
+                    }, 300);
+                    hasInteracted = true;
+                }
+
+                // Hide welcome message when chat is opened
+                if (welcomeMessage) {
+                    welcomeMessage.style.animation = 'none';
+                    welcomeMessage.style.opacity = '0';
+                    welcomeMessage.style.transform = 'translateY(-10px) scale(0.9)';
+                }
+
+                // Call your existing click handler
+                if (originalClickHandler) {
+                    originalClickHandler.call(this, e);
+                }
+            };
+
+            // Periodic attention-grabbing effects
+            setInterval(() => {
+                if (!hasInteracted && chatIcon) {
+                    chatIcon.style.animation = 'none';
+                    setTimeout(() => {
+                        chatIcon.style.animation = 'pulse-ring 2s infinite ease-out';
+                    }, 100);
+                }
+            }, 15000); // Every 15 seconds
+
+            // Auto-hide welcome message after some time if not interacted
+            setTimeout(() => {
+                if (!hasInteracted && welcomeMessage) {
+                    welcomeMessage.style.animation = 'none';
+                    welcomeMessage.style.opacity = '0';
+                }
+            }, 30000); // Hide after 30 seconds
+        });
     </script>
 </body>
 
