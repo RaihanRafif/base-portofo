@@ -16,7 +16,7 @@ const portfolioData = {
                 "Implemented response streaming to enhance user interaction and deliver a premium, ChatGPT-like user experience."
             ],
             "assets": {
-                "video": null,
+                "video": './assets/projects/kopakopi/v-1.webm',
                 "youtubeId": null,
                 "images": [
                     './assets/projects/kopakopi/1.png',
@@ -60,7 +60,7 @@ const portfolioData = {
                 'Revolutionized product discovery, directly increasing sales conversion opportunities through a superior shopping experience.'
             ],
             "assets": {
-                "video": null,
+                "video": './assets/projects/fashong/v-1.webm',
                 "youtubeId": null,
                 "images": [
                     './assets/projects/fashong/1.png',
@@ -93,7 +93,7 @@ const portfolioData = {
                 'Allows for output customization based on a "persona" (e.g., "witty," "professional") to maintain brand voice consistency.'
             ],
             "assets": {
-                "video": null,
+                "video": './assets/projects/atherium/v-1.webm',
                 "youtubeId": null,
                 "images": [
                     './assets/projects/atherium/1.png',
