@@ -1,0 +1,6 @@
+User-agent: *
+#Allow: /
+Disallow: /
+
+# TODO: Ganti domain di bawah ini setelah deploy
+Sitemap: https://YOURDOMAIN.TLD/sitemap.xml

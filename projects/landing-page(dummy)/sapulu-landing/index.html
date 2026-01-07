@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- <meta name="robots" content="index,follow,max-image-preview:large" /> -->
+   <meta name="robots" content="noindex,nofollow,max-image-preview:large" />
+  <meta name="theme-color" content="#0e0f10" />
+  <meta name="format-detection" content="telephone=yes" />
+
+  <title>Sapulu Coffee Kraton Yogyakarta | Specialty Coffee & Brunch</title>
+  <meta name="description"
+    content="Sapulu Coffee di Kraton, Yogyakarta — specialty coffee dengan suasana adem, cocok untuk ngopi pagi, brunch, dan nongkrong santai. Reservasi & tanya menu via WhatsApp." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sapulu Coffee" />
+  <meta property="og:description"
+    content="Specialty coffee di jantung Yogyakarta. Kopi enak, tempat adem, vibes Jogja." />
+  <meta property="og:image" content="assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <!-- TIP: set og:url ke URL asli setelah deploy (mis. https://domainkamu.tld/) -->
+  <meta property="og:url" content="https://YOURDOMAIN.TLD/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sapulu Coffee" />
+  <meta name="twitter:description" content="Specialty coffee & brunch di Kraton, Yogyakarta." />
+  <meta name="twitter:image" content="assets/og.jpg" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="image" href="assets/hero.webp" imagesrcset="assets/hero.webp 1x, assets/hero.jpg 1x"
+    imagesizes="100vw" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Sapulu Coffee">
+        <span class="brand__mark" aria-hidden="true">☕</span>
+        <span class="brand__text">
+          <strong>Sapulu Coffee</strong>
+          <span class="muted">Kraton, Yogyakarta</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-controls="nav" aria-expanded="false" aria-label="Buka menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigasi utama">
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#location">Lokasi</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--small" href="#contact">Reservasi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <picture>
+          <source srcset="assets/hero.webp" type="image/webp" />
+          <img src="assets/hero.jpg" alt="" width="1920" height="1080" loading="eager" fetchpriority="high" />
+        </picture>
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="container hero__content">
+        <p class="pill reveal">Specialty coffee • Brunch • Cozy vibes</p>
+        <h1 class="reveal">
+          Ngopi enak di jantung <span class="accent">Kraton Jogja</span>
+        </h1>
+        <p class="lead reveal">
+          Tempat adem buat ngopi pagi, kerja santai, atau ngobrol bareng teman. Klik WhatsApp untuk tanya menu atau
+          reservasi.
+        </p>
+
+        <div class="hero__cta reveal">
+          <a class="btn" href="#contact">Chat WhatsApp</a>
+          <a class="btn btn--ghost" href="#location">Lihat Lokasi</a>
+        </div>
+
+        <div class="hero__stats reveal">
+          <div class="stat">
+            <span class="stat__num">☕</span>
+            <span class="stat__label">Specialty coffee</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">🥐</span>
+            <span class="stat__label">Brunch & bites</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">📍</span>
+            <span class="stat__label">Kraton, Jogja</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights / Menu -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Menu favorit</h2>
+          <p class="muted">Pilihan cepat yang sering jadi andalan. Mau versi lengkap? Tinggal chat.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Espresso Based</h3>
+            <p class="muted">Latte, cappuccino, americano dan teman-temannya. Konsisten, tidak drama.</p>
+            <ul class="list">
+              <li>Latte</li>
+              <li>Cappuccino</li>
+              <li>Americano</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Manual Brew</h3>
+            <p class="muted">Untuk kamu yang suka “rasa” dan rela nunggu beberapa menit.</p>
+            <ul class="list">
+              <li>V60</li>
+              <li>Aeropress</li>
+              <li>Cold brew</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Brunch & Bites</h3>
+            <p class="muted">Ngopi doang kadang kurang. Ini penyelamatnya.</p>
+            <ul class="list">
+              <li>Pastry</li>
+              <li>Light meals</li>
+              <li>Snack</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="callout reveal">
+          <div>
+            <h3>Butuh reservasi?</h3>
+            <p class="muted">Klik tombol WhatsApp dan tulis tanggal + jumlah orang. Simple.</p>
+          </div>
+          <a class="btn btn--small" href="#contact">Reservasi via WA</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section section--alt" id="gallery">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Galeri</h2>
+          <p class="muted">Sedikit vibes biar kamu kebayang sebelum datang.</p>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery__item reveal">
+            <picture>
+              <source srcset="assets/gallery-1.webp" type="image/webp" />
+              <img src="assets/gallery-1.jpg" alt="Suasana Sapulu Coffee" width="1200" height="900" loading="lazy"
+                decoding="async" />
+            </picture>
+          </figure>
+          <figure class="gallery__item reveal">
+            <picture>
+              <source srcset="assets/gallery-2.webp" type="image/webp" />
+              <img src="assets/gallery-2.jpg" alt="Area duduk di Sapulu Coffee" width="1200" height="900" loading="lazy"
+                decoding="async" />
+            </picture>
+          </figure>
+          <figure class="gallery__item reveal">
+            <picture>
+              <source srcset="assets/gallery-3.webp" type="image/webp" />
+              <img src="assets/gallery-3.jpg" alt="Kopi dan sajian" width="1200" height="900" loading="lazy"
+                decoding="async" />
+            </picture>
+          </figure>
+          <figure class="gallery__item reveal">
+            <picture>
+              <source srcset="assets/gallery-4.webp" type="image/webp" />
+              <img src="assets/gallery-4.jpg" alt="Detail interior Sapulu Coffee" width="1200" height="900"
+                loading="lazy" decoding="async" />
+            </picture>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section" id="location">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Lokasi</h2>
+          <p class="muted">Klik “Buka di Google Maps” untuk navigasi.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="panel reveal">
+            <h3>Alamat</h3>
+            <p class="muted">
+              Kraton, Yogyakarta<br />
+              <span class="small">Jam buka dapat berubah, chat dulu kalau mau aman.</span>
+            </p>
+
+            <div class="actions">
+              <a class="btn btn--small"
+                href="https://maps.app.goo.gl/d4hyddjAQzc2REK3A"
+                target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>
+              <a class="btn btn--ghost btn--small" href="#contact">Tanya via WA</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Kenapa enak ke sini?</h3>
+            <ul class="checklist">
+              <li>Lokasi strategis area Kraton</li>
+              <li>Vibes nyaman, cocok buat santai</li>
+              <li>Kopi dan brunch yang proper</li>
+            </ul>
+          </div>
+
+          <div class="map reveal" aria-label="Peta lokasi Sapulu Coffee">
+            <iframe title="Peta Sapulu Coffee"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Sapulu%20Coffee%20Kraton%20Yogyakarta&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>FAQ</h2>
+          <p class="muted">Pertanyaan yang biasanya muncul sebelum orang datang.</p>
+        </div>
+
+        <div class="faq">
+          <details class="faq__item reveal">
+            <summary>
+              <span>Apakah bisa reservasi?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <p class="muted">
+              Bisa. Chat WhatsApp, sebutkan tanggal, jam, dan jumlah orang.
+            </p>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>
+              <span>Apakah ada menu brunch?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <p class="muted">
+              Ada pilihan pastry dan light meals. Tanyakan menu terbaru via WhatsApp untuk yang paling akurat.
+            </p>
+          </details>
+
+          <details class="faq__item reveal">
+            <summary>
+              <span>Apakah cocok untuk kerja / laptop?</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <p class="muted">
+              Cocok untuk santai dan kerja ringan. Kalau butuh spot tertentu, chat dulu biar bisa diinfokan kondisi.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2>Reservasi & tanya menu</h2>
+          <p class="muted">Isi form ini, nanti otomatis membuka WhatsApp dengan pesan siap kirim.</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="panel reveal">
+            <form id="contactForm" class="form" novalidate>
+              <div class="field">
+                <label for="name">Nama</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
+                <small class="error" data-error-for="name"></small>
+              </div>
+
+              <div class="field">
+                <label for="phone">Nomor WhatsApp</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+                <small class="error" data-error-for="phone"></small>
+              </div>
+
+              <div class="field">
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" rows="4" required
+                  placeholder="Contoh: mau reservasi 2 orang hari Sabtu jam 16:00"></textarea>
+                <small class="error" data-error-for="message"></small>
+              </div>
+
+              <button class="btn" type="submit">Kirim via WhatsApp</button>
+              <p class="muted small" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="panel reveal">
+            <h3>Kontak cepat</h3>
+            <p class="muted">Kalau kamu tipe orang yang tidak suka form, tenang.</p>
+
+            <div class="quick">
+              <a class="quick__item" href="https://maps.app.goo.gl/d4hyddjAQzc2REK3A" target="_blank"
+                rel="noopener noreferrer">
+                <span class="quick__icon" aria-hidden="true">📍</span>
+                <span>
+                  <strong>Navigasi</strong>
+                  <span class="muted">Buka Google Maps</span>
+                </span>
+              </a>
+
+              <a class="quick__item" href="#top">
+                <span class="quick__icon" aria-hidden="true">☕</span>
+                <span>
+                  <strong>Menu</strong>
+                  <span class="muted">Lihat highlight</span>
+                </span>
+              </a>
+
+              <a class="quick__item" href="#gallery">
+                <span class="quick__icon" aria-hidden="true">🖼️</span>
+                <span>
+                  <strong>Galeri</strong>
+                  <span class="muted">Cek vibes</span>
+                </span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <strong>Sapulu Coffee</strong>
+        <p class="muted small">Kraton, Yogyakarta</p>
+      </div>
+      <div class="footer__right">
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#location">Lokasi</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Reservasi</a>
+        <a href="#top" class="to-top" aria-label="Kembali ke atas">↑</a>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <small class="muted">© <span id="year"></span> Sapulu Coffee • Concept landing page.</small>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Sapulu Coffee",
+  "url": "https://YOURDOMAIN.TLD/",
+  "image": [
+    "https://YOURDOMAIN.TLD/assets/og.jpg"
+  ],
+  "telephone": "+62 811-2541-1112",
+  "priceRange": "$$",
+  "servesCuisine": ["Coffee", "Brunch"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Yogyakarta",
+    "addressRegion": "DI Yogyakarta",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -7.805,
+    "longitude": 110.364
+  },
+  "sameAs": [
+    "https://maps.app.goo.gl/d4hyddjAQzc2REK3A"
+  ]
+}
+  </script>
+
+  <!-- FAQ schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah bisa reservasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Chat WhatsApp, sebutkan tanggal, jam, dan jumlah orang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah ada menu brunch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ada pilihan pastry dan light meals. Tanyakan menu terbaru via WhatsApp untuk yang paling akurat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah cocok untuk kerja / laptop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cocok untuk santai dan kerja ringan. Kalau butuh spot tertentu, chat dulu biar bisa diinfokan kondisi."
+      }
+    }
+  ]
+}
+  </script>
+</body>
+
+</html>
