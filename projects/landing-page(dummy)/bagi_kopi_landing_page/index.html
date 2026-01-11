@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BagiKopi — Berbagi Cerita Lewat Secangkir Kopi</title>
+  <meta name="description" content="BagiKopi adalah coffee shop yang nyaman untuk berbagi cerita, bekerja, dan menikmati kopi. Berdiri sejak 2019 dan hadir di berbagai kota." />
+
+  <!-- Open Graph (opsional, isi ulang jika sudah punya domain & gambar) -->
+  <meta property="og:title" content="BagiKopi — Berbagi Cerita Lewat Secangkir Kopi" />
+  <meta property="og:description" content="Tempat nyaman untuk berbagi cerita, bekerja, dan menikmati kopi." />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="https://domainanda.com/images/og.jpg" /> -->
+
+  <style>
+    :root{
+      --coffee-brown:#6B4F2C;
+      --cream:#F5E8D8;
+      --dark-gray:#2E2E2E;
+      --warm-beige:#EAD7C1;
+      --soft-black:#1F1F1F;
+
+      --bg:var(--cream);
+      --text:var(--soft-black);
+      --muted:rgba(31,31,31,.72);
+      --card:rgba(255,255,255,.35);
+      --stroke:rgba(31,31,31,.12);
+
+      --shadow: 0 18px 50px rgba(31,31,31,.10);
+      --shadow2: 0 10px 30px rgba(31,31,31,.08);
+
+      --radius: 18px;
+      --radius-lg: 26px;
+
+      --container: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(107,79,44,.12), transparent 60%),
+                  radial-gradient(900px 700px at 95% 10%, rgba(234,215,193,.55), transparent 55%),
+                  var(--bg);
+      line-height:1.45;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--container); margin:0 auto; padding:0 20px}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(245,232,216,.92), rgba(245,232,216,.72));
+      border-bottom:1px solid rgba(31,31,31,.10);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 160px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius:10px;
+      background: conic-gradient(from 210deg, var(--coffee-brown), rgba(107,79,44,.45), var(--coffee-brown));
+      box-shadow: var(--shadow2);
+      position:relative;
+      border:1px solid rgba(31,31,31,.10);
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:10px;
+      border-radius:8px;
+      background:rgba(245,232,216,.65);
+      border:1px solid rgba(31,31,31,.08);
+    }
+    .navlinks{
+      display:flex; gap:16px; align-items:center;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+    .navlinks a{padding:8px 10px; border-radius:12px}
+    .navlinks a:hover{background:rgba(234,215,193,.55); color:var(--text)}
+    .nav-cta{display:flex; gap:10px; align-items:center}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid rgba(31,31,31,.12);
+      background:rgba(255,255,255,.35);
+      box-shadow: var(--shadow2);
+      font-weight:700;
+      font-size:14px;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow)}
+    .btn:active{transform: translateY(0)}
+    .btn-primary{
+      background: linear-gradient(180deg, rgba(107,79,44,1), rgba(107,79,44,.92));
+      color:var(--cream);
+      border-color: rgba(107,79,44,.7);
+    }
+    .btn-primary:hover{background: linear-gradient(180deg, rgba(107,79,44,.98), rgba(107,79,44,.86))}
+    .btn-ghost{
+      background: rgba(255,255,255,.22);
+    }
+
+    .burger{
+      display:none;
+      border:1px solid rgba(31,31,31,.12);
+      background:rgba(255,255,255,.22);
+      border-radius:14px;
+      padding:10px 12px;
+      box-shadow: var(--shadow2);
+      cursor:pointer;
+      font-weight:800;
+    }
+
+    /* Hero */
+    .hero{
+      padding:44px 0 26px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.20));
+      border:1px solid rgba(31,31,31,.12);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+    .hero-copy{
+      padding:28px 28px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-copy:before{
+      content:"";
+      position:absolute; inset:-120px -140px auto auto;
+      width:420px; height:420px;
+      background: radial-gradient(circle at 40% 40%, rgba(107,79,44,.22), transparent 62%);
+      transform: rotate(12deg);
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:13px;
+      font-weight:700;
+      color:rgba(31,31,31,.78);
+      background: rgba(234,215,193,.55);
+      border:1px solid rgba(31,31,31,.10);
+      padding:8px 10px;
+      border-radius:999px;
+      position:relative;
+      z-index:1;
+    }
+    .badge i{
+      width:10px; height:10px; border-radius:99px;
+      background: var(--coffee-brown);
+      display:inline-block;
+      box-shadow: 0 0 0 3px rgba(107,79,44,.12);
+    }
+
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.07;
+      letter-spacing:-.5px;
+      position:relative;
+      z-index:1;
+    }
+    .subtitle{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 56ch;
+      position:relative;
+      z-index:1;
+    }
+    .hero-actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      position:relative; z-index:1;
+    }
+    .meta-row{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:18px;
+      position:relative; z-index:1;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(31,31,31,.10);
+      background: rgba(255,255,255,.28);
+      color:rgba(31,31,31,.78);
+      font-weight:700;
+      font-size:13px;
+    }
+
+    .hero-visual{
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .visual-block{
+      border-radius: 22px;
+      border:1px solid rgba(31,31,31,.12);
+      background:
+        radial-gradient(700px 260px at 20% 10%, rgba(107,79,44,.22), transparent 55%),
+        radial-gradient(520px 280px at 70% 70%, rgba(234,215,193,.65), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,.18));
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      position:relative;
+      min-height: 210px;
+    }
+    .visual-block:before{
+      content:"";
+      position:absolute; inset:-40px -40px auto auto;
+      width:220px; height:220px;
+      border-radius: 48px;
+      background: rgba(245,232,216,.55);
+      transform: rotate(18deg);
+      border:1px solid rgba(31,31,31,.08);
+    }
+    .visual-block .caption{
+      position:absolute;
+      left:18px; bottom:18px; right:18px;
+      background: rgba(245,232,216,.78);
+      border:1px solid rgba(31,31,31,.10);
+      border-radius: 18px;
+      padding:12px 12px;
+      box-shadow: var(--shadow2);
+    }
+    .visual-block .caption strong{
+      display:block; font-size:14px;
+    }
+    .visual-block .caption span{
+      display:block; color:var(--muted); font-size:13px; margin-top:2px;
+    }
+    .mini-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .mini{
+      border-radius: 22px;
+      border:1px solid rgba(31,31,31,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,.16));
+      box-shadow: var(--shadow2);
+      padding:14px;
+      min-height: 96px;
+    }
+    .mini strong{display:block; font-size:14px; margin-bottom:6px}
+    .mini p{margin:0; color:var(--muted); font-size:13px}
+
+    /* Section base */
+    section{padding:34px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:14px; margin-bottom:14px;
+    }
+    h2{
+      margin:0;
+      font-size: clamp(20px, 2.4vw, 30px);
+      letter-spacing:-.3px;
+      line-height:1.15;
+    }
+    .lead{
+      margin:6px 0 0;
+      color:var(--muted);
+      max-width: 70ch;
+      font-size:15px;
+    }
+
+    /* Feature cards */
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .feature{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(31,31,31,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,.16));
+      box-shadow: var(--shadow2);
+      min-height: 150px;
+    }
+    .icon{
+      width:38px; height:38px;
+      border-radius: 14px;
+      background: rgba(234,215,193,.70);
+      border:1px solid rgba(31,31,31,.10);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      color: rgba(107,79,44,1);
+      margin-bottom:10px;
+    }
+    .feature h3{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Menu */
+    .menu-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:start;
+    }
+    .menu-card{padding:18px}
+    .menu-list{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+    .menu-item{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:14px;
+      padding:12px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.22);
+      border:1px solid rgba(31,31,31,.10);
+    }
+    .menu-item strong{display:block; font-size:14px}
+    .menu-item span{display:block; color:var(--muted); font-size:13px; margin-top:2px}
+    .tag{
+      font-size:12px; font-weight:800;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(31,31,31,.10);
+      background: rgba(234,215,193,.60);
+      color: rgba(31,31,31,.78);
+      white-space:nowrap;
+      height: fit-content;
+    }
+    .menu-note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+    }
+    .gallery-big, .gallery-small{
+      border-radius: var(--radius-lg);
+      border:1px solid rgba(31,31,31,.12);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      min-height: 340px;
+      background:
+        radial-gradient(800px 380px at 20% 0%, rgba(107,79,44,.20), transparent 55%),
+        radial-gradient(700px 420px at 90% 80%, rgba(234,215,193,.72), transparent 56%),
+        linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,.12));
+    }
+    .gallery-small{
+      min-height: 340px;
+      display:grid;
+      grid-template-rows: 1fr 1fr;
+      gap:14px;
+      background:none;
+      border:none;
+      box-shadow:none;
+    }
+    .shot{
+      border-radius: var(--radius-lg);
+      border:1px solid rgba(31,31,31,.12);
+      box-shadow: var(--shadow2);
+      background:
+        radial-gradient(520px 240px at 20% 10%, rgba(234,215,193,.72), transparent 55%),
+        radial-gradient(500px 260px at 70% 90%, rgba(107,79,44,.18), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,.12));
+      position:relative;
+      overflow:hidden;
+    }
+    .img-label{
+      position:absolute; left:16px; bottom:16px; right:16px;
+      border-radius: 18px;
+      background: rgba(245,232,216,.82);
+      border:1px solid rgba(31,31,31,.10);
+      padding:10px 12px;
+      color: rgba(31,31,31,.86);
+      font-weight:700;
+      box-shadow: var(--shadow2);
+    }
+    .img-label small{
+      display:block; margin-top:3px; font-weight:650; color:var(--muted)
+    }
+
+    /* Outlet */
+    .outlet-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    .outlet-card{padding:18px}
+    .search{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .input{
+      flex:1;
+      min-width: 220px;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(31,31,31,.12);
+      background: rgba(255,255,255,.28);
+      outline:none;
+      box-shadow: var(--shadow2);
+      font-weight:650;
+      color: rgba(31,31,31,.86);
+    }
+    .input::placeholder{color: rgba(31,31,31,.48); font-weight:650}
+    .city-list{margin:0; padding:0; list-style:none; display:grid; gap:10px}
+    .city{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.22);
+      border:1px solid rgba(31,31,31,.10);
+    }
+    .city strong{font-size:14px}
+    .city span{color:var(--muted); font-size:13px}
+    .city a{
+      font-weight:800; font-size:13px;
+      padding:9px 10px;
+      border-radius: 12px;
+      border:1px solid rgba(31,31,31,.10);
+      background: rgba(234,215,193,.60);
+    }
+    .city a:hover{background: rgba(234,215,193,.78)}
+
+    /* Testimonials + FAQ */
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .quote{
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid rgba(31,31,31,.12);
+      background: linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,.16));
+      box-shadow: var(--shadow2);
+    }
+    .quote p{margin:0 0 10px; color:rgba(31,31,31,.82)}
+    .quote footer{color:var(--muted); font-weight:750; font-size:13px}
+
+    details{
+      border-radius: var(--radius);
+      border:1px solid rgba(31,31,31,.12);
+      background: rgba(255,255,255,.22);
+      box-shadow: var(--shadow2);
+      padding:14px 14px;
+    }
+    details + details{margin-top:10px}
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary:after{
+      content:"+";
+      font-weight:900;
+      width:28px; height:28px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(31,31,31,.10);
+      background: rgba(234,215,193,.60);
+      color: rgba(31,31,31,.78);
+      flex: 0 0 auto;
+    }
+    details[open] summary:after{content:"–"}
+    details p{margin:10px 0 0; color:var(--muted); font-size:14px}
+
+    /* Footer */
+    footer{
+      padding:26px 0 34px;
+      border-top:1px solid rgba(31,31,31,.10);
+      background: linear-gradient(to top, rgba(245,232,216,.92), rgba(245,232,216,.62));
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+    .fine{color:var(--muted); font-size:13px; margin:10px 0 0}
+    .footlinks{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+      margin-top: 6px;
+    }
+    .footlinks a{
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(31,31,31,.12);
+      background: rgba(255,255,255,.22);
+      font-weight:750;
+      font-size:13px;
+      color: rgba(31,31,31,.78);
+    }
+    .footlinks a:hover{background: rgba(234,215,193,.70); color: rgba(31,31,31,.90)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .menu-grid{grid-template-columns: 1fr}
+      .gallery{grid-template-columns: 1fr}
+      .gallery-big{min-height: 300px}
+      .gallery-small{min-height: 0}
+      .outlet-grid{grid-template-columns: 1fr}
+      .grid-3{grid-template-columns: 1fr}
+      .grid-2{grid-template-columns: 1fr}
+      .footer-grid{grid-template-columns: 1fr}
+      .footlinks{justify-content:flex-start}
+    }
+    @media (max-width: 760px){
+      .navlinks{display:none}
+      .burger{display:inline-flex}
+      .nav{gap:10px}
+    }
+
+    /* Mobile menu panel */
+    .mobile-panel{
+      display:none;
+      padding: 0 0 14px;
+    }
+    .mobile-panel.open{display:block}
+    .mobile-links{
+      display:grid;
+      gap:8px;
+      padding: 10px 0 0;
+    }
+    .mobile-links a{
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(31,31,31,.12);
+      background: rgba(255,255,255,.22);
+      font-weight:800;
+      color: rgba(31,31,31,.84);
+    }
+    .mobile-links a:hover{background: rgba(234,215,193,.70)}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="BagiKopi">
+          <!-- Ganti ini dengan logo asli Anda bila sudah tersedia:
+               <img src="logo/bagikopi.svg" alt="BagiKopi" width="36" height="36"> -->
+          <span class="logo" aria-hidden="true"></span>
+          <span>BagiKopi</span>
+        </a>
+
+        <nav class="navlinks" aria-label="Navigasi utama">
+          <a href="#about">Tentang</a>
+          <a href="#menu">Menu</a>
+          <a href="#suasana">Suasana</a>
+          <a href="#outlet">Outlet</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="#menu">Lihat Menu</a>
+          <a class="btn btn-primary" href="#outlet">Cari Outlet</a>
+          <button class="burger" id="burger" aria-expanded="false" aria-controls="mobilePanel">Menu</button>
+        </div>
+      </div>
+
+      <div class="mobile-panel" id="mobilePanel">
+        <div class="mobile-links">
+          <a href="#about">Tentang</a>
+          <a href="#menu">Menu</a>
+          <a href="#suasana">Suasana</a>
+          <a href="#outlet">Outlet</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="card hero-copy">
+            <span class="badge"><i></i> Berdiri sejak 2019 • Coffee shop untuk berbagi cerita</span>
+            <h1>Berbagi Cerita Lewat Secangkir Kopi</h1>
+            <p class="subtitle">
+              BagiKopi adalah tempat nyaman untuk bekerja, mengobrol, dan menikmati kopi.
+              Kami fokus pada kualitas rasa, pelayanan, dan pengalaman yang membuat Anda ingin kembali.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#outlet">Cari Outlet Terdekat</a>
+              <a class="btn" href="#menu">Lihat Menu</a>
+            </div>
+
+            <div class="meta-row" aria-label="Highlight">
+              <span class="pill">Konsep kebersamaan</span>
+              <span class="pill">Kopi & non-kopi</span>
+              <span class="pill">Snack & rice bowl</span>
+              <span class="pill">Hadir di berbagai kota</span>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="visual-block card" role="img" aria-label="Visual suasana BagiKopi (placeholder)">
+              <div class="caption">
+                <strong>Suasana yang mengundang untuk singgah</strong>
+                <span>Ganti area ini dengan foto hero outlet atau interior terbaik Anda.</span>
+              </div>
+            </div>
+
+            <div class="mini-grid">
+              <div class="mini">
+                <strong>Rasa yang konsisten</strong>
+                <p>Fokus pada kualitas dan pengalaman minum kopi yang menyenangkan.</p>
+              </div>
+              <div class="mini">
+                <strong>Ruang untuk bertemu</strong>
+                <p>Tempat untuk ngobrol santai, diskusi, atau quality time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / VALUE -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Tentang BagiKopi</h2>
+            <p class="lead">
+              Kami percaya kopi bukan sekadar minuman — melainkan medium untuk berbagi cerita, mempererat relasi,
+              dan menciptakan momen yang berkesan.
+            </p>
+          </div>
+          <a class="btn" href="#outlet">Kunjungi Outlet</a>
+        </div>
+
+        <div class="grid-3" role="list">
+          <div class="feature" role="listitem">
+            <div class="icon" aria-hidden="true">01</div>
+            <h3>Kopi berkualitas</h3>
+            <p>Diracik untuk menghadirkan rasa yang seimbang dan mudah dinikmati kapan saja.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <div class="icon" aria-hidden="true">02</div>
+            <h3>Tempat nyaman</h3>
+            <p>Ruang yang membuat Anda betah — untuk ngobrol, rehat, atau menyelesaikan pekerjaan.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <div class="icon" aria-hidden="true">03</div>
+            <h3>Suasana hangat</h3>
+            <p>Konsep kebersamaan yang terasa dari pelayanan hingga ambience di setiap kunjungan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Menu Favorit</h2>
+            <p class="lead">Pilihan kopi, non-kopi, hingga makanan ringan untuk menemani setiap cerita.</p>
+          </div>
+          <a class="btn btn-primary" href="#outlet">Cari Outlet</a>
+        </div>
+
+        <div class="menu-grid">
+          <div class="card menu-card">
+            <h3 style="margin:0 0 10px;font-size:16px">Best Seller</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div>
+                  <strong>Es Kopi Susu</strong>
+                  <span>Signature yang creamy dan seimbang.</span>
+                </div>
+                <span class="tag">Signature</span>
+              </li>
+              <li class="menu-item">
+                <div>
+                  <strong>Latte</strong>
+                  <span>Classic milk coffee yang lembut.</span>
+                </div>
+                <span class="tag">Coffee</span>
+              </li>
+              <li class="menu-item">
+                <div>
+                  <strong>Matcha</strong>
+                  <span>Non-kopi untuk opsi yang lebih ringan.</span>
+                </div>
+                <span class="tag">Non-Coffee</span>
+              </li>
+            </ul>
+            <p class="menu-note">
+              Anda bisa menambahkan harga, deskripsi resmi, dan label “Best Seller” berbasis data penjualan.
+            </p>
+          </div>
+
+          <div class="card menu-card">
+            <h3 style="margin:0 0 10px;font-size:16px">Kategori</h3>
+            <ul class="menu-list">
+              <li class="menu-item">
+                <div>
+                  <strong>Coffee</strong>
+                  <span>Americano, Latte, dan varian lainnya.</span>
+                </div>
+                <span class="tag">Kopi</span>
+              </li>
+              <li class="menu-item">
+                <div>
+                  <strong>Non-Coffee</strong>
+                  <span>Chocolate & Matcha.</span>
+                </div>
+                <span class="tag">Non-Kopi</span>
+              </li>
+              <li class="menu-item">
+                <div>
+                  <strong>Food</strong>
+                  <span>Snack & Rice Bowl.</span>
+                </div>
+                <span class="tag">Makanan</span>
+              </li>
+            </ul>
+            <p class="menu-note">
+              Tombol “Lihat Menu Lengkap” idealnya mengarah ke halaman menu atau PDF/Link aggregator.
+            </p>
+
+            <!-- Opsional: buat jadi link nyata -->
+            <a class="btn" href="#" style="margin-top:8px;width:fit-content">Lihat Menu Lengkap</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY / AMBIENCE -->
+    <section id="suasana">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Suasana yang Berkesan</h2>
+            <p class="lead">
+              Visual yang konsisten (tone hangat, creamy, dan natural) akan menguatkan identitas BagiKopi.
+              Ganti placeholder di bawah dengan foto interior, produk, dan momen pelanggan.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-big" role="img" aria-label="Foto interior utama (placeholder)">
+            <div class="img-label">
+              Interior / Hero Shot
+              <small>Tempatkan foto paling ikonik untuk memperkuat kesan pertama.</small>
+            </div>
+          </div>
+
+          <div class="gallery-small">
+            <div class="shot" role="img" aria-label="Foto produk (placeholder)">
+              <div class="img-label">
+                Produk Signature
+                <small>Contoh: Es Kopi Susu, Latte, atau seasonal menu.</small>
+              </div>
+            </div>
+            <div class="shot" role="img" aria-label="Foto momen pelanggan (placeholder)">
+              <div class="img-label">
+                Momen & Cerita
+                <small>Contoh: ngobrol, meeting kecil, atau quality time.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jika Anda sudah punya file gambar, ganti placeholder dengan <img> seperti contoh:
+             <img src="images/hero.webp" alt="Suasana BagiKopi" loading="lazy" decoding="async"> -->
+      </div>
+    </section>
+
+    <!-- OUTLET / LOCATOR -->
+    <section id="outlet">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Cari Outlet</h2>
+            <p class="lead">
+              BagiKopi hadir di berbagai kota. Ketik nama kota/area untuk menemukan outlet yang paling dekat.
+              Anda bisa mengganti daftar kota menjadi outlet spesifik beserta alamat dan jam operasional.
+            </p>
+          </div>
+        </div>
+
+        <div class="outlet-grid">
+          <div class="card outlet-card">
+            <div class="search">
+              <label class="sr-only" for="citySearch">Cari kota</label>
+              <input id="citySearch" class="input" type="text" placeholder="Cari kota (contoh: Jakarta, Bandung, Surabaya)" />
+              <button class="btn btn-primary" id="resetBtn" type="button">Reset</button>
+            </div>
+
+            <ul class="city-list" id="cityList">
+              <!-- Contoh data. Ganti sesuai fakta outlet Anda. -->
+              <li class="city" data-city="jakarta">
+                <div>
+                  <strong>Jakarta</strong>
+                  <span>Beberapa outlet • “puluhan outlet” nasional</span>
+                </div>
+                <a href="#" aria-label="Lihat outlet Jakarta">Lihat</a>
+              </li>
+              <li class="city" data-city="bandung">
+                <div>
+                  <strong>Bandung</strong>
+                  <span>Beberapa outlet</span>
+                </div>
+                <a href="#" aria-label="Lihat outlet Bandung">Lihat</a>
+              </li>
+              <li class="city" data-city="surabaya">
+                <div>
+                  <strong>Surabaya</strong>
+                  <span>Beberapa outlet</span>
+                </div>
+                <a href="#" aria-label="Lihat outlet Surabaya">Lihat</a>
+              </li>
+              <li class="city" data-city="yogyakarta">
+                <div>
+                  <strong>Yogyakarta</strong>
+                  <span>Beberapa outlet</span>
+                </div>
+                <a href="#" aria-label="Lihat outlet Yogyakarta">Lihat</a>
+              </li>
+            </ul>
+
+            <p class="menu-note" id="resultNote" style="margin-top:12px">
+              Tip: tautkan tombol “Lihat” ke Google Maps, halaman outlet, atau WhatsApp CS.
+            </p>
+          </div>
+
+          <div class="card outlet-card">
+            <h3 style="margin:0 0 10px;font-size:16px">Arahkan Konversi</h3>
+            <p style="margin:0;color:var(--muted);font-size:14px">
+              Untuk landing page yang benar-benar efektif, 3 komponen berikut biasanya meningkatkan conversion rate:
+            </p>
+
+            <div style="margin-top:12px; display:grid; gap:10px">
+              <div class="menu-item">
+                <div>
+                  <strong>Store Locator</strong>
+                  <span>Daftar outlet + Maps + jam operasional.</span>
+                </div>
+                <span class="tag">Prioritas</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <strong>Social Proof</strong>
+                  <span>Testimoni, rating, atau highlight komunitas.</span>
+                </div>
+                <span class="tag">Kepercayaan</span>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <strong>Menu & Best Seller</strong>
+                  <span>3–6 item unggulan + foto produk.</span>
+                </div>
+                <span class="tag">Niat beli</span>
+              </div>
+            </div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+              <a class="btn btn-primary" href="#">Buka Maps</a>
+              <a class="btn" href="#">Hubungi CS</a>
+            </div>
+
+            <p class="menu-note" style="margin-top:10px">
+              Silakan ganti tombol di atas dengan link yang benar (Maps/WhatsApp/Instagram).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimoni">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Apa Kata Mereka</h2>
+            <p class="lead">
+              Gunakan testimoni nyata untuk memperkuat kredibilitas. Di bawah ini contoh struktur (placeholder).
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="quote">
+            <p>“Tempatnya nyaman untuk ngobrol lama. Kopinya enak dan servicenya ramah.”</p>
+            <footer>— Pelanggan, (isi nama/kota)</footer>
+          </div>
+          <div class="quote">
+            <p>“Cocok untuk ketemu teman atau sekadar rehat. Menunya variatif dan mudah dipilih.”</p>
+            <footer>— Pelanggan, (isi nama/kota)</footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Pertanyaan Umum</h2>
+            <p class="lead">Bagian ini mengurangi friction sebelum pengunjung memutuskan datang.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <details>
+              <summary>Apakah BagiKopi cocok untuk bekerja atau meeting santai?</summary>
+              <p>Ya, banyak pelanggan datang untuk bekerja atau diskusi. Anda bisa menambahkan detail fasilitas per outlet (misalnya Wi-Fi, colokan, smoking/non-smoking) sesuai fakta.</p>
+            </details>
+            <details>
+              <summary>Ada pilihan non-kopi?</summary>
+              <p>Ada, seperti Chocolate dan Matcha, selain menu kopi seperti Americano dan Latte.</p>
+            </details>
+            <details>
+              <summary>Bagaimana cara melihat menu lengkap?</summary>
+              <p>Tambahkan link ke halaman menu, PDF, atau highlight Instagram agar pengunjung dapat melihat detail lebih lengkap.</p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>Di kota mana saja BagiKopi tersedia?</summary>
+              <p>Gunakan bagian “Cari Outlet” untuk menampilkan kota/outlet. Idealnya sertakan alamat dan tautan Maps.</p>
+            </details>
+            <details>
+              <summary>Apakah ada promo atau membership?</summary>
+              <p>Jika ada, tampilkan satu kartu promo singkat di hero atau dekat CTA agar jelas dan tidak mengganggu.</p>
+            </details>
+            <details>
+              <summary>Bagaimana menghubungi BagiKopi?</summary>
+              <p>Sediakan tombol WhatsApp/Instagram/Email di footer agar mudah diakses.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin:0">
+            <span class="logo" aria-hidden="true"></span>
+            <span>BagiKopi</span>
+          </div>
+          <p class="fine">
+            © <span id="year"></span> BagiKopi. Berbagi cerita, satu cangkir dalam satu waktu.
+            <br/>Silakan isi alamat, nomor CS, dan tautan sosial media sesuai kebutuhan.
+          </p>
+        </div>
+
+        <div>
+          <div class="footlinks" aria-label="Tautan cepat">
+            <a href="#outlet">Outlet</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">Tentang</a>
+            <a href="#faq">FAQ</a>
+            <a href="#top">Kembali ke Atas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tahun otomatis
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const burger = document.getElementById("burger");
+    const panel = document.getElementById("mobilePanel");
+    burger?.addEventListener("click", () => {
+      const open = panel.classList.toggle("open");
+      burger.setAttribute("aria-expanded", String(open));
+    });
+    // Tutup panel setelah klik link
+    panel?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      panel.classList.remove("open");
+      burger.setAttribute("aria-expanded", "false");
+    }));
+
+    // Filter kota/outlet (demo)
+    const search = document.getElementById("citySearch");
+    const list = document.getElementById("cityList");
+    const resetBtn = document.getElementById("resetBtn");
+    const note = document.getElementById("resultNote");
+
+    function normalize(s){ return (s || "").toLowerCase().trim(); }
+
+    function filterCities(){
+      const q = normalize(search.value);
+      let shown = 0;
+
+      list.querySelectorAll(".city").forEach(li => {
+        const city = normalize(li.getAttribute("data-city"));
+        const text = normalize(li.innerText);
+        const match = !q || city.includes(q) || text.includes(q);
+        li.style.display = match ? "flex" : "none";
+        if (match) shown++;
+      });
+
+      note.textContent = q
+        ? `Menampilkan ${shown} hasil untuk pencarian “${search.value}”.`
+        : "Tip: tautkan tombol “Lihat” ke Google Maps, halaman outlet, atau WhatsApp CS.";
+    }
+
+    search?.addEventListener("input", filterCities);
+    resetBtn?.addEventListener("click", () => {
+      search.value = "";
+      filterCities();
+      search.focus();
+    });
+  </script>
+</body>
+</html>

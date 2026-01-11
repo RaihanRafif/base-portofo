@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NITRO COFFEE @Ciranjang — Work-friendly Specialty Coffee</title>
+  <meta name="description" content="Work-friendly specialty coffee & crafted brunch in Ciranjang. Industrial-warm space for meetings, focused work, and slow mornings." />
+  <meta name="theme-color" content="#CFC1A1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-grain">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Nitro Coffee">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name">NITRO COFFEE</span>
+          <span class="brand-sub">Ciranjang • Jakarta</span>
+        </span>
+      </a>
+
+      <div class="nav-right">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <div id="navMenu" class="nav-menu" data-nav-menu>
+          <nav class="nav-links" aria-label="Primary">
+            <a href="#ritual" data-i18n="nav_ritual">Ritual</a>
+            <a href="#space" data-i18n="nav_space">Space</a>
+            <a href="#menu" data-i18n="nav_menu">Menu</a>
+            <a href="#reviews" data-i18n="nav_reviews">Reviews</a>
+            <a href="#location" data-i18n="nav_location">Location</a>
+          </nav>
+
+          <div class="nav-actions">
+            <div class="lang" role="group" aria-label="Language toggle">
+              <span class="label" data-i18n="lang_label">Language</span>
+              <button type="button" data-lang-btn="en" aria-pressed="true" aria-label="English">EN</button>
+              <button type="button" data-lang-btn="id" aria-pressed="false" aria-label="Bahasa Indonesia">ID</button>
+            </div>
+
+            <a class="btn btn-primary" href="#location" data-i18n="nav_cta">Get directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker"><span class="dot"></span> <span data-i18n="hero_kicker">work-friendly specialty coffee pit stop</span></div>
+
+          <h1 class="h1" data-i18n="hero_title">Serious coffee, calm space, and brunch that actually delivers.</h1>
+          <p class="sub" data-i18n="hero_sub">
+            Nitro Coffee @Ciranjang is an industrial-warm spot for meetings, focused work, or a slow morning.
+            Not a loud content playground. A café that helps you get things done.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#menu" data-i18n="hero_cta_primary">See menu</a>
+            <a class="btn btn-secondary" href="#space" data-i18n="hero_cta_secondary">View the space</a>
+            <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Jl.%20Ciranjang%20No.10%202%2C%20RT.1/RW.1%2C%20Rw.%20Bar.%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012180%2C%20Indonesia" data-i18n="maps_open">Open in Google Maps</a>
+          </div>
+
+          <div class="chips" role="list" aria-label="Highlights">
+            <span class="chip" role="listitem" data-i18n="chip_wifi">Wi‑Fi</span>
+            <span class="chip" role="listitem" data-i18n="chip_outdoor">Outdoor seating</span>
+            <span class="chip" role="listitem" data-i18n="chip_takeaway">Takeaway</span>
+            <span class="chip" role="listitem" data-i18n="chip_smoking">Smoking area</span>
+            <span class="chip" role="listitem"><strong data-i18n="chip_open_label">Status:</strong> <span data-open-status>Checking…</span> (07:00–21:00*)</span>
+          </div>
+
+          <p class="small" style="margin:10px 0 0" data-i18n="hours_note">
+            *Hours shown here are a practical default. Please confirm the latest hours on Google Maps before publishing.
+          </p>
+
+          <div class="meta">
+            <div class="meta-item">
+              <div class="meta-k" data-i18n="meta_address_k">Address</div>
+              <div class="meta-v">Jl. Ciranjang No.10 2, RT.1/RW.1, Rw. Bar., Kec. Kby. Baru, Kota Jakarta Selatan, DKI Jakarta 12180, Indonesia</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-k" data-i18n="meta_phone_k">Phone</div>
+              <div class="meta-v"><a href="tel:+62812-1911-6214">+62 812-1911-6214</a></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="Hero media">
+          <div class="media">
+            <img src="assets/images/manual_2017_exterior_bluebrick.jpg" data-fallback alt="Nitro Coffee exterior with signature blue brick and outdoor seating." />
+            <div class="media-caption" data-i18n="panel_caption">
+              Signature: the blue brick façade + outdoor seating, perfect for a quick reset between meetings.
+            </div>
+          </div>
+          <div class="panel-body">
+            <span class="badge"><span class="icon"></span> <span data-i18n="panel_badge">Niche: WFC & meeting-friendly</span></span>
+            <p style="margin:10px 0 0; opacity:.92; font-size:14px" data-i18n="panel_body">
+              Clean layout, warm lighting, and a calm productivity vibe.
+            </p>
+
+            <div class="kpi" aria-label="Quick stats">
+              <div class="box">
+                <div class="big">~10 min</div>
+                <div class="small">reset window</div>
+              </div>
+              <div class="box">
+                <div class="big">2 modes</div>
+                <div class="small">sit-in / takeaway</div>
+              </div>
+              <div class="box">
+                <div class="big">1 vibe</div>
+                <div class="small">calm productivity</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- RITUAL -->
+    <section id="ritual" class="section">
+      <div class="section-title">
+        <h2 data-i18n="ritual_title">Three Nitro rituals (for people with calendars)</h2>
+        <p data-i18n="ritual_sub">Niche concept: coffee as a work ritual, not a prop.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge"><span class="icon"></span> <span data-i18n="ritual_1_badge">07:00–10:30</span></span>
+          <h3 data-i18n="ritual_1_title">Morning Focus</h3>
+          <p data-i18n="ritual_1_desc">Espresso or a magic latte with pastry. Start slow, stay sharp.</p>
+        </div>
+        <div class="card">
+          <span class="badge"><span class="icon"></span> <span data-i18n="ritual_2_badge">11:00–15:00</span></span>
+          <h3 data-i18n="ritual_2_title">Midday Reset</h3>
+          <p data-i18n="ritual_2_desc">Brunch with intent. French toast, pancakes, or a solid main.</p>
+        </div>
+        <div class="card">
+          <span class="badge"><span class="icon"></span> <span data-i18n="ritual_3_badge">16:00–21:00</span></span>
+          <h3 data-i18n="ritual_3_title">Late Recharge</h3>
+          <p data-i18n="ritual_3_desc">Iced coffee or chai plus a snack. Ideal for wrap-ups and catch-ups.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why" class="section">
+      <div class="section-title">
+        <h2 data-i18n="why_title">Why this place works for work</h2>
+        <p data-i18n="why_sub">A few practical reasons people keep coming back.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="badge"><span class="icon"></span> Focus</span>
+          <h3 data-i18n="why_1_title">Layout that stays functional</h3>
+          <p data-i18n="why_1_desc">Communal tables and a center counter. Easy to settle in without chaos.</p>
+        </div>
+        <div class="card">
+          <span class="badge"><span class="icon"></span> Comfort</span>
+          <h3 data-i18n="why_2_title">Warm lighting, less fatigue</h3>
+          <p data-i18n="why_2_desc">Tungsten warmth feels calmer than harsh white lighting.</p>
+        </div>
+        <div class="card">
+          <span class="badge"><span class="icon"></span> Momentum</span>
+          <h3 data-i18n="why_3_title">Quick in, quick out</h3>
+          <p data-i18n="why_3_desc">Takeaway-friendly when you only need caffeine and momentum.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACE -->
+    <section id="space" class="section">
+      <div class="section-title">
+        <h2 data-i18n="space_title">A space built for getting things done</h2>
+        <p data-i18n="space_sub">Industrial-warm: wood, exposed brick, and tiled counter texture.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <div class="media">
+            <img src="assets/images/manual_2017_interior_counter.jpg" data-fallback alt="Nitro Coffee interior with communal tables and central bar." />
+            <div class="media-caption" data-i18n="space_caption">Communal tables + a central bar. Warm tones and clean lines.</div>
+          </div>
+          <div class="panel-body">
+            <span class="badge"><span class="icon"></span> <span data-i18n="amenities_badge">Amenities</span></span>
+
+            <div class="menu-grid" style="margin-top:10px">
+              <div class="menu-item">
+                <div>
+                  <b data-i18n="amenity_1_title">Wi‑Fi & quick meetings</b>
+                  <div class="small" data-i18n="amenity_1_desc">A tidy space that doesn’t fight your agenda.</div>
+                </div>
+                <div class="price">✓</div>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <b data-i18n="amenity_2_title">Outdoor seating</b>
+                  <div class="small" data-i18n="amenity_2_desc">A short reset without changing location.</div>
+                </div>
+                <div class="price">✓</div>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <b data-i18n="amenity_3_title">Warm lighting</b>
+                  <div class="small" data-i18n="amenity_3_desc">Doesn’t feel like an office, still stays focused.</div>
+                </div>
+                <div class="price">✓</div>
+              </div>
+              <div class="menu-item">
+                <div>
+                  <b data-i18n="amenity_4_title">Takeaway</b>
+                  <div class="small" data-i18n="amenity_4_desc">For the days you’re in motion.</div>
+                </div>
+                <div class="price">✓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="badge"><span class="icon"></span> <span data-i18n="vibe_badge">Atmosphere notes</span></span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; margin: 10px 0 6px;" data-i18n="vibe_quote">“Calm productivity.”</h3>
+          <p data-i18n="vibe_desc">It fits the Senopati/SCBD crowd: a warm, quiet café that stays practical, not performative.</p>
+
+          <ul class="list">
+            <li data-i18n="vibe_li_1">Materials: wood-forward, exposed brick, tiled counter texture</li>
+            <li data-i18n="vibe_li_2">Palette: warm beige, charcoal, coffee brown, blue accents</li>
+            <li data-i18n="vibe_li_3">Layout: clean horizontal lines, perfect for grid-based design</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <div class="panel" style="border-radius: 16px;">
+            <div class="media" style="aspect-ratio: 16/10;">
+              <img src="assets/images/lifenesia_2024_drink_close.jpg" data-fallback alt="Close-up of iced coffee on a wooden table." />
+              <div class="media-caption" data-i18n="vibe_media_caption">Close-ups of coffee + pastry work great for your menu section.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+      <div class="section-title">
+        <h2 data-i18n="menu_title">Menu preview</h2>
+        <p data-i18n="menu_sub">Items here are common highlights (names may vary). Add your official prices.</p>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-card">
+          <h3 data-i18n="menu_bucket_1">Espresso & coffee</h3>
+          <div class="menu-item"><div><b>Magic Latte</b><div class="small">Signature espresso + milk.</div></div><div class="price" data-i18n="price_hint">Rp ••</div></div>
+          <div class="menu-item"><div><b>Americano / Filter</b><div class="small">Clean, no fuss.</div></div><div class="price" data-i18n="price_hint">Rp ••</div></div>
+        </div>
+
+        <div class="menu-card">
+          <h3 data-i18n="menu_bucket_2">Iced & non-coffee</h3>
+          <div class="menu-item"><div><b>Vanilla Iced Coffee</b><div class="small">Easy drinking, still bold.</div></div><div class="price" data-i18n="price_hint">Rp ••</div></div>
+          <div class="menu-item"><div><b>Chai Latte</b><div class="small">Spiced, comforting, warm.</div></div><div class="price" data-i18n="price_hint">Rp ••</div></div>
+        </div>
+
+        <div class="menu-card">
+          <h3 data-i18n="menu_bucket_3">Brunch & mains</h3>
+          <div class="menu-item"><div><b>French Toast</b><div class="small">Brunch with intent.</div></div><div class="price">Rp •••</div></div>
+          <div class="menu-item"><div><b>Chicken Karaage Rice</b><div class="small">Practical lunch.</div></div><div class="price">Rp •••</div></div>
+        </div>
+
+        <div class="menu-card">
+          <h3 data-i18n="menu_bucket_4">Pastry & sweets</h3>
+          <div class="menu-item"><div><b>Croissant</b><div class="small">Classic pairing.</div></div><div class="price" data-i18n="price_hint">Rp ••</div></div>
+          <div class="menu-item"><div><b>Pancakes</b><div class="small">Sweet reset.</div></div><div class="price">Rp •••</div></div>
+        </div>
+      </div>
+
+      <div style="margin-top: 12px; display:flex; gap: 10px; flex-wrap:wrap;">
+        <a class="btn btn-primary" href="tel:+62812-1911-6214" data-i18n="cta_order">Call / order</a>
+        <a class="btn btn-secondary" href="#top" data-i18n="cta_back">Back to top</a>
+      </div>
+
+      <p class="small" style="margin-top: 10px" data-i18n="menu_note">
+        For a public site, use your official menu (with permission) or rewrite the list from the source-of-truth.
+      </p>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section">
+      <div class="section-title">
+        <h2 data-i18n="reviews_title">Review snapshot</h2>
+        <p data-i18n="reviews_sub">Safe paraphrases (not 1:1 quotes).</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="quote">
+          <p data-i18n="rev_1">“Great for working. Cozy, not chaotic.”</p>
+          <div class="who" data-i18n="rev_who">Guest (paraphrase)</div>
+        </div>
+        <div class="quote">
+          <p data-i18n="rev_2">“Consistent coffee, and the food holds up.”</p>
+          <div class="who" data-i18n="rev_who">Guest (paraphrase)</div>
+        </div>
+        <div class="quote">
+          <p data-i18n="rev_3">“Warm lighting and a layout that fits quick meetings.”</p>
+          <div class="who" data-i18n="rev_who">Guest (paraphrase)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location" class="section">
+      <div class="section-title">
+        <h2 data-i18n="loc_title">Location & hours</h2>
+        <p data-i18n="loc_sub">Address + map embed (query-based).</p>
+      </div>
+
+      <div class="split">
+        <div class="card">
+          <h3 style="margin:0 0 6px" data-i18n="loc_name">NITRO COFFEE @Ciranjang</h3>
+          <p style="margin:0 0 10px">Jl. Ciranjang No.10 2, RT.1/RW.1, Rw. Bar., Kec. Kby. Baru, Kota Jakarta Selatan, DKI Jakarta 12180, Indonesia</p>
+
+          <div class="menu-item" style="margin-bottom:10px">
+            <div>
+              <b data-i18n="hours_k">Hours (temporary)</b>
+              <div class="small" data-i18n="hours_v">07:00–21:00 daily (confirm on Maps)</div>
+            </div>
+            <div class="price" data-open-status>Checking…</div>
+          </div>
+
+          <div class="menu-item" style="margin-bottom:10px">
+            <div>
+              <b data-i18n="phone_k">Phone</b>
+              <div class="small" data-i18n="phone_desc">For ordering or availability</div>
+            </div>
+            <div class="price"><a href="tel:+62812-1911-6214">+62 812-1911-6214</a></div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps?q=Jl.%20Ciranjang%20No.10%202%2C%20RT.1/RW.1%2C%20Rw.%20Bar.%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012180%2C%20Indonesia" data-i18n="maps_open">Open in Google Maps</a>
+            <a class="btn btn-secondary" href="#top" data-i18n="cta_back">Back to top</a>
+          </div>
+
+          <p class="small" style="margin-top:10px" data-i18n="maps_note">
+            For production, use the official Google Maps embed (Place ID / API) and confirmed hours.
+          </p>
+        </div>
+
+        <div class="panel">
+          <iframe class="map-embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Jl.%20Ciranjang%20No.10%202%2C%20RT.1/RW.1%2C%20Rw.%20Bar.%2C%20Kec.%20Kby.%20Baru%2C%20Kota%20Jakarta%20Selatan%2C%20DKI%20Jakarta%2012180%2C%20Indonesia&output=embed" title="Nitro Coffee location map"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+      <div class="section-title">
+        <h2 data-i18n="faq_title">FAQ (because humans always ask)</h2>
+        <p class="small">Quick answers. No thesis.</p>
+      </div>
+
+      <details>
+        <summary data-i18n="faq_1_q">Is it good for working?</summary>
+        <p data-i18n="faq_1_a">The vibe is generally work-friendly. If you need absolute silence, come earlier in the morning.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq_2_q">Do you have outdoor seating?</summary>
+        <p data-i18n="faq_2_a">Outdoor seating is commonly listed. Availability can change, so check on-site.</p>
+      </details>
+      <details>
+        <summary data-i18n="faq_3_q">What should I order first?</summary>
+        <p data-i18n="faq_3_a">Try a magic latte (or your espresso preference) and pair it with a pastry. For brunch, go with French toast or pancakes.</p>
+      </details>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand" style="gap:10px; margin-bottom:10px">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <div>
+              <div class="brand-name" style="font-size: 14px">NITRO COFFEE</div>
+              <div class="small" data-i18n="footer_desc">Industrial-warm café for meetings, focused work, and brunch.</div>
+            </div>
+          </div>
+
+          <div class="small">
+            © <span id="year"></span> Nitro Coffee. <span data-i18n="copyright">Demo landing page for design work.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 6px" data-i18n="footer_notes_title">Implementation notes</h3>
+          <ol class="list" style="margin: 0 0 0 18px">
+            <li data-i18n="footer_note_1">Add reference photos to assets/images/ (see README).</li>
+            <li data-i18n="footer_note_2">Confirm the latest opening hours on Google Maps.</li>
+            <li data-i18n="footer_note_3">Publish only photos you own or have permission to use.</li>
+          </ol>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
