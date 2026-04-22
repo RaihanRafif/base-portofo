@@ -1,0 +1,55 @@
+.portfolio-filters {
+  padding-block: $spacing-xl;
+  border-bottom: 1px solid rgba($color-text-white, 0.08);
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-lg;
+  }
+
+  &__container {
+    max-width: 144rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .filter-tabs {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .filter-tab {
+    padding: 1.2rem 2.4rem;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.7);
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.08);
+      border-color: rgba($color-text-white, 0.15);
+      color: $color-text-white;
+    }
+
+    &.active {
+      background: linear-gradient(
+        135deg,
+        rgba($color-higlighter-red, 0.2) 0%,
+        rgba($color-higlighter-red, 0.1) 100%
+      );
+      border-color: rgba($color-higlighter-red, 0.3);
+      color: $color-text-white;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+    }
+  }
+}

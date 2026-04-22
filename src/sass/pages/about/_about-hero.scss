@@ -1,0 +1,44 @@
+// ========================================
+// ABOUT HERO
+// ========================================
+.about-hero {
+  padding-block: $spacing-3xl;
+  text-align: center;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-2xl;
+  }
+
+  &__container {
+    max-width: 90rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: clamp(4.8rem, 8vw, 8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: $color-text-white;
+    margin-bottom: $spacing-md;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+
+    background: linear-gradient(
+      135deg,
+      $color-text-white 0%,
+      rgba($color-text-white, 0.7) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    line-height: 1.6;
+    color: rgba($color-text-white, 0.7);
+    max-width: 70ch;
+    margin-inline: auto;
+  }
+}

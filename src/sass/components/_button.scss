@@ -1,0 +1,95 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 10rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  // Ripple effect on hover
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba($color-text-white, 0.1);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: scale(1);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 1.4rem 2.8rem;
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 30rem;
+  }
+
+  // Primary Button
+  // ----------------------------------------
+  &--primary {
+    background: linear-gradient(
+      135deg,
+      $color-higlighter-red 0%,
+      darken($color-higlighter-red, 10%) 100%
+    );
+    color: $color-text-white;
+    border: 2px solid transparent;
+    box-shadow: 0 0.8rem 2rem rgba($color-higlighter-red, 0.3),
+      inset 0 1px 0 rgba($color-text-white, 0.2);
+
+    &:hover {
+      background: linear-gradient(
+        135deg,
+        lighten($color-higlighter-red, 5%) 0%,
+        $color-higlighter-red 100%
+      );
+      box-shadow: 0 1.2rem 3rem rgba($color-higlighter-red, 0.4),
+        inset 0 1px 0 rgba($color-text-white, 0.2);
+      transform: translateY(-0.2rem);
+    }
+
+    &:active {
+      box-shadow: 0 0.4rem 1rem rgba($color-higlighter-red, 0.3),
+        inset 0 1px 0 rgba($color-text-white, 0.2);
+    }
+  }
+
+  // Secondary Button
+  // ----------------------------------------
+  &--secondary {
+    background-color: transparent;
+    color: $color-text-white;
+    border: 2px solid rgba($color-text-white, 0.2);
+    box-shadow: inset 0 1px 0 rgba($color-text-white, 0.05);
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.05);
+      border-color: rgba($color-text-white, 0.3);
+      box-shadow: 0 0.8rem 2rem rgba($color-primary-dark, 0.3),
+        inset 0 1px 0 rgba($color-text-white, 0.05);
+      transform: translateY(-0.2rem);
+    }
+
+    &:active {
+      background-color: rgba($color-text-white, 0.08);
+    }
+  }
+}

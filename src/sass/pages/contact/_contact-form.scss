@@ -1,0 +1,203 @@
+.contact-form-wrapper {
+  @media (max-width: $breakpoint-desktop) {
+    order: 1;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  &__header {
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__title {
+    font-size: clamp(3.2rem, 4vw, 4rem);
+    font-weight: 800;
+    color: $color-text-white;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: rgba($color-text-white, 0.7);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  .form-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-text-white;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    .required {
+      color: $color-higlighter-red;
+    }
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 1.4rem 1.8rem;
+    background-color: rgba($color-text-white, 0.03);
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 1.2rem;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: $color-text-white;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba($color-text-white, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgba($color-text-white, 0.05);
+      border-color: rgba($color-text-white, 0.2);
+      box-shadow: 0 0 0 3px rgba($color-text-white, 0.05);
+    }
+
+    &:hover:not(:focus) {
+      border-color: rgba($color-text-white, 0.15);
+    }
+
+    &.error {
+      border-color: rgba(#ef4444, 0.5);
+      background-color: rgba(#ef4444, 0.05);
+
+      &:focus {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(#ef4444, 0.1);
+      }
+    }
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 15rem;
+    line-height: 1.6;
+  }
+
+  .form-error {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ef4444;
+    margin-top: 0.4rem;
+
+    &::before {
+      content: "⚠";
+      font-size: 1.4rem;
+    }
+  }
+
+  .form-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.6rem 3.2rem;
+    background: linear-gradient(
+      135deg,
+      $color-higlighter-red 0%,
+      darken($color-higlighter-red, 10%) 100%
+    );
+    border: 2px solid transparent;
+    border-radius: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-text-white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0.8rem 2rem rgba($color-higlighter-red, 0.3),
+      inset 0 1px 0 rgba($color-text-white, 0.2);
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover:not(:disabled) {
+      background: linear-gradient(
+        135deg,
+        lighten($color-higlighter-red, 5%) 0%,
+        $color-higlighter-red 100%
+      );
+      box-shadow: 0 1.2rem 3rem rgba($color-higlighter-red, 0.4),
+        inset 0 1px 0 rgba($color-text-white, 0.2);
+      transform: translateY(-0.2rem);
+
+      svg {
+        transform: translateX(0.3rem);
+      }
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+      box-shadow: 0 0.4rem 1rem rgba($color-higlighter-red, 0.3),
+        inset 0 1px 0 rgba($color-text-white, 0.2);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .spinner {
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  .form-status {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.4rem 1.8rem;
+    border-radius: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    animation: slideDown 0.3s ease;
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    &.success {
+      background-color: rgba(#10b981, 0.1);
+      border: 1px solid rgba(#10b981, 0.3);
+      color: #10b981;
+    }
+
+    &.error {
+      background-color: rgba(#ef4444, 0.1);
+      border: 1px solid rgba(#ef4444, 0.3);
+      color: #ef4444;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+.about-experience {
+  padding-block: $spacing-3xl;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-2xl;
+  }
+
+  &__container {
+    max-width: 100rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-2xl;
+    }
+  }
+}
+
+.timeline {
+  position: relative;
+
+  &-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: $spacing-xl;
+    position: relative;
+
+    @media (max-width: $breakpoint-mobile) {
+      gap: $spacing-md;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-xl;
+
+      @media (max-width: $breakpoint-mobile) {
+        margin-bottom: $spacing-lg;
+      }
+    }
+  }
+
+  &-marker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.8rem;
+  }
+
+  &-dot {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: linear-gradient(
+      135deg,
+      $color-higlighter-red 0%,
+      darken($color-higlighter-red, 10%) 100%
+    );
+    border: 3px solid $color-primary-dark;
+    box-shadow: 0 0 0 3px rgba($color-higlighter-red, 0.2),
+      0 0 2rem rgba($color-higlighter-red, 0.3);
+    z-index: 2;
+  }
+
+  &-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba($color-text-white, 0.2) 0%,
+      rgba($color-text-white, 0.05) 100%
+    );
+    margin-top: 1rem;
+  }
+
+  &-content {
+    padding-bottom: $spacing-md;
+  }
+}
+
+.experience {
+  &-card {
+    padding: $spacing-xl;
+    background-color: rgba($color-text-white, 0.02);
+    border: 1px solid rgba($color-text-white, 0.08);
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.04);
+      border-color: rgba($color-text-white, 0.12);
+      transform: translateX(0.8rem);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-lg;
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-md;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+  }
+
+  &-title-group {
+    flex: 1;
+  }
+
+  &-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $color-text-white;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  &-company {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.7);
+  }
+
+  &-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &-type {
+    padding: 0.6rem 1.4rem;
+    border-radius: 10rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    &.freelance {
+      background-color: rgba(#4ade80, 0.1);
+      border: 1px solid rgba(#4ade80, 0.3);
+      color: #4ade80;
+    }
+
+    &.full-time {
+      background-color: rgba(#60a5fa, 0.1);
+      border: 1px solid rgba(#60a5fa, 0.3);
+      color: #60a5fa;
+    }
+  }
+
+  &-duration {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.6);
+    white-space: nowrap;
+  }
+
+  &-description {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: rgba($color-text-white, 0.7);
+  }
+}

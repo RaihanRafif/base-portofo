@@ -1,0 +1,401 @@
+
+// ========================================
+// PROJECTS CAROUSEL - CIRCULAR LAYOUT
+// ========================================
+.projects-carousel {
+  position: relative;
+  min-height: 70rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: $spacing-xl;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-tablet) {
+    min-height: 60rem;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    min-height: 50rem;
+  }
+
+  // Track (Container for all cards)
+  // ----------------------------------------
+  &__track {
+    position: relative;
+    width: 100%;
+    height: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    @media (max-width: $breakpoint-tablet) {
+      height: 55rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      height: 45rem;
+    }
+  }
+
+  // Individual Card Item
+  // ----------------------------------------
+  &__item {
+    position: absolute;
+    width: 45rem;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 40rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 32rem;
+    }
+
+    // Center position (active/focused)
+    &--center {
+      z-index: 10;
+      transform: translateX(0) translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: all;
+
+      .projects-container {
+        box-shadow: 0 2rem 6rem rgba($color-primary-dark, 0.6);
+      }
+    }
+
+    // Left position (previous)
+    &--left {
+      z-index: 5;
+      transform: translateX(-60%) translateY(-8rem) scale(0.85);
+      opacity: 0.5;
+      pointer-events: all;
+      cursor: pointer;
+
+      @media (max-width: $breakpoint-tablet) {
+        transform: translateX(-55%) translateY(-6rem) scale(0.8);
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        transform: translateX(-50%) translateY(-4rem) scale(0.75);
+        opacity: 0.3;
+      }
+
+      &:hover {
+        opacity: 0.7;
+        transform: translateX(-60%) translateY(-9rem) scale(0.88);
+
+        @media (max-width: $breakpoint-mobile) {
+          transform: translateX(-50%) translateY(-5rem) scale(0.78);
+        }
+      }
+    }
+
+    // Right position (next)
+    &--right {
+      z-index: 5;
+      transform: translateX(60%) translateY(-8rem) scale(0.85);
+      opacity: 0.5;
+      pointer-events: all;
+      cursor: pointer;
+
+      @media (max-width: $breakpoint-tablet) {
+        transform: translateX(55%) translateY(-6rem) scale(0.8);
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        transform: translateX(50%) translateY(-4rem) scale(0.75);
+        opacity: 0.3;
+      }
+
+      &:hover {
+        opacity: 0.7;
+        transform: translateX(60%) translateY(-9rem) scale(0.88);
+
+        @media (max-width: $breakpoint-mobile) {
+          transform: translateX(50%) translateY(-5rem) scale(0.78);
+        }
+      }
+    }
+
+    // Hidden positions
+    &--hidden {
+      z-index: 0;
+      transform: translateX(0) translateY(0) scale(0.5);
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  // Navigation Controls
+  // ----------------------------------------
+  &__controls {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    z-index: 20;
+
+    @media (max-width: $breakpoint-mobile) {
+      gap: $spacing-md;
+    }
+  }
+
+  // Navigation Buttons
+  // ----------------------------------------
+  .carousel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    color: $color-text-white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.1);
+      border-color: rgba($color-text-white, 0.2);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  }
+
+  // Dots Navigation
+  // ----------------------------------------
+  .carousel-dots {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .carousel-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgba($color-text-white, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.4);
+      transform: scale(1.2);
+    }
+
+    &.active {
+      width: 3rem;
+      border-radius: 1rem;
+      background-color: $color-higlighter-red;
+    }
+  }
+
+  // Project Counter
+  // ----------------------------------------
+  &__counter {
+    position: absolute;
+    top: 0;
+    right: $spacing-lg;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgba($color-text-white, 0.5);
+
+    @media (max-width: $breakpoint-mobile) {
+      right: $spacing-md;
+      font-size: 1.4rem;
+    }
+
+    .current {
+      font-size: 3.6rem;
+      color: $color-text-white;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 2.8rem;
+      }
+    }
+
+    .separator {
+      margin-inline: 0.5rem;
+    }
+  }
+}
+
+// ========================================
+// PROJECT CARD (Updated for Carousel)
+// ========================================
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba($color-text-white, 0.02);
+  border: 1px solid rgba($color-text-white, 0.08);
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba($color-text-white, 0.04);
+    border-color: rgba($color-text-white, 0.12);
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: rgba($color-text-white, 0.05);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &:hover .image-container img {
+    transform: scale(1.05);
+  }
+
+  .bottom-section {
+    padding: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-md;
+    }
+  }
+
+  .title-project {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $color-text-white;
+    margin-bottom: $spacing-sm;
+    line-height: 1.3;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  .tag-section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: 0.6rem 1.4rem;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 10rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.7);
+    transition: all 0.3s ease;
+
+    &.arrow-button {
+      margin-left: auto;
+      background-color: rgba($color-higlighter-red, 0.1);
+      border-color: rgba($color-higlighter-red, 0.3);
+      color: $color-higlighter-red;
+
+      &:hover {
+        background-color: rgba($color-higlighter-red, 0.2);
+      }
+    }
+  }
+}
+
+// Similar Project Card
+// ----------------------------------------
+.similar-project-card {
+  display: block;
+  text-decoration: none;
+  background-color: rgba($color-text-white, 0.02);
+  border: 1px solid rgba($color-text-white, 0.08);
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-color: rgba($color-text-white, 0.04);
+    border-color: rgba($color-text-white, 0.12);
+    transform: translateY(-0.8rem);
+    box-shadow: 0 2rem 4rem rgba($color-primary-dark, 0.4);
+
+    .card-image img {
+      transform: scale(1.1);
+    }
+  }
+
+  .card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: rgba($color-text-white, 0.05);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  .card-content {
+    padding: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-md;
+    }
+  }
+
+  .card-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $color-text-white;
+    margin-bottom: $spacing-sm;
+    line-height: 1.3;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  .card-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .tag {
+      padding: 0.6rem 1.4rem;
+      background-color: rgba($color-text-white, 0.05);
+      border: 1px solid rgba($color-text-white, 0.1);
+      border-radius: 10rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: rgba($color-text-white, 0.7);
+    }
+  }
+}

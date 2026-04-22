@@ -1,0 +1,230 @@
+// ========================================
+// CTA/CONTACT SECTION
+// ========================================
+.cta-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: $spacing-md;
+  position: relative;
+  overflow: hidden;
+
+  // Animated background gradient
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -90%;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      rgba($color-higlighter-red, 0.1) 0deg,
+      transparent 90deg,
+      rgba($color-higlighter-red, 0.05) 180deg,
+      transparent 270deg,
+      rgba($color-higlighter-red, 0.1) 360deg
+    );
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      $color-primary-dark 70%
+    );
+    pointer-events: none;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    min-height: 60vh;
+    padding-block: $spacing-2xl;
+  }
+
+  &__container {
+    max-width: 90rem;
+    margin-inline: auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    text-align: center;
+    padding: $spacing-3xl;
+    background-color: rgba($color-text-white, 0.02);
+    border: 1px solid rgba($color-text-white, 0.08);
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+
+    // Gradient overlay
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba($color-text-white, 0.03) 0%,
+        transparent 50%,
+        rgba($color-higlighter-red, 0.03) 100%
+      );
+      pointer-events: none;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $spacing-2xl $spacing-lg;
+      border-radius: 2rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-xl $spacing-md;
+    }
+  }
+
+  // Title
+  // ----------------------------------------
+  &__title {
+    font-size: clamp(3rem, 5vw, 5.6rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: $color-text-white;
+    margin-bottom: $spacing-md;
+    position: relative;
+
+    // Gradient text effect
+    background: linear-gradient(
+      135deg,
+      $color-text-white 0%,
+      rgba($color-text-white, 0.8) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  // Description
+  // ----------------------------------------
+  &__description {
+    font-size: clamp(1.6rem, 2vw, 2rem);
+    line-height: 1.8;
+    color: rgba($color-text-white, 0.7);
+    max-width: 60ch;
+    margin-inline: auto;
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  // Buttons Container
+  // ----------------------------------------
+  &__buttons {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      gap: $spacing-sm;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  // Socials Container
+  // ----------------------------------------
+  &__socials {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-color: rgba($color-text-white, 0.05);
+      border: 1px solid rgba($color-text-white, 0.1);
+      color: rgba($color-text-white, 0.7);
+      font-size: 2rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba($color-text-white, 0.1) 0%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover {
+        background-color: rgba($color-text-white, 0.1);
+        border-color: rgba($color-text-white, 0.2);
+        color: $color-text-white;
+        transform: translateY(-0.4rem);
+        box-shadow: 0 1rem 2rem rgba($color-primary-dark, 0.3);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        transform: translateY(-0.2rem);
+      }
+
+      // Individual social colors (optional)
+      &[aria-label="GitHub"]:hover {
+        background-color: rgba(#333, 0.2);
+        border-color: rgba(#333, 0.3);
+      }
+
+      &[aria-label="LinkedIn"]:hover {
+        background-color: rgba(#0077b5, 0.2);
+        border-color: rgba(#0077b5, 0.3);
+      }
+
+      &[aria-label="Email"]:hover {
+        background-color: rgba($color-higlighter-red, 0.2);
+        border-color: rgba($color-higlighter-red, 0.3);
+      }
+
+      &[aria-label="Twitter"]:hover {
+        background-color: rgba(#1da1f2, 0.2);
+        border-color: rgba(#1da1f2, 0.3);
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+.portfolio-grid-section {
+  padding-block: $spacing-3xl;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-2xl;
+  }
+}
+
+.portfolio-grid__container {
+  max-width: 144rem;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38rem, 1fr));
+  gap: $spacing-xl;
+
+  @media (max-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+    gap: $spacing-lg;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+// Portfolio Card
+// ----------------------------------------
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba($color-text-white, 0.02);
+  border: 1px solid rgba($color-text-white, 0.08);
+  border-radius: 2rem;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+
+  &:hover {
+    background-color: rgba($color-text-white, 0.04);
+    border-color: rgba($color-text-white, 0.15);
+    transform: translateY(-0.8rem);
+    box-shadow: 0 2rem 4rem rgba($color-primary-dark, 0.4);
+
+    .portfolio-card__image img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-card__overlay {
+      opacity: 1;
+    }
+  }
+
+  // Image
+  // ----------------------------------------
+  &__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: rgba($color-text-white, 0.05);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba($color-primary-dark, 0.9) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: $spacing-lg;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .view-project {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $color-text-white;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+
+      svg {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover .view-project svg {
+      transform: translateX(0.4rem);
+    }
+  }
+
+  // Content
+  // ----------------------------------------
+  &__content {
+    padding: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    flex: 1;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-md;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $color-text-white;
+    line-height: 1.3;
+    flex: 1;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  &__category {
+    padding: 0.6rem 1.2rem;
+    background-color: rgba($color-higlighter-red, 0.1);
+    border: 1px solid rgba($color-higlighter-red, 0.3);
+    border-radius: 10rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $color-higlighter-red;
+    text-transform: capitalize;
+    white-space: nowrap;
+  }
+
+  &__summary {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: rgba($color-text-white, 0.7);
+    margin-bottom: $spacing-sm;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .tag {
+      padding: 0.6rem 1.4rem;
+      background-color: rgba($color-text-white, 0.05);
+      border: 1px solid rgba($color-text-white, 0.1);
+      border-radius: 10rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: rgba($color-text-white, 0.7);
+    }
+  }
+
+  &__tech {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+
+    .tech-badge {
+      padding: 0.4rem 1rem;
+      background-color: rgba($color-text-white, 0.03);
+      border: 1px solid rgba($color-text-white, 0.08);
+      border-radius: 0.6rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: rgba($color-text-white, 0.6);
+
+      &.more {
+        background-color: rgba($color-higlighter-red, 0.1);
+        border-color: rgba($color-higlighter-red, 0.2);
+        color: $color-higlighter-red;
+      }
+    }
+  }
+}
+
+// No Results State
+// ----------------------------------------
+.no-results {
+  text-align: center;
+  padding: $spacing-3xl;
+  max-width: 60rem;
+  margin-inline: auto;
+
+  svg {
+    color: rgba($color-text-white, 0.3);
+    margin-bottom: $spacing-lg;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: $color-text-white;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    font-size: 1.8rem;
+    color: rgba($color-text-white, 0.7);
+    margin-bottom: $spacing-xl;
+  }
+}

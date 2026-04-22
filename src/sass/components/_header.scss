@@ -1,0 +1,279 @@
+// ========================================
+// HEADER - MORPHING SHAPE
+// ========================================
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  // Default state (rounded rectangle with margins)
+  margin: $spacing-md $spacing-lg;
+  padding: $spacing-sm $spacing-xl;
+
+  background-color: $color-background-dark;
+  border-radius: 10rem;
+
+  isolation: isolate;
+
+  border: 1px solid rgba($color-text-white, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba($color-text-white, 0.05),
+    0 1px 0 rgba($color-primary-dark, 0.6);
+
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  // Smooth transitions for all properties
+  transition:
+    all 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      to bottom,
+      rgba($color-text-white, 0.14),
+      rgba($color-text-white, 0) 1%
+    );
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  // Inner wrapper for content
+  .header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  // Scrolled state - Trapezoid shape
+  &.header--scrolled {
+    margin: 0;
+    padding: $spacing-sm $spacing-xl;
+    border-radius: 0 0 2rem 2rem;
+
+    // Trapezoid shape using clip-path
+    clip-path: polygon(0 0, 100% 0, calc(100% - 2rem) 100%, 2rem 100%);
+
+    background: linear-gradient(
+      135deg,
+      rgba($color-background-dark, 0.98) 0%,
+      rgba($color-background-dark, 0.95) 100%
+    );
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+      inset 0 1px 0 rgba($color-text-white, 0.08),
+      0 4px 30px rgba($color-primary-dark, 0.9);
+
+    &::before {
+      opacity: 0.5;
+      border-radius: 0 0 2rem 2rem;
+    }
+
+    // Slightly smaller logo when scrolled
+    .logo {
+      font-size: 2.8rem;
+    }
+  }
+
+  .header__right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  // Tablet
+  @media (max-width: $breakpoint-tablet) {
+    margin: $spacing-sm $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    border-radius: 5rem;
+    font-size: 1.4rem;
+
+    .header__inner {
+      flex-wrap: wrap;
+      gap: $spacing-sm;
+    }
+
+    &.header--scrolled {
+      margin: 0;
+      padding: $spacing-sm $spacing-md;
+      border-radius: 0 0 1.6rem 1.6rem;
+
+      clip-path: polygon(0 0, 100% 0, calc(100% - 1.6rem) 100%, 1.6rem 100%);
+
+      .logo {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+  // Mobile
+  @media (max-width: $breakpoint-mobile) {
+    margin: $spacing-sm;
+    padding: $spacing-sm;
+    border-radius: 2.4rem;
+    font-size: 1.4rem;
+
+    .header__inner {
+      flex-direction: column;
+      gap: $spacing-sm;
+    }
+
+    &.header--scrolled {
+      margin: 0;
+      padding: $spacing-sm;
+      border-radius: 0 0 1.2rem 1.2rem;
+
+      // Less aggressive trapezoid on mobile
+      clip-path: polygon(0 0, 100% 0, calc(100% - 1.2rem) 100%, 1.2rem 100%);
+
+      .logo {
+        font-size: 2rem;
+      }
+    }
+
+    .sub-nav {
+      width: 100%;
+      justify-content: center;
+      gap: $spacing-xs;
+    }
+
+    .header__right {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  // Logo
+  // ----------------------------------------
+  .logo {
+    font-size: 3.2rem;
+    transition: font-size 0.4s ease;
+
+    a {
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: rgba($color-text-white, 0.8);
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      font-size: 2.8rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2.4rem;
+    }
+  }
+
+  // Right cluster: nav + language switcher
+  // ----------------------------------------
+
+  // Navigation
+  // ----------------------------------------
+  .sub-nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 100%;
+      justify-content: center;
+      gap: $spacing-xs;
+    }
+  }
+
+  // Language switcher
+  // ----------------------------------------
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.3rem;
+    border-radius: 10rem;
+    background: rgba($color-text-white, 0.04);
+    border: 1px solid rgba($color-text-white, 0.08);
+  }
+
+  .lang-btn {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+
+    padding: 0.6rem 1rem;
+    border-radius: 10rem;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition:
+      background-color 0.25s ease,
+      transform 0.15s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.06);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    &--active {
+      background-color: rgba($color-text-white, 0.12);
+    }
+  }
+
+  // Nav Links
+  // ----------------------------------------
+  .nav {
+    position: relative;
+    padding: 0.8rem 1.6rem;
+    border-radius: 10rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.05);
+    }
+
+    // Active state
+    &--active {
+      background-color: rgba($color-text-white, 0.1);
+      color: $color-text-white;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 2px;
+        background-color: $color-higlighter-red;
+        border-radius: 2px;
+      }
+
+      &:hover {
+        background-color: rgba($color-text-white, 0.12);
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0.6rem 1.2rem;
+      font-size: 1.3rem;
+    }
+  }
+}

@@ -1,0 +1,192 @@
+// ========================================
+// PROJECT HERO SECTION
+// ========================================
+.project-hero {
+  padding-block: $spacing-3xl;
+  padding-top: calc($spacing-3xl + 10rem); // Space for fixed header
+  position: relative;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-2xl;
+    padding-top: calc($spacing-2xl + 12rem);
+  }
+
+  &__container {
+    max-width: 120rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  // Back Button
+  // ----------------------------------------
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 10rem;
+    color: rgba($color-text-white, 0.7);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: $spacing-xl;
+    transition: all 0.3s ease;
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.1);
+      border-color: rgba($color-text-white, 0.2);
+      color: $color-text-white;
+
+      svg {
+        transform: translateX(-0.4rem);
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  // Hero Content
+  // ----------------------------------------
+  &__content {
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__title {
+    font-size: clamp(4rem, 6vw, 7.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: $color-text-white;
+    margin-bottom: $spacing-md;
+
+    background: linear-gradient(
+      135deg,
+      $color-text-white 0%,
+      rgba($color-text-white, 0.8) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-sm;
+    }
+  }
+
+  &__summary {
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+    line-height: 1.6;
+    color: rgba($color-text-white, 0.7);
+    max-width: 80ch;
+    margin-bottom: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  // Meta Info
+  // ----------------------------------------
+  &__meta {
+    display: flex;
+    gap: $spacing-xl;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-mobile) {
+      gap: $spacing-lg;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .meta-label {
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba($color-text-white, 0.5);
+    }
+
+    .meta-value {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $color-text-white;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  // Hero Image
+  // ----------------------------------------
+  &__image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 2rem;
+    overflow: hidden;
+    cursor: zoom-in;
+    background-color: rgba($color-text-white, 0.02);
+    border: 1px solid rgba($color-text-white, 0.08);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba($color-primary-dark, 0.8) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: $color-text-white;
+
+      svg {
+        filter: drop-shadow(0 0.4rem 0.8rem rgba($color-primary-dark, 0.5));
+      }
+
+      span {
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-shadow: 0 0.2rem 0.4rem rgba($color-primary-dark, 0.5);
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+
+      .image-overlay {
+        opacity: 1;
+      }
+    }
+  }
+}

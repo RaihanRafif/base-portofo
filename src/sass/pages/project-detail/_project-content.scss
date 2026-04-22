@@ -1,0 +1,194 @@
+// ========================================
+// PROJECT CONTENT SECTION
+// ========================================
+.project-content {
+  padding-block: $spacing-3xl;
+  border-top: 1px solid rgba($color-text-white, 0.08);
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-2xl;
+  }
+
+  &__container {
+    max-width: 120rem;
+    margin-inline: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    gap: $spacing-3xl;
+
+    @media (max-width: $breakpoint-desktop) {
+      grid-template-columns: 1fr;
+      gap: $spacing-2xl;
+    }
+  }
+}
+
+// Sidebar
+// ----------------------------------------
+.project-sidebar {
+  @media (max-width: $breakpoint-desktop) {
+    order: 2;
+  }
+
+  .sidebar-section {
+    position: sticky;
+    top: calc(10rem + $spacing-xl);
+    padding: $spacing-lg;
+    background-color: rgba($color-text-white, 0.02);
+    border: 1px solid rgba($color-text-white, 0.08);
+    border-radius: 2rem;
+
+    @media (max-width: $breakpoint-desktop) {
+      position: static;
+    }
+  }
+
+  .sidebar-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-text-white;
+    margin-bottom: $spacing-lg;
+  }
+
+  .detail-group {
+    &:not(:last-child) {
+      margin-bottom: $spacing-lg;
+      padding-bottom: $spacing-lg;
+      border-bottom: 1px solid rgba($color-text-white, 0.08);
+    }
+  }
+
+  .detail-label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba($color-text-white, 0.5);
+    margin-bottom: $spacing-sm;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .tech-tag {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 10rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.8);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.08);
+      border-color: rgba($color-text-white, 0.15);
+      color: $color-text-white;
+    }
+  }
+
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .project-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 1.4rem 2rem;
+  }
+}
+
+// Main Content
+// ----------------------------------------
+.project-main {
+  @media (max-width: $breakpoint-desktop) {
+    order: 1;
+  }
+
+  .content-section {
+    &:not(:last-child) {
+      margin-bottom: $spacing-3xl;
+
+      @media (max-width: $breakpoint-mobile) {
+        margin-bottom: $spacing-2xl;
+      }
+    }
+  }
+
+  .content-title {
+    font-size: clamp(2.8rem, 4vw, 3.6rem);
+    font-weight: 800;
+    color: $color-text-white;
+    margin-bottom: $spacing-md;
+    position: relative;
+    padding-bottom: $spacing-sm;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 6rem;
+      height: 0.4rem;
+      background: linear-gradient(
+        90deg,
+        $color-higlighter-red 0%,
+        transparent 100%
+      );
+      border-radius: 2px;
+    }
+  }
+
+  .content-text {
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    line-height: 1.8;
+    color: rgba($color-text-white, 0.8);
+
+    p:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-item {
+    position: relative;
+    padding-left: 3.2rem;
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+    line-height: 1.8;
+    color: rgba($color-text-white, 0.8);
+
+    &:not(:last-child) {
+      margin-bottom: $spacing-md;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.8rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      background-color: $color-higlighter-red;
+      border-radius: 50%;
+      box-shadow: 0 0 1rem rgba($color-higlighter-red, 0.5);
+    }
+
+    strong {
+      color: $color-text-white;
+      font-weight: 700;
+    }
+  }
+}
