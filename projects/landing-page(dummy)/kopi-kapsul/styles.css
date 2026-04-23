@@ -363,6 +363,9 @@ img{max-width:100%; height:auto; display:block}
   letter-spacing:.02em;
   color:var(--fg);
 }
+.section--dark .section__head h2{
+  color:#fff;
+}
 .section__label{
   font-family:var(--font-mono);
   font-size:.68rem;
