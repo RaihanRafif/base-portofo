@@ -1,0 +1,236 @@
+.home {
+  // Hero Container - Full Viewport Height
+  // ----------------------------------------
+  &__hero-container {
+    min-height: 100vh;
+    min-height: 100dvh; // Dynamic viewport height (better for mobile)
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-block: $spacing-6xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding-block: $spacing-6xl;
+    }
+  }
+
+  // Profile Section
+  // ----------------------------------------
+  &__profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-xl;
+    max-width: 120rem;
+    margin-inline: auto;
+    width: 100%;
+
+    @media (min-width: 1000px) and (max-width: 1200px) {
+      gap: $spacing-lg;
+      max-width: 100%;
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+      flex-direction: column;
+      gap: $spacing-lg;
+      max-width: 60rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      gap: $spacing-md;
+    }
+  }
+
+
+  // Photo Container
+  // ----------------------------------------
+  &__photo {
+    flex-shrink: 0;
+    max-width: 45rem;
+    width: 100%;
+
+    @media (min-width: 1000px) and (max-width: 1200px) {
+      max-width: 38rem;
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+      max-width: 40rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      max-width: 32rem;
+    }
+  }
+
+  &__photo-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 2rem;
+  }
+
+  &__photo-base,
+  &__photo-top {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__photo-base {
+    object-fit: cover;
+  }
+
+  &__photo-top {
+    display: block;
+  }
+
+  // About Section
+  // ----------------------------------------
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    flex: 1;
+    max-width: 70rem;
+
+    @media (min-width: 1000px) and (max-width: 1200px) {
+      max-width: 55rem;
+      gap: $spacing-sm;
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+      align-items: center;
+      text-align: center;
+      max-width: 100%;
+    }
+  }
+
+  // Name Profile
+  // ----------------------------------------
+  &__name-profile {
+    font-size: clamp(6rem, 8vw, 12rem);
+    font-weight: 900;
+    line-height: 0.9;
+
+    @media (min-width: 1000px) and (max-width: 1200px) {
+      font-size: clamp(5rem, 7vw, 9rem);
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+      font-size: clamp(5rem, 10vw, 8rem);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: clamp(4rem, 12vw, 6rem);
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__name-profile--sub {
+    background-color: $color-higlighter-red;
+    width: fit-content;
+    transform: rotate(-3deg);
+    padding: 0 1.6rem;
+  }
+
+  // Text Description
+  // ----------------------------------------
+  &__text {
+    font-size: clamp(1.6rem, 1.5vw, 2rem);
+    line-height: 1.6;
+    max-width: 60ch;
+
+    @media (min-width: 1000px) and (max-width: 1200px) {
+      font-size: 1.6rem;
+      max-width: 50ch;
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.6rem;
+    }
+
+    p {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+
+  // Status Badge
+  // ----------------------------------------
+  &__currently-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 2.4rem;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 10rem;
+    width: fit-content;
+    margin-top: $spacing-sm;
+    box-shadow: 0 0 20px rgba(#00ff88, 0.1),
+      inset 0 1px 0 rgba($color-text-white, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.08);
+      border-color: rgba(#00ff88, 0.3);
+      box-shadow: 0 0 30px rgba(#00ff88, 0.2),
+        inset 0 1px 0 rgba($color-text-white, 0.08);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: $breakpoint-desktop) {
+      margin-top: $spacing-xs;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 1rem 2rem;
+    }
+
+    .icon-status {
+      width: 1rem;
+      height: 1rem;
+      background-color: #00ff88;
+      border-radius: 50%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: #00ff88;
+        border-radius: 50%;
+        animation: pulse 2s ease-in-out infinite;
+      }
+    }
+
+    .status {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: $color-text-white;
+      letter-spacing: 0.05em;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+

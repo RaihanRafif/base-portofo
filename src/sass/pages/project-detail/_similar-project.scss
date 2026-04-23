@@ -1,0 +1,42 @@
+// ========================================
+// SIMILAR PROJECTS SECTION
+// ========================================
+.similar-projects-section {
+  padding-block: $spacing-3xl;
+  border-top: 1px solid rgba($color-text-white, 0.08);
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-2xl;
+  }
+
+  .similar-projects__container {
+    max-width: 120rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .similar-projects__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-xl;
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  .similar-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+}

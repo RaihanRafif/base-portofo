@@ -1,0 +1,299 @@
+// ========================================
+// IMAGE MODAL
+// ========================================
+.image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba($color-primary-dark, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xl;
+  animation: fadeIn 0.3s ease;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-md;
+  }
+
+  // Close Button
+  // ----------------------------------------
+  .modal-close {
+    position: absolute;
+    top: $spacing-lg;
+    right: $spacing-lg;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgba($color-text-white, 0.1);
+    border: 1px solid rgba($color-text-white, 0.2);
+    color: $color-text-white;
+    font-size: 3.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.15);
+      border-color: rgba($color-text-white, 0.3);
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      top: $spacing-md;
+      right: $spacing-md;
+      width: 4.5rem;
+      height: 4.5rem;
+      font-size: 3rem;
+    }
+  }
+
+  // Navigation Buttons
+  // ----------------------------------------
+  .modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgba($color-text-white, 0.1);
+    border: 1px solid rgba($color-text-white, 0.2);
+    color: $color-text-white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.15);
+      border-color: rgba($color-text-white, 0.3);
+    }
+
+    &--prev {
+      left: $spacing-lg;
+
+      @media (max-width: $breakpoint-mobile) {
+        left: $spacing-sm;
+      }
+
+      &:hover {
+        transform: translateY(-50%) translateX(-0.4rem);
+      }
+    }
+
+    &--next {
+      right: $spacing-lg;
+
+      @media (max-width: $breakpoint-mobile) {
+        right: $spacing-sm;
+      }
+
+      &:hover {
+        transform: translateY(-50%) translateX(0.4rem);
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 4.5rem;
+      height: 4.5rem;
+    }
+  }
+
+  // Modal Content
+  // ----------------------------------------
+  .modal-content {
+    position: relative;
+    max-width: 140rem;
+    max-height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    img {
+      max-width: 100%;
+      max-height: 85vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 1.6rem;
+      box-shadow: 0 2rem 6rem rgba($color-primary-dark, 0.8);
+    }
+  }
+
+  // Counter
+  // ----------------------------------------
+  .modal-counter {
+    position: absolute;
+    bottom: $spacing-lg;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.2rem 2.4rem;
+    background-color: rgba($color-text-white, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($color-text-white, 0.2);
+    border-radius: 10rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $color-text-white;
+
+    @media (max-width: $breakpoint-mobile) {
+      bottom: $spacing-md;
+      padding: 1rem 2rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.stats-section {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: $spacing-3xl;
+  position: relative;
+
+  @media (max-width: $breakpoint-tablet) {
+    min-height: auto;
+    padding-block: $spacing-2xl;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-3xl;
+    width: 100%;
+    max-width: 120rem;
+    margin-inline: auto;
+
+    @media (max-width: $breakpoint-tablet) {
+      grid-template-columns: 1fr;
+      gap: $spacing-2xl;
+      max-width: 40rem;
+    }
+  }
+}
+
+// Stat Card
+// ----------------------------------------
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
+  padding: $spacing-xl;
+  background-color: rgba($color-text-white, 0.02);
+  border: 1px solid rgba($color-text-white, 0.08);
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Subtle gradient overlay
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba($color-text-white, 0.03) 0%,
+      rgba($color-text-white, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-0.8rem);
+    background-color: rgba($color-text-white, 0.04);
+    border-color: rgba($color-text-white, 0.12);
+    box-shadow: 0 2rem 4rem rgba($color-primary-dark, 0.3);
+
+    &::before {
+      opacity: 1;
+    }
+
+    .stat-card__number {
+      color: $color-text-white;
+    }
+  }
+
+  // Inner container for front and back of the card
+  &__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+
+  // Front and back content of the card
+  &__front,
+  &__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  // Front side (default side visible)
+  &__front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Back side (revealed on hover)
+  &__back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    background-color: rgba($color-text-white, 0.02); // or change based on your design
+    border-radius: 2rem;
+  }
+
+  &:hover .stat-card__inner {
+    transform: rotateY(180deg);
+  }
+
+  // Highlight variant
+  &--highlight {
+    background: linear-gradient(
+      135deg,
+      rgba($color-higlighter-red, 0.1) 0%,
+      rgba($color-higlighter-red, 0.05) 100%
+    );
+    border: 2px solid rgba($color-higlighter-red, 0.3);
+
+    &:hover {
+      border-color: rgba($color-higlighter-red, 0.5);
+      box-shadow: 0 2rem 4rem rgba($color-higlighter-red, 0.2);
+    }
+
+    .stat-card__number {
+      color: $color-higlighter-red;
+    }
+
+    .stat-card__label {
+      color: rgba($color-text-white, 0.9);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.portfolio-page {
+  padding-top: 10rem; // Space for fixed header
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-top: 12rem;
+  }
+}

@@ -1,0 +1,93 @@
+.about-skills {
+  padding-block: $spacing-3xl;
+  background-color: rgba($color-text-white, 0.01);
+  border-block: 1px solid rgba($color-text-white, 0.08);
+
+  @media (max-width: $breakpoint-tablet) {
+    padding-block: $spacing-2xl;
+  }
+
+  &__container {
+    max-width: 120rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+
+  .skills-grid {
+    display: grid;
+    gap: $spacing-xl;
+
+    @media (max-width: $breakpoint-mobile) {
+      gap: $spacing-lg;
+    }
+  }
+}
+
+.skill-category {
+  padding: $spacing-xl;
+  background-color: rgba($color-text-white, 0.02);
+  border: 1px solid rgba($color-text-white, 0.08);
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba($color-text-white, 0.04);
+    border-color: rgba($color-text-white, 0.12);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $spacing-lg;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $color-text-white;
+    margin-bottom: $spacing-lg;
+
+    svg {
+      color: $color-higlighter-red;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2rem;
+    }
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .skill-tag {
+    padding: 1rem 1.8rem;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 10rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.8);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.08);
+      border-color: rgba($color-text-white, 0.15);
+      color: $color-text-white;
+      transform: translateY(-0.2rem);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0.8rem 1.4rem;
+      font-size: 1.4rem;
+    }
+  }
+}

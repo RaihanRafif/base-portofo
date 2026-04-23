@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function toRem($n) {
+  @return math.div($n ,16);
+}

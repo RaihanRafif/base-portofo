@@ -22,6 +22,7 @@
   if (navToggle && nav) {
     navToggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("is-open");
+      navToggle.classList.toggle("is-active", isOpen);
       navToggle.setAttribute("aria-expanded", String(isOpen));
       navToggle.setAttribute("aria-label", isOpen ? "Tutup menu" : "Buka menu");
     });
@@ -30,6 +31,7 @@
     $$("#nav a").forEach(a => {
       a.addEventListener("click", () => {
         nav.classList.remove("is-open");
+        navToggle.classList.remove("is-active");
         navToggle.setAttribute("aria-expanded", "false");
         navToggle.setAttribute("aria-label", "Buka menu");
       });
@@ -39,6 +41,7 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         nav.classList.remove("is-open");
+        navToggle.classList.remove("is-active");
         navToggle.setAttribute("aria-expanded", "false");
         navToggle.setAttribute("aria-label", "Buka menu");
       }

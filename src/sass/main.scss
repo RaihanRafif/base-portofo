@@ -1,0 +1,62 @@
+@import "variables";
+@import "base";
+@import "animation";
+
+@import "./components/header";
+@import "./components/button";
+@import "./components/floatingChat";
+
+
+@import "./pages/home/main";
+@import "./pages/home/image-modal";
+@import "./pages/home/contact";
+@import "./pages/home/project";
+@import "./pages/home/project-carousel";
+
+@import "./pages/project-detail/not-found";
+@import "./pages/project-detail/project-hero";
+@import "./pages/project-detail/similar-project";
+@import "./pages/project-detail/project-gallery";
+@import "./pages/project-detail/project-content";
+
+@import "./pages/about/main";
+@import "./pages/about/about-hero";
+@import "./pages/about/about-story";
+@import "./pages/about/about-skills";
+@import "./pages/about/about-experience";
+@import "./pages/about/about-cta";
+@import "./pages/about/about-stats";
+
+@import "./pages/portfolio/main";
+@import "./pages/portfolio/portfolio-hero";
+@import "./pages/portfolio/portfolio-filters";
+@import "./pages/portfolio/portfolio-grid";
+@import "./pages/portfolio/portfolio-cta";
+
+@import "./pages/contact/contact-main";
+@import "./pages/contact/contact-info";
+@import "./pages/contact/contact-form";
+@import "./pages/contact/contact-hero";
+@import "./pages/contact/main";
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-inline: auto;
+  color: $color-text-white;
+  max-width: 144rem; // 1440px
+  width: 100%;
+  padding-inline: $spacing-lg;
+
+  @media (max-width: $breakpoint-tablet) {
+    gap: $spacing-3xl;
+    padding-inline: $spacing-md;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: $spacing-2xl;
+    padding-inline: $spacing-sm;
+  }
+}
