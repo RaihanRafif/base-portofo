@@ -4,18 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- <meta name="robots" content="index,follow,max-image-preview:large" /> -->
   <meta name="robots" content="noindex,nofollow,max-image-preview:large" />
-  <meta name="theme-color" content="#0e0f10" />
+  <meta name="theme-color" content="#F5F0E8" />
   <meta name="format-detection" content="telephone=yes" />
-  <title>Ujung Langit Yogyakarta | Coffee & Brunch</title>
+  <title>Ujung Langit · Kedai Kopi Yogyakarta</title>
   <meta name="description"
-    content="Kedai Kopi Di Ujung Langit di Sorosutan, Umbulharjo — specialty coffee dengan suasana adem, cocok untuk ngopi pagi, brunch, dan nongkrong santai. Reservasi & tanya menu via WhatsApp." />
+    content="Kedai kopi di Sorosutan, Umbulharjo — specialty coffee, kopi filter, dan kudapan. Tempat adem buat ngopi pagi, kerja santai, atau ngobrol. Reservasi via WhatsApp." />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Kedai Kopi Di Ujung Langit" />
+  <meta property="og:title" content="Ujung Langit · Kedai Kopi Yogyakarta" />
   <meta property="og:description"
-    content="Specialty coffee di jantung Yogyakarta. Kopi enak, tempat adem, vibes Jogja." />
+    content="Specialty coffee & kudapan di jantung Yogyakarta. Kopi enak, tempat adem." />
   <meta property="og:image" content="assets/og.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -25,8 +24,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kedai Kopi Di Ujung Langit" />
-  <meta name="twitter:description" content="Specialty coffee & brunch di Sorosutan, Umbulharjo." />
+  <meta name="twitter:title" content="Ujung Langit · Kedai Kopi Yogyakarta" />
+  <meta name="twitter:description" content="Specialty coffee & kudapan di Sorosutan, Umbulharjo." />
   <meta name="twitter:image" content="assets/og.jpg" />
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -34,7 +33,7 @@
     imagesizes="100vw" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Kalam:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
@@ -46,11 +45,10 @@
       <a class="brand" href="#top" aria-label="Kedai Kopi Di Ujung Langit">
         <span class="brand__mark" aria-hidden="true">☕</span>
         <span class="brand__text">
-          <strong>Kedai Kopi Di Ujung Langit</strong>
+          <strong>Ujung Langit</strong>
           <span class="muted">Sorosutan, Umbulharjo</span>
         </span>
       </a>
-
 
       <button class="nav-toggle" id="navToggle" aria-controls="nav" aria-expanded="false" aria-label="Buka menu">
         <span aria-hidden="true"></span>
@@ -69,96 +67,77 @@
   </header>
 
   <main id="main">
-    <!-- Hero -->
+    <!-- Hero: asymmetric editorial layout -->
     <section class="hero">
-      <div class="hero__media" aria-hidden="true">
-        <picture>
-          <source srcset="assets/hero.webp" type="image/webp" />
-          <img src="assets/hero.jpg" alt="" width="1920" height="1080" loading="eager" fetchpriority="high" />
-        </picture>
-        <div class="hero__overlay"></div>
-      </div>
-
-      <div class="container hero__content">
-        <p class="pill reveal">Specialty coffee • Brunch • Cozy vibes</p>
+      <div class="hero__content container">
+        <div class="coordinate reveal">7°49'S 110°23'E · Yogyakarta</div>
         <h1 class="reveal">
-          Ngopi enak di jantung <span class="accent">Umbulharjo Jogja</span>
+          Ngopi enak<br/>di jantung <em class="accent">Umbulharjo</em>
         </h1>
         <p class="lead reveal">
-          Tempat adem buat ngopi pagi, kerja santai, atau ngobrol bareng teman. Klik WhatsApp untuk tanya menu atau
-          reservasi.
+          Tempat adem buat ngopi pagi, kerja santai, atau ngobrol bareng teman. Kopi asli Jawa, harga masuk akal.
         </p>
 
         <div class="hero__cta reveal">
           <a class="btn" href="#contact">Chat WhatsApp</a>
           <a class="btn btn--ghost" href="#location">Lihat Lokasi</a>
         </div>
+      </div>
 
-        <div class="hero__stats reveal">
-          <div class="stat">
-            <span class="stat__num">☕</span>
-            <span class="stat__label">Specialty coffee</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num">🥐</span>
-            <span class="stat__label">Brunch & bites</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num">📍</span>
-            <span class="stat__label">Umbulharjo, Jogja</span>
-          </div>
-        </div>
+      <div class="hero__media" aria-hidden="true">
+        <picture>
+          <source srcset="assets/hero.webp" type="image/webp" />
+          <img src="assets/hero.jpg" alt="" width="1920" height="1080" loading="eager" fetchpriority="high" />
+        </picture>
       </div>
     </section>
 
-    <!-- Highlights / Menu -->
+    <!-- Menu: kraft paper cards with hand-written subtitles -->
     <section class="section" id="menu">
       <div class="container">
         <div class="section__head reveal">
-          <h2>Menu favorit</h2>
+          <span class="section__label">Menu</span>
+          <h2>Favorit pengunjung</h2>
           <p class="muted">
-            Sorosutan, Kec. Umbulharjo<br />
-            Kota Yogyakarta, DI Yogyakarta<br />
-            <span class="small">Jam buka (info publik): 06.00–10.00 &amp; 15.00–23.00. Bisa berubah, chat dulu kalau mau
-              aman.</span>
+            Sorosutan, Kec. Umbulharjo · Kota Yogyakarta<br />
+            <span class="mono small">06.00–10.00 & 15.00–23.00 · Bisa berubah, chat dulu kalau mau aman.</span>
           </p>
         </div>
 
         <div class="cards">
           <article class="card reveal" aria-label="Menu Minuman">
             <h3>Minuman</h3>
-            <p class="muted">Simpel, murah, dan tidak banyak gaya.</p>
+            <span class="card__sub">Simpel, murah, nggak banyak gaya</span>
             <ul class="list">
-              <li>Teh Walini — Rp 5.000</li>
-              <li>Kopi Hitam — Rp 5.000</li>
-              <li>Kopi Sanger — Rp 7.000</li>
-              <li>Kopi Capsule — Rp 10.000</li>
-              <li>Coklat — Rp 7.000</li>
-              <li>Es Taro — Rp 7.000</li>
+              <li>Teh Walini<span class="price">5K</span></li>
+              <li>Kopi Hitam<span class="price">5K</span></li>
+              <li>Kopi Sanger<span class="price">7K</span></li>
+              <li>Kopi Capsule<span class="price">10K</span></li>
+              <li>Coklat<span class="price">7K</span></li>
+              <li>Es Taro<span class="price">7K</span></li>
             </ul>
           </article>
 
           <article class="card reveal" aria-label="Menu Kopi Filter">
             <h3>Kopi Filter</h3>
-            <p class="muted">Buat yang mau rasa kopi lebih “jelas”.</p>
+            <span class="card__sub">Buat yang mau rasa kopi lebih "jelas"</span>
             <ul class="list">
-              <li>Robusta — Rp 6.000</li>
-              <li>Liberika — Rp 10.000</li>
-              <li>Arabika — Rp 10.000</li>
+              <li>Robusta<span class="price">6K</span></li>
+              <li>Liberika<span class="price">10K</span></li>
+              <li>Arabika<span class="price">10K</span></li>
             </ul>
           </article>
 
           <article class="card reveal" aria-label="Menu Kudapan">
             <h3>Kudapan</h3>
-            <p class="muted">Teman ngopi yang masuk akal.</p>
+            <span class="card__sub">Teman ngopi yang masuk akal</span>
             <ul class="list">
-              <li>Tempe Mendoan — Rp 6.000</li>
-              <li>Singkong Goreng — Rp 7.000</li>
-              <li>Kentang Goreng — Rp 8.000</li>
+              <li>Tempe Mendoan<span class="price">6K</span></li>
+              <li>Singkong Goreng<span class="price">7K</span></li>
+              <li>Kentang Goreng<span class="price">8K</span></li>
             </ul>
           </article>
         </div>
-
 
         <div class="callout reveal">
           <div>
@@ -170,12 +149,13 @@
       </div>
     </section>
 
-    <!-- Gallery -->
+    <!-- Gallery: asymmetric editorial grid with slight rotation -->
     <section class="section section--alt" id="gallery">
       <div class="container">
         <div class="section__head reveal">
-          <h2>Galeri</h2>
-          <p class="muted">Sedikit vibes biar kamu kebayang sebelum datang.</p>
+          <span class="section__label">Galeri</span>
+          <h2>Sedikit vibes</h2>
+          <p class="muted">Biar kamu kebayang sebelum datang.</p>
         </div>
 
         <div class="gallery">
@@ -215,8 +195,9 @@
     <section class="section" id="location">
       <div class="container">
         <div class="section__head reveal">
-          <h2>Lokasi</h2>
-          <p class="muted">Klik “Buka di Google Maps” untuk navigasi.</p>
+          <span class="section__label">Lokasi</span>
+          <h2>Temukan kami</h2>
+          <p class="muted">Klik "Buka di Google Maps" untuk navigasi.</p>
         </div>
 
         <div class="grid grid--2">
@@ -225,13 +206,12 @@
             <p class="muted">
               Sorosutan, Kec. Umbulharjo<br />
               Kota Yogyakarta, DI Yogyakarta<br />
-              <span class="small">Jam buka (info publik): 06.00–10.00 &amp; 15.00–23.00. Bisa berubah, chat dulu kalau
-                mau aman.</span>
+              <span class="mono small">06.00–10.00 & 15.00–23.00 · Bisa berubah.</span>
             </p>
 
             <div class="actions">
               <a class="btn btn--small" href="https://maps.app.goo.gl/bDmkebMmtjTe5uWBA" target="_blank"
-                rel="noopener noreferrer">Buka di Google Maps</a>
+                rel="noopener noreferrer">Buka di Maps</a>
               <a class="btn btn--ghost btn--small" href="#contact">Tanya via WA</a>
             </div>
 
@@ -240,8 +220,8 @@
             <h3>Kenapa enak ke sini?</h3>
             <ul class="checklist">
               <li>Lokasi strategis area Umbulharjo (Sorosutan)</li>
-              <li>Harga ramah dompet (mulai Rp 5.000)</li>
-              <li>Ada kopi filter, cold brew, dan kudapan</li>
+              <li>Harga ramah dompet — mulai <span class="mono">5K</span></li>
+              <li>Ada kopi filter asli Jawa, cold brew, kudapan</li>
             </ul>
           </div>
 
@@ -250,16 +230,16 @@
               src="https://www.google.com/maps?q=-7.826482,110.3844037&output=embed"></iframe>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- FAQ: clean, editorial -->
     <section class="section section--alt" id="faq">
       <div class="container">
         <div class="section__head reveal">
-          <h2>FAQ</h2>
-          <p class="muted">Pertanyaan yang biasanya muncul sebelum orang datang.</p>
+          <span class="section__label">FAQ</span>
+          <h2>Sebelum datang</h2>
+          <p class="muted">Pertanyaan yang biasanya muncul.</p>
         </div>
 
         <div class="faq">
@@ -300,7 +280,8 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="section__head reveal">
-          <h2>Reservasi & tanya menu</h2>
+          <span class="section__label">Reservasi</span>
+          <h2>Tanya menu atau reservasi</h2>
           <p class="muted">Isi form ini, nanti otomatis membuka WhatsApp dengan pesan siap kirim.</p>
         </div>
 
@@ -333,7 +314,7 @@
 
           <div class="panel reveal">
             <h3>Kontak cepat</h3>
-            <p class="muted">Kalau kamu tipe orang yang tidak suka form, tenang.</p>
+            <p class="muted">Kalau kamu tipe orang yang nggak suka form, tenang.</p>
 
             <div class="quick">
               <a class="quick__item" href="https://maps.app.goo.gl/d4hyddjAQzc2REK3A" target="_blank"
@@ -345,7 +326,7 @@
                 </span>
               </a>
 
-              <a class="quick__item" href="#top">
+              <a class="quick__item" href="#menu">
                 <span class="quick__icon" aria-hidden="true">☕</span>
                 <span>
                   <strong>Menu</strong>
@@ -361,7 +342,6 @@
                 </span>
               </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -372,7 +352,7 @@
     <div class="container footer__inner">
       <div class="footer__left">
         <strong>Ujung Langit</strong>
-        <p class="muted small">Kraton, Yogyakarta</p>
+        <p class="muted small">Sorosutan, Yogyakarta</p>
       </div>
       <div class="footer__right">
         <a href="#menu">Menu</a>
@@ -385,7 +365,7 @@
     </div>
 
     <div class="container footer__bottom">
-      <small class="muted">© <span id="year"></span> Ujung Langit • Concept landing page.</small>
+      <small class="muted">© <span id="year"></span> Ujung Langit · Concept landing page.</small>
     </div>
   </footer>
 
@@ -437,10 +417,10 @@
     },
     {
       "@type": "Question",
-      "name": "Apakah ada menu brunch?",
+      "name": "Apakah ada menu snack?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ada pilihan pastry dan light meals. Tanyakan menu terbaru via WhatsApp untuk yang paling akurat."
+        "text": "Tersedia beberapa menu snack dan jajanan ringan."
       }
     },
     {
