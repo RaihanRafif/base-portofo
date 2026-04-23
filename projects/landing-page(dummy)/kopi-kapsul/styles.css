@@ -290,13 +290,25 @@ img{max-width:100%; height:auto; display:block}
   gap:12px;
   flex-wrap:wrap;
 }
+.hero__cta .btn--cream,
 .hero__cta .btn:first-child{
   background:var(--cream);
   color:var(--brown);
 }
+.hero__cta .btn--cream:hover,
 .hero__cta .btn:first-child:hover{
   background:var(--gold);
   color:var(--fg);
+}
+
+.hero__cta .btn--ghost{
+  background:transparent;
+  color:#fff;
+  border:1.5px solid rgba(255,255,255,.4);
+}
+.hero__cta .btn--ghost:hover{
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.7);
 }
 
 /* Vertical text — Ueshima signature */
@@ -345,7 +357,7 @@ img{max-width:100%; height:auto; display:block}
   background:var(--fg);
   color:#fff;
 }
-.section--dark .muted{color:rgba(255,255,255,.4)}
+.section--dark .muted{color:rgba(255,255,255,.45)}
 .section--dark .section__label{color:rgba(255,255,255,.35)}
 .section--dark h2{color:#fff}
 .section--dark .sidelines{color:rgba(255,255,255,.35)}
