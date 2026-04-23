@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex,nofollow,max-image-preview:large" />
-  <meta name="theme-color" content="#F5F0E8" />
+  <meta name="theme-color" content="#080000" />
   <meta name="format-detection" content="telephone=yes" />
   <title>Ujung Langit · Kedai Kopi Yogyakarta</title>
   <meta name="description"
@@ -33,20 +33,21 @@
     imagesizes="100vw" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Kalam:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&family=Kalam:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body id="top">
   <a class="skip-link" href="#main">Lewati ke konten</a>
 
+  <!-- Header: dark bar -->
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="Kedai Kopi Di Ujung Langit">
         <span class="brand__mark" aria-hidden="true">☕</span>
         <span class="brand__text">
           <strong>Ujung Langit</strong>
-          <span class="muted">Sorosutan, Umbulharjo</span>
+          <span class="muted">Yogyakarta</span>
         </span>
       </a>
 
@@ -61,99 +62,152 @@
         <a href="#gallery">Galeri</a>
         <a href="#location">Lokasi</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn--small" href="#contact">Reservasi</a>
+        <a class="btn btn--cream btn--small" href="#contact">Reservasi</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero: asymmetric editorial layout -->
+    <!-- Hero: dark cinematic + vertical text -->
     <section class="hero">
-      <div class="hero__content container">
-        <div class="coordinate reveal">7°49'S 110°23'E · Yogyakarta</div>
-        <h1 class="reveal">
-          Ngopi enak<br/>di jantung <em class="accent">Umbulharjo</em>
-        </h1>
-        <p class="lead reveal">
-          Tempat adem buat ngopi pagi, kerja santai, atau ngobrol bareng teman. Kopi asli Jawa, harga masuk akal.
-        </p>
-
-        <div class="hero__cta reveal">
-          <a class="btn" href="#contact">Chat WhatsApp</a>
-          <a class="btn btn--ghost" href="#location">Lihat Lokasi</a>
-        </div>
-      </div>
-
       <div class="hero__media" aria-hidden="true">
         <picture>
           <source srcset="assets/hero.webp" type="image/webp" />
           <img src="assets/hero.jpg" alt="" width="1920" height="1080" loading="eager" fetchpriority="high" />
         </picture>
       </div>
+
+      <div class="hero__content">
+        <div class="hero__inner">
+          <div class="hero__text">
+            <p class="coordinate reveal">7°49′S 110°23′E · Yogyakarta</p>
+            <h1 class="reveal">
+              Ngopi enak,<br/>di jantung <em>Umbulharjo</em>
+            </h1>
+            <p class="lead reveal">
+              Kopi asli Jawa, tempat adem, harga masuk akal. Buka pagi dan sore — buat ngopi, kerja santai, atau ngobrol.
+            </p>
+            <div class="hero__cta reveal">
+              <a class="btn" href="#contact">Chat WhatsApp</a>
+              <a class="btn btn--ghost" href="#location">Lihat Lokasi</a>
+            </div>
+          </div>
+          <p class="hero__vertical reveal" aria-hidden="true">
+            惜しみなく手間をかけ — 一杯一杯丁寧に
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Menu: kraft paper cards with hand-written subtitles -->
+    <!-- Brand title: Ueshima section-title style -->
+    <section class="section-title">
+      <div class="container reveal">
+        <h1>Ujung Langit</h1>
+        <span class="tagline">Kedai Kopi Di Ujung Langit</span>
+      </div>
+    </section>
+
+    <!-- Menu: editorial list style -->
     <section class="section" id="menu">
       <div class="container">
+        <div class="sidelines reveal">Menu</div>
         <div class="section__head reveal">
-          <span class="section__label">Menu</span>
           <h2>Favorit pengunjung</h2>
           <p class="muted">
             Sorosutan, Kec. Umbulharjo · Kota Yogyakarta<br />
-            <span class="mono small">06.00–10.00 & 15.00–23.00 · Bisa berubah, chat dulu kalau mau aman.</span>
+            <span class="mono small">06.00–10.00 &amp; 15.00–23.00 · Bisa berubah, chat dulu.</span>
           </p>
         </div>
 
-        <div class="cards">
-          <article class="card reveal" aria-label="Menu Minuman">
-            <h3>Minuman</h3>
-            <span class="card__sub">Simpel, murah, nggak banyak gaya</span>
-            <ul class="list">
-              <li>Teh Walini<span class="price">5K</span></li>
-              <li>Kopi Hitam<span class="price">5K</span></li>
-              <li>Kopi Sanger<span class="price">7K</span></li>
-              <li>Kopi Capsule<span class="price">10K</span></li>
-              <li>Coklat<span class="price">7K</span></li>
-              <li>Es Taro<span class="price">7K</span></li>
+        <div class="menu-section">
+          <div class="menu-group reveal">
+            <h3 class="menu-group__title">Minuman</h3>
+            <span class="menu-group__sub">Simpel, murah, nggak banyak gaya</span>
+            <ul class="menu-list">
+              <li>
+                <span class="menu-item__name">Teh Walini</span>
+                <span class="menu-item__price">5K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Kopi Hitam</span>
+                <span class="menu-item__price">5K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Kopi Sanger</span>
+                <span class="menu-item__price">7K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Kopi Capsule</span>
+                <span class="menu-item__price">10K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Coklat</span>
+                <span class="menu-item__price">7K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Es Taro</span>
+                <span class="menu-item__price">7K</span>
+              </li>
             </ul>
-          </article>
+          </div>
 
-          <article class="card reveal" aria-label="Menu Kopi Filter">
-            <h3>Kopi Filter</h3>
-            <span class="card__sub">Buat yang mau rasa kopi lebih "jelas"</span>
-            <ul class="list">
-              <li>Robusta<span class="price">6K</span></li>
-              <li>Liberika<span class="price">10K</span></li>
-              <li>Arabika<span class="price">10K</span></li>
+          <div class="menu-group reveal">
+            <h3 class="menu-group__title">Kopi Filter</h3>
+            <span class="menu-group__sub">Buat yang mau rasa kopi lebih "jelas"</span>
+            <ul class="menu-list">
+              <li>
+                <span class="menu-item__name">Robusta</span>
+                <span class="menu-item__desc">asli Jawa</span>
+                <span class="menu-item__price">6K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Liberika</span>
+                <span class="menu-item__desc">rare variety</span>
+                <span class="menu-item__price">10K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Arabika</span>
+                <span class="menu-item__desc">single origin</span>
+                <span class="menu-item__price">10K</span>
+              </li>
             </ul>
-          </article>
+          </div>
 
-          <article class="card reveal" aria-label="Menu Kudapan">
-            <h3>Kudapan</h3>
-            <span class="card__sub">Teman ngopi yang masuk akal</span>
-            <ul class="list">
-              <li>Tempe Mendoan<span class="price">6K</span></li>
-              <li>Singkong Goreng<span class="price">7K</span></li>
-              <li>Kentang Goreng<span class="price">8K</span></li>
+          <div class="menu-group reveal">
+            <h3 class="menu-group__title">Kudapan</h3>
+            <span class="menu-group__sub">Teman ngopi yang masuk akal</span>
+            <ul class="menu-list">
+              <li>
+                <span class="menu-item__name">Tempe Mendoan</span>
+                <span class="menu-item__price">6K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Singkong Goreng</span>
+                <span class="menu-item__price">7K</span>
+              </li>
+              <li>
+                <span class="menu-item__name">Kentang Goreng</span>
+                <span class="menu-item__price">8K</span>
+              </li>
             </ul>
-          </article>
+          </div>
         </div>
 
         <div class="callout reveal">
           <div>
             <h3>Butuh reservasi?</h3>
-            <p class="muted">Klik tombol WhatsApp dan tulis tanggal + jumlah orang. Simple.</p>
+            <p class="muted">Klik tombol WhatsApp dan tulis tanggal + jumlah orang.</p>
           </div>
           <a class="btn btn--small" href="#contact">Reservasi via WA</a>
         </div>
       </div>
     </section>
 
-    <!-- Gallery: asymmetric editorial grid with slight rotation -->
-    <section class="section section--alt" id="gallery">
+    <!-- Gallery: dark section -->
+    <section class="section section--dark" id="gallery">
       <div class="container">
+        <div class="sidelines reveal">Galeri</div>
         <div class="section__head reveal">
-          <span class="section__label">Galeri</span>
           <h2>Sedikit vibes</h2>
           <p class="muted">Biar kamu kebayang sebelum datang.</p>
         </div>
@@ -194,19 +248,19 @@
     <!-- Location -->
     <section class="section" id="location">
       <div class="container">
+        <div class="sidelines reveal">Lokasi</div>
         <div class="section__head reveal">
-          <span class="section__label">Lokasi</span>
           <h2>Temukan kami</h2>
-          <p class="muted">Klik "Buka di Google Maps" untuk navigasi.</p>
+          <p class="muted">Klik "Buka di Maps" untuk navigasi.</p>
         </div>
 
         <div class="grid grid--2">
           <div class="panel reveal">
-            <h3>Alamat</h3>
+            <h3 style="font-family:var(--font-serif);font-weight:400;color:var(--brown);margin:0 0 4px">Alamat</h3>
             <p class="muted">
               Sorosutan, Kec. Umbulharjo<br />
               Kota Yogyakarta, DI Yogyakarta<br />
-              <span class="mono small">06.00–10.00 & 15.00–23.00 · Bisa berubah.</span>
+              <span class="mono small">06.00–10.00 &amp; 15.00–23.00</span>
             </p>
 
             <div class="actions">
@@ -217,7 +271,7 @@
 
             <div class="divider"></div>
 
-            <h3>Kenapa enak ke sini?</h3>
+            <h3 style="font-family:var(--font-serif);font-weight:400;color:var(--brown);margin:0 0 8px">Kenapa enak ke sini?</h3>
             <ul class="checklist">
               <li>Lokasi strategis area Umbulharjo (Sorosutan)</li>
               <li>Harga ramah dompet — mulai <span class="mono">5K</span></li>
@@ -233,11 +287,11 @@
       </div>
     </section>
 
-    <!-- FAQ: clean, editorial -->
+    <!-- FAQ -->
     <section class="section section--alt" id="faq">
       <div class="container">
+        <div class="sidelines reveal">FAQ</div>
         <div class="section__head reveal">
-          <span class="section__label">FAQ</span>
           <h2>Sebelum datang</h2>
           <p class="muted">Pertanyaan yang biasanya muncul.</p>
         </div>
@@ -279,10 +333,10 @@
     <!-- Contact -->
     <section class="section" id="contact">
       <div class="container">
+        <div class="sidelines reveal">Reservasi</div>
         <div class="section__head reveal">
-          <span class="section__label">Reservasi</span>
           <h2>Tanya menu atau reservasi</h2>
-          <p class="muted">Isi form ini, nanti otomatis membuka WhatsApp dengan pesan siap kirim.</p>
+          <p class="muted">Isi form ini, nanti otomatis membuka WhatsApp.</p>
         </div>
 
         <div class="grid grid--2">
@@ -313,8 +367,8 @@
           </div>
 
           <div class="panel reveal">
-            <h3>Kontak cepat</h3>
-            <p class="muted">Kalau kamu tipe orang yang nggak suka form, tenang.</p>
+            <h3 style="font-family:var(--font-serif);font-weight:400;color:var(--brown);margin:0 0 4px">Kontak cepat</h3>
+            <p class="muted" style="margin-bottom:16px">Kalau kamu tipe orang yang nggak suka form, tenang.</p>
 
             <div class="quick">
               <a class="quick__item" href="https://maps.app.goo.gl/d4hyddjAQzc2REK3A" target="_blank"
@@ -335,7 +389,7 @@
               </a>
 
               <a class="quick__item" href="#gallery">
-                <span class="quick__icon" aria-hidden="true">🖼️</span>
+                <span class="quick__icon" aria-hidden="true">🖼</span>
                 <span>
                   <strong>Galeri</strong>
                   <span class="muted">Cek vibes</span>
@@ -365,7 +419,7 @@
     </div>
 
     <div class="container footer__bottom">
-      <small class="muted">© <span id="year"></span> Ujung Langit · Concept landing page.</small>
+      <small class="muted">© <span id="year"></span> Ujung Langit · Concept landing page</small>
     </div>
   </footer>
 
