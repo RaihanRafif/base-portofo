@@ -105,11 +105,11 @@ export const portfolioData = {
                 "video": null,
                 "youtubeId": null,
                 "images": [
-                    "/assets/projects/inventory-berkah-jaya/1.png",
-                    "/assets/projects/inventory-berkah-jaya/2.png",
-                    "/assets/projects/inventory-berkah-jaya/3.png",
-                    "/assets/projects/inventory-berkah-jaya/4.png",
-                    "/assets/projects/inventory-berkah-jaya/5.png"
+                    "/assets/projects/inventory-berkah-jaya/1.png?v=2",
+                    "/assets/projects/inventory-berkah-jaya/2.png?v=2",
+                    "/assets/projects/inventory-berkah-jaya/3.png?v=2",
+                    "/assets/projects/inventory-berkah-jaya/4.png?v=2",
+                    "/assets/projects/inventory-berkah-jaya/5.png?v=2"
                 ]
             },
             "tech": [
