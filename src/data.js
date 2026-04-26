@@ -137,6 +137,80 @@ export const portfolioData = {
                 "fill": "#2563EB"
             },
             "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"{FILL_COLOR}\"><path d=\"M20 8h-3V4H7v4H4v12h16V8zm-5 0H9V6h6v2z\"/></svg>"
+        },
+        {
+            "id": "medically-ai",
+            "date": "2026",
+            "title": "Medically AI — Healthcare Assistant Web App",
+            "category": "FULLSTACK WEB DEVELOPMENT",
+            "summary": "An AI-powered healthcare web application featuring an intelligent health chatbot, AI symptom checker, doctor appointment booking system, health statistics dashboard, and health article browsing — designed for accessible health consultation and wellness tracking.",
+            "client": "Medically AI (Personal Showcase)",
+            "overview": "Developed a comprehensive healthcare platform combining AI-powered chat assistance, symptom analysis, and medical appointment management. The app enables users to consult health concerns through an AI assistant, check symptoms with intelligent analysis, browse nearby hospitals, book doctor appointments, and manage health profiles — all through a modern, mobile-responsive interface.",
+            "role": "Fullstack Developer",
+            "mission": "To build an accessible healthcare platform that leverages AI to provide health information and streamline patient-doctor interactions. The goal was to create a user-friendly tool for preliminary health consultation, symptom tracking, and appointment booking without barriers.",
+            "impact": "Successfully delivered an AI-powered healthcare platform where users can interact with a health chatbot, assess symptoms, and book doctor appointments. The integration of AI assistance with hospital browsing and appointment management creates a practical, single-page healthcare hub for preliminary consultation and wellness awareness.",
+            "contributions": [
+                "Architected and built a fullstack healthcare platform with React + Vite frontend and Node.js + Express + SQLite backend.",
+                "Integrated Ollama AI for local inference powering the health chat assistant and AI symptom checker.",
+                "Designed and implemented an AI chat widget with persistent chat sessions, user-friendly health assistant persona, and symptom analysis flow.",
+                "Built doctor directory with appointment booking system including patient-doctor matchmaking and status tracking.",
+                "Created hospital browsing section with interactive hospital cards and navigation features.",
+                "Implemented health statistics dashboard with animated counters and real-time data display.",
+                "Developed health articles section with categorized content, search, and featured articles.",
+                "Designed and built responsive mobile navigation and footer with WhatsApp integration.",
+                "Configured Cloudflare Tunnel deployment for custom domain access (medically.raihanrafif.com).",
+                "Implemented CORS, JWT authentication, rate limiting, and security middleware for production API."
+            ],
+            "keyfeatures": [
+                "AI Health Chatbot: Conversational AI assistant powered by Ollama local inference for health Q\u0026A and general wellness advice.",
+                "AI Symptom Checker: Intelligent symptom analysis tool that takes symptoms, age, gender, and duration to generate health insights.",
+                "Appointment Booking System: Full booking flow allowing patients to schedule appointments with available doctors including appointment tracking.",
+                "Doctor Directory: Interactive doctor cards with specialties, ratings, and direct booking integration.",
+                "Hospital Browser: Nearby hospital discovery with detailed information cards and navigation.",
+                "Health Statistics Dashboard: Animated KPI cards showing platform statistics with smooth counting animations.",
+                "Health Articles Section: Categorized health content with search functionality and featured article cards.",
+                "Responsive Design: Mobile-first approach with hamburger navigation and touch-friendly UI.",
+                "Persistent Chat Sessions: SQLite-backed chat history allowing users to resume previous conversations.",
+                "Modern UI/UX: Clean healthcare-inspired design with teal/blue color palette, smooth scroll animations, and accessible components.",
+                "Production Deployment: Deployed on Jetson Nano with Cloudflare Tunnel for public access.",
+                "Security Hardened: Helmet.js, CORS configuration, rate limiting, and JWT authentication."
+            ],
+            "assets": {
+                "video": null,
+                "youtubeId": null,
+                "images": [
+                    "/assets/projects/medically-ai/1.png",
+                    "/assets/projects/medically-ai/2.png",
+                    "/assets/projects/medically-ai/3.png",
+                    "/assets/projects/medically-ai/4.png",
+                    "/assets/projects/medically-ai/5.png"
+                ]
+            },
+            "tech": [
+                "React 19",
+                "Vite",
+                "Node.js",
+                "Express.js",
+                "SQLite",
+                "Ollama",
+                "Tailwind CSS",
+                "React Router DOM",
+                "Framer Motion",
+                "Lucide React",
+                "node-fetch",
+                "Cloudflare Tunnel"
+            ],
+            "liveUrl": "https://medically.raihanrafif.com",
+            "repoUrl": "https://github.com/RaihanRafif/medically-ai",
+            "theme": {
+                "bg": "bg-teal-50",
+                "text": "text-teal-700",
+                "hover": "hover:text-teal-600",
+                "buttonBg": "bg-teal-600",
+                "buttonHover": "hover:bg-teal-700",
+                "fill": "#0D9488"
+            },
+            "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"{FILL_COLOR}\"><path d=\"M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z\"/></svg>"
         }
 
         // {
