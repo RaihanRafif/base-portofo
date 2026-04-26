@@ -83,6 +83,7 @@ export const portfolioData = {
                 "Developed POS flow: product search & filter by category, cart operations, real-time stock validation, discount options (percentage/fixed), and payment modal.",
                 "Created CRUD modules for products, categories, suppliers, users, purchases, and sales through REST-style API routes.",
                 "Built user management with role assignment and activity tracking.",
+                "Implemented category management with custom ordering, description fields, and status toggle (active/inactive).",
                 "Integrated analytics endpoints and dashboards with interactive charts (Recharts + Chart.js) for revenue, profit, and transaction trends.",
                 "Prepared database schema + seed data (fixed SQL) and Sequelize models for consistent local setup.",
                 "Added API documentation support using Swagger (swagger-jsdoc + swagger-ui)."
@@ -92,6 +93,7 @@ export const portfolioData = {
                 "Dashboard: KPI cards, revenue trends, transaction analytics, and best-selling product charts.",
                 "POS Module: Category-filtered product grid, cart management, real-time stock validation, discount options (percentage/fixed), and payment modal.",
                 "Inventory Control: Product catalog with search, category & stock status filtering, low-stock alerts, and pagination.",
+                "Category Management: Organize products with custom order, descriptions, and active/inactive status toggle.",
                 "User Management: CRUD users with role assignment and activity tracking.",
                 "Transactions: Purchases & sales records with detail items, totals, and status tracking.",
                 "Analytics Charts: Revenue, profit, and transaction trends with Recharts + Chart.js.",
@@ -106,7 +108,8 @@ export const portfolioData = {
                     "/assets/projects/inventory-berkah-jaya/1.png",
                     "/assets/projects/inventory-berkah-jaya/2.png",
                     "/assets/projects/inventory-berkah-jaya/3.png",
-                    "/assets/projects/inventory-berkah-jaya/4.png"
+                    "/assets/projects/inventory-berkah-jaya/4.png",
+                    "/assets/projects/inventory-berkah-jaya/5.png"
                 ]
             },
             "tech": [
