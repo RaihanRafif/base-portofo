@@ -179,11 +179,11 @@ export const portfolioData = {
                 "video": null,
                 "youtubeId": null,
                 "images": [
-                    "/assets/projects/medically-ai/1.png",
-                    "/assets/projects/medically-ai/2.png",
-                    "/assets/projects/medically-ai/3.png",
-                    "/assets/projects/medically-ai/4.png",
-                    "/assets/projects/medically-ai/5.png"
+                    "/assets/projects/medically/1.png",
+                    "/assets/projects/medically/2.png",
+                    "/assets/projects/medically/3.png",
+                    "/assets/projects/medically/4.png",
+                    "/assets/projects/medically/5.png"
                 ]
             },
             "tech": [
