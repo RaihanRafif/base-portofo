@@ -30,15 +30,14 @@ function AvatarR() {
 export default function ChatFab({ compact = true }) {
     const [open, setOpen] = useState(false);
     const {
-        messages, input, setInput, sendMessage, clearChat, exportChat,
-        isLoading, backendOnline, backendChecked, suggestions, showTyping
+        messages, input, setInput, sendMessage,
+        isLoading, suggestions, showTyping
     } = useChat();
 
     const panelRef = useRef(null);
     const listRef = useRef(null);
     const btnRef = useRef(null);
     const inputRef = useRef(null);
-    const [toast, setToast] = useState(null);
 
     // Auto-scroll
     useEffect(() => {
@@ -77,25 +76,20 @@ export default function ChatFab({ compact = true }) {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [open]);
 
+    // Toggle body class when panel opens — pushes header down
+    useEffect(() => {
+        if (open) {
+            document.body.classList.add("chat-panel-open");
+        } else {
+            document.body.classList.remove("chat-panel-open");
+        }
+        return () => document.body.classList.remove("chat-panel-open");
+    }, [open]);
+
     function onSubmit(e) {
         e.preventDefault();
         if (!input.trim() || isLoading) return;
         sendMessage(input.trim());
-    }
-
-    function handleExport() {
-        exportChat();
-        showToast("Chat saved to downloads 📥");
-    }
-
-    function handleReset() {
-        clearChat();
-        showToast("Conversation cleared 🧹");
-    }
-
-    function showToast(msg) {
-        setToast(msg);
-        setTimeout(() => setToast(null), 2500);
     }
 
     function handleSuggestion(text) {
@@ -123,14 +117,7 @@ export default function ChatFab({ compact = true }) {
                     </svg>
                 )}
                 <span className="chat-fab-pulse"></span>
-                {!backendChecked && <span className="chat-fab-badge" title="Checking...">•</span>}
-                {backendChecked && backendOnline && <span className="chat-fab-badge online" title="AI Online">●</span>}
             </button>
-
-            {/* Toast */}
-            {toast && (
-                <div className="chat-toast">{toast}</div>
-            )}
 
             {open && (
                 <section
@@ -138,41 +125,20 @@ export default function ChatFab({ compact = true }) {
                     ref={panelRef}
                     className={`chat-panel-modern ${compact ? "is-compact" : ""}`}
                     role="dialog"
-                    aria-labelledby="chat-title"
+                    aria-label="Chat with Raihan's AI"
                 >
-                    {/* Header */}
-                    <header className="chat-header-modern">
-                        <div className="chat-header-info">
-                            <div className="chat-avatar">
-                                <AvatarR />
-                                {backendOnline && <span className="chat-avatar-status online"></span>}
-                            </div>
-                            <div>
-                                <h2 id="chat-title">Raihan's AI</h2>
-                                <span className="chat-meta">
-                                    {backendOnline ? "Ready to chat" : "Offline mode"}
-                                </span>
-                            </div>
-                        </div>
-                        <div className="chat-header-actions">
-                            <button type="button" onClick={handleExport} title="Download chat" aria-label="Download chat">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                                </svg>
-                            </button>
-                            <button type="button" onClick={handleReset} title="Clear chat" aria-label="Clear chat">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                                    <polyline points="1 4 1 10 7 10" />
-                                    <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-                                </svg>
-                            </button>
-                            <button type="button" onClick={() => setOpen(false)} title="Close" aria-label="Close">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                                    <path d="M18 6L6 18M6 6L18 18" />
-                                </svg>
-                            </button>
-                        </div>
-                    </header>
+                    {/* Close button — floating top-right */}
+                    <button
+                        type="button"
+                        className="chat-panel-close"
+                        onClick={() => setOpen(false)}
+                        title="Close"
+                        aria-label="Close"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                            <path d="M18 6L6 18M6 6L18 18" />
+                        </svg>
+                    </button>
 
                     {/* Suggestions */}
                     <div className="chat-suggestions">
