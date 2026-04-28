@@ -175,7 +175,7 @@ export default function ProjectDetail() {
                                     ))}
                                 </div>
                             </div>
-                            {(project?.liveUrl || project?.repoUrl) && (
+                            {(project?.liveUrl) && (
                                 <div className="detail-group">
                                     <span className="detail-label">{t("project.sidebar.links")}</span>
                                     <div className="project-links">
@@ -187,18 +187,6 @@ export default function ProjectDetail() {
                                                 rel="noreferrer noopener"
                                             >
                                                 <span>{t("buttons.liveDemo")}</span>
-                                                <span aria-hidden="true">↗</span>
-                                            </a>
-                                        )}
-
-                                        {project?.repoUrl && (
-                                            <a
-                                                className="btn btn--secondary project-link"
-                                                href={project.repoUrl}
-                                                target="_blank"
-                                                rel="noreferrer noopener"
-                                            >
-                                                <span>{t("buttons.sourceCode")}</span>
                                                 <span aria-hidden="true">↗</span>
                                             </a>
                                         )}
