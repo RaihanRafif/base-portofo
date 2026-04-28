@@ -15,7 +15,7 @@ function formatMarkdown(text) {
 export default function ChatFab({ compact = true }) {
     const [open, setOpen] = useState(false);
     const {
-        messages, input, setInput, sendMessage, resetChat, exportChat,
+        messages, input, setInput, sendMessage, clearChat, exportChat,
         isLoading, backendOnline, backendChecked, suggestions, showTyping
     } = useChat();
 
