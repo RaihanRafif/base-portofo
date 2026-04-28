@@ -105,39 +105,53 @@ function localAnswer(query) {
     const q = query.toLowerCase();
     const projects = portfolioData.projects || [];
 
-    // Project-specific queries
+    // Project-specific queries (fuzzy title match)
     for (const p of projects) {
         const pTitle = p.title?.toLowerCase() || "";
         const pId = p.id?.toLowerCase() || "";
-        if (q.includes(pId) || q.includes(pTitle.split(" ").slice(0, 3).join(" ")) || q.includes(pTitle.split("—")[0]?.trim().toLowerCase())) {
-            return `**${p.title}** (${p.category})\\n\\n${p.overview}\\n\\n**Role:** ${p.role}\\n**Key Features:**\\n${(p.keyfeatures || []).slice(0, 5).map(f => `• ${f}`).join("\\n")}\\n\\n**Tech Stack:** ${(p.tech || []).join(", ")}\\n**Live Demo:** ${p.liveUrl || "Not deployed yet"}`;
+        const titleWords = pTitle.split(/[\s—\-]+/).filter(w => w.length > 2);
+        const idWords = pId.split(/[\s—\-]+/).filter(w => w.length > 2);
+        const queryWords = q.split(/\s+/).filter(w => w.length > 2);
+        
+        // Direct substring match or keyword overlap
+        const directMatch = q.includes(pId) || queryWords.some(w => titleWords.includes(w) || pTitle.includes(w));
+        if (directMatch) {
+            const features = (p.keyfeatures || []).slice(0, 5).map(f => `- ${f}`).join("\n");
+            const tech = (p.tech || []).join(", ");
+            return `**${p.title}** (${p.category || "Project"})\n\n${p.overview || ""}\n\n**Role:** ${p.role || "Developer"}\n\n**Key Features:**\n${features}\n\n**Tech Stack:** ${tech}\n\n**Live Demo:** ${p.liveUrl || "N/A"}`;
         }
     }
 
-    // Category queries
-    if (q.includes("all project") || q.includes("list project") || q.includes("show project")) {
-        return `Raihan has **${projects.length} featured projects**:\\n\\n${projects.map((p, i) => `${i + 1}. **${p.title}** — ${p.category}`).join("\\n")}\\n\\nAsk about any specific project for details!`;
+    // List all projects
+    if (q.includes("list") || q.includes("all") || q.includes("show")) {
+        if (q.includes("project") || q.includes("work") || q.includes("portfolio")) {
+            const list = projects.map((p, i) => `${i + 1}. **${p.title}** — ${p.category || "Project"}`).join("\n");
+            return `Raihan has **${projects.length} featured projects**:\n\n${list}\n\nAsk about any specific project for details!`;
+        }
     }
 
-    if (q.includes("skill") || q.includes("tech stack") || q.includes("tools") || q.includes("technology")) {
+    // Skills / tech stack
+    if (q.includes("skill") || q.includes("tech") || q.includes("stack") || q.includes("technology") || q.includes("tool")) {
         const allTech = [...new Set(projects.flatMap(p => p.tech || []))];
-        return `**Core Skills & Technologies:**\\n\\n${allTech.map(t => `• ${t}`).join("\\n")}\\n\\nPlus: PWA, Accessibility (WCAG), SEO, CI/CD, Cloudflare Tunnel, Docker basics.`;
+        const list = allTech.map(t => `- ${t}`).join("\n");
+        return `**Core Skills and Technologies**\n\n${list}\n\nPlus: PWA, Accessibility (WCAG), SEO, CI/CD, Cloudflare Tunnel, Docker basics.`;
     }
 
+    // Experience / background
     if (q.includes("experience") || q.includes("year") || q.includes("background") || q.includes("who")) {
-        return `**Raihan Rafif** is a fullstack web developer with **5+ years** of hands-on experience building production-grade web applications.\\n\\nExpertise spans frontend (React, Next.js), backend (Node.js, Laravel, Go), mobile (React Native), and DevOps (Docker, Cloudflare). Passionate about clean code, performance, and user-centric design.`;
+        return `**Raihan Rafif** is a fullstack web developer with **5+ years** of hands-on experience building production-grade web applications.\n\nExpertise spans frontend (React, Next.js), backend (Node.js, Laravel, Go), mobile (React Native), and DevOps (Docker, Cloudflare). Passionate about clean code, performance, and user-centric design.`;
     }
 
     if (q.includes("contact") || q.includes("email") || q.includes("hire") || q.includes("rate") || q.includes("price")) {
-        return `Interested in working with Raihan? The best way is through the **Contact** page or filling out the inquiry form.\\n\\nRaihan is **available for new projects** — freelance, contract, or full-time remote roles.`;
+        return `Interested in working with Raihan? The best way is through the **Contact** page or filling out the inquiry form.\n\nRaihan is **available for new projects** - freelance, contract, or full-time remote roles.`;
     }
 
     if (q.includes("available") || q.includes("status") || q.includes("open")) {
-        return `Yes — Raihan is **currently available** for new projects and collaborations! 🚀\\n\\nFeel free to reach out with your project brief.`;
+        return `Yes - Raihan is **currently available** for new projects and collaborations!\n\nFeel free to reach out with your project brief.`;
     }
 
-    // Default
-    return `I'm Raihan's AI assistant. I can tell you about:\\n• His **projects** and case studies\\n• **Skills** and tech stack\\n• **Experience** and background\\n• **Availability** for new work\\n\\nWhat would you like to know?`;
+    // Default with suggestions
+    return `I\'m Raihan\'s AI assistant. I can tell you about:\n- His **projects** and case studies\n- **Skills** and tech stack\n- **Experience** and background\n- **Availability** for new work\n\nWhat would you like to know?`;
 }
 
 /* ========== MAIN HOOK ========== */

@@ -3280,7 +3280,7 @@ header .nav--active:hover {
   position: fixed;
   right: clamp(1.6rem, 3vw, 3.2rem);
   bottom: clamp(1.6rem, 3vw, 3.2rem);
-  z-index: 999;
+  z-index: 10001;
   width: 5.6rem;
   height: 5.6rem;
   border-radius: 50%;
@@ -3351,8 +3351,8 @@ header .nav--active:hover {
   position: fixed;
   bottom: 8rem;
   right: clamp(1.6rem, 3vw, 3.2rem);
-  z-index: 998;
-  background: rgb(28, 28, 28);
+  z-index: 99997;
+  background: #1c1c1c;
   color: white;
   padding: 1rem 1.6rem;
   border-radius: 1.2rem;
@@ -3380,7 +3380,7 @@ header .nav--active:hover {
   flex-direction: column;
   border-radius: 2.4rem;
   overflow: hidden;
-  z-index: 998;
+  z-index: 10002;
   background: rgb(28, 28, 28);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3729,16 +3729,43 @@ header .nav--active:hover {
     right: 0;
     left: 0;
     bottom: 0;
+    top: auto;
     width: 100%;
     max-width: 100%;
-    height: calc(100vh - 6rem);
+    height: 85vh;
+    height: 85dvh;
+    max-height: 85dvh;
     border-radius: 2rem 2rem 0 0;
+    z-index: 10002;
   }
   .chat-fab-modern {
-    right: 1.6rem;
-    bottom: 1.6rem;
+    right: clamp(1.2rem, 3vw, 1.6rem);
+    bottom: clamp(1.2rem, 3vw, 1.6rem);
     width: 5.2rem;
     height: 5.2rem;
+    z-index: 10001;
+  }
+  .chat-messages-modern {
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+  .chat-msg-bubble {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.4rem;
+  }
+  .chat-input-modern {
+    padding: 1rem 1.2rem;
+  }
+  .chat-suggestions {
+    padding: 0.8rem 1.2rem;
+    gap: 0.5rem;
+  }
+  .chat-suggestion-chip {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  }
+  .chat-header-modern {
+    padding: 1.2rem;
   }
 }
 
