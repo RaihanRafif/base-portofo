@@ -170,7 +170,7 @@ export default function useChat() {
                 // AI offline fallback
                 setMessages(prev => [...prev, {
                     role: "ai",
-                    content: "Sorry, I'm having trouble connecting to my knowledge base right now. 🔧\n\nPlease reach out directly via the Contact form, or try asking about Raihan's **projects**, **skills**, or **experience**.",
+                    content: "I\'m currently offline. Please reach out via the Contact form, or try asking about Raihan\'s **projects**, **skills**, or **experience**.",
                     time: formatTime(),
                     id: "ai_offline_" + Date.now(),
                 }]);
@@ -178,7 +178,7 @@ export default function useChat() {
         } catch (err) {
             setMessages(prev => [...prev, {
                 role: "ai",
-                content: "Sorry, something went wrong on my end. 😅\n\nPlease try again or reach out via the Contact form.",
+                content: "Something went wrong. Please try again or reach out via the Contact form.",
                 time: formatTime(),
                 id: "ai_err_" + Date.now(),
             }]);

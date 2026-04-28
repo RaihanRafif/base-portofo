@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import useChat from "../hooks/useChat.js";
 
 function formatMarkdown(text) {
-    // Simple markdown to HTML converter
     if (!text) return "";
     return text
         .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
@@ -10,6 +9,22 @@ function formatMarkdown(text) {
         .replace(/`(.+?)`/g, "<code>$1</code>")
         .replace(/• (.+)/g, "<li>$1</li>")
         .replace(/\\n/g, "<br/>");
+}
+
+// Monogram "R" avatar SVG
+function AvatarR() {
+    return (
+        <svg viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="url(#avatarGrad)" />
+            <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="white" fontSize="16" fontFamily="Inter, sans-serif" fontWeight="700" letterSpacing="-0.5">R</text>
+            <defs>
+                <linearGradient id="avatarGrad" x1="0" y1="0" x2="32" y2="32">
+                    <stop stopColor="#eb4141" />
+                    <stop offset="1" stopColor="#c73636" />
+                </linearGradient>
+            </defs>
+        </svg>
+    );
 }
 
 export default function ChatFab({ compact = true }) {
@@ -129,18 +144,13 @@ export default function ChatFab({ compact = true }) {
                     <header className="chat-header-modern">
                         <div className="chat-header-info">
                             <div className="chat-avatar">
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <rect width="24" height="24" rx="6" fill="#6366f1" />
-                                    <circle cx="9" cy="10" r="1.5" fill="white" />
-                                    <circle cx="15" cy="10" r="1.5" fill="white" />
-                                    <path d="M8 14c0 0 2 3 4 3s4-3 4-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-                                </svg>
+                                <AvatarR />
                                 {backendOnline && <span className="chat-avatar-status online"></span>}
                             </div>
                             <div>
                                 <h2 id="chat-title">Raihan's AI</h2>
                                 <span className="chat-meta">
-                                    {backendOnline ? "● AI-powered responses" : "⚡ Quick responses"}
+                                    {backendOnline ? "Ready to chat" : "Offline mode"}
                                 </span>
                             </div>
                         </div>
@@ -185,12 +195,7 @@ export default function ChatFab({ compact = true }) {
                             <div key={m.id || m.time} className={`chat-msg ${m.role === "user" ? "user" : "ai"}`}>
                                 {m.role === "ai" && (
                                     <div className="chat-msg-avatar">
-                                        <svg viewBox="0 0 24 24" fill="none">
-                                            <rect width="24" height="24" rx="6" fill="#6366f1" />
-                                            <circle cx="9" cy="10" r="1.5" fill="white" />
-                                            <circle cx="15" cy="10" r="1.5" fill="white" />
-                                            <path d="M8 14c0 0 2 3 4 3s4-3 4-3" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-                                        </svg>
+                                        <AvatarR />
                                     </div>
                                 )}
                                 <div className="chat-msg-bubble">
