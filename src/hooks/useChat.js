@@ -122,12 +122,12 @@ function localAnswer(query) {
         }
     }
 
-    // List all projects
-    if (q.includes("list") || q.includes("all") || q.includes("show")) {
-        if (q.includes("project") || q.includes("work") || q.includes("portfolio")) {
-            const list = projects.map((p, i) => `${i + 1}. **${p.title}** — ${p.category || "Project"}`).join("\n");
-            return `Raihan has **${projects.length} featured projects**:\n\n${list}\n\nAsk about any specific project for details!`;
-        }
+    // List all projects (broad natural language triggers)
+    const projectWords = q.includes("project") || q.includes("work") || q.includes("portfolio") || q.includes("case study");
+    const inquiryWords = q.includes("list") || q.includes("all") || q.includes("show") || q.includes("what") || q.includes("tell") || q.includes("built") || q.includes("build") || q.includes("kind") || q.includes("many") || q.includes("have") || q.includes("has") || q.includes("some") || q.includes("any") || q.includes("does") || q.includes("did");
+    if (projectWords && (inquiryWords || q.split(/\s+/).length <= 6)) {
+        const list = projects.map((p, i) => `${i + 1}. **${p.title}** — ${p.category || "Project"}`).join("\n");
+        return `Raihan has **${projects.length} featured projects**:\n\n${list}\n\nAsk about any specific project for details!`;
     }
 
     // Skills / tech stack
