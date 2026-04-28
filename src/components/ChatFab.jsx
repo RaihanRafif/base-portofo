@@ -74,7 +74,7 @@ export default function ChatFab({ compact = true }) {
     }
 
     function handleReset() {
-        resetChat();
+        clearChat();
         showToast("Conversation cleared 🧹");
     }
 
