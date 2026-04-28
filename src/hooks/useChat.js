@@ -216,7 +216,7 @@ export default function useChat() {
         isLoading,
         showTyping,
         sendMessage,
-        clearChat,
+        clearChat: resetChat,
         exportChat,
         backendOnline,
         backendChecked,
