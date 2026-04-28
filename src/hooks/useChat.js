@@ -93,7 +93,7 @@ export default function useChat() {
         let alive = true;
         (async () => {
             try {
-                const { controller, clear } = withTimeout(3000);
+                const { controller, clear } = withTimeout(3500);
                 const res = await fetch(`${API_BASE}/health`, { signal: controller.signal });
                 clear();
                 if (!alive) return;
@@ -108,6 +108,13 @@ export default function useChat() {
         })();
         return () => { alive = false; };
     }, []);
+
+    // Suggestions
+    const suggestions = [
+        "What projects has Raihan built?",
+        "What tech stack does he use?",
+        "How can I hire Raihan?",
+    ];
 
     // Auto-scroll trigger
     useEffect(() => {
@@ -213,5 +220,6 @@ export default function useChat() {
         exportChat,
         backendOnline,
         backendChecked,
+        suggestions,
     };
 }
