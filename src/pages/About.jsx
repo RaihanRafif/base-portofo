@@ -184,19 +184,16 @@ export default function About() {
 
             {/* CTA Section */}
             <section className="about-cta">
-                <div className="about-cta__container">
-                    <h2 className="about-cta__title">{t("about.cta.title")}</h2>
-                    <p className="about-cta__description">
-                        {t("about.cta.description1")} {t("about.cta.description2")}
-                    </p>
-                    <div className="about-cta__buttons">
-                        <a href="/contact" className="btn btn--primary">
-                            {t("buttons.getInTouch")}
-                        </a>
-                        <a href="/portfolio" className="btn btn--secondary">
-                            {t("buttons.viewMyWork")}
-                        </a>
-                    </div>
+                <h2 className="about-cta__title">
+                    <span className="cta-section__title-word">{t("about.cta.title")}</span>
+                </h2>
+                <div className="about-cta__buttons">
+                    <a href="/contact" className="btn btn--primary">
+                        {t("buttons.getInTouch")}
+                    </a>
+                    <a href="/portfolio" className="btn btn--secondary">
+                        {t("buttons.viewMyWork")}
+                    </a>
                 </div>
             </section>
         </main>

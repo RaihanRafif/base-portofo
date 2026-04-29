@@ -3,12 +3,32 @@ import useChat from "../hooks/useChat.js";
 
 function formatMarkdown(text) {
     if (!text) return "";
-    return text
+    let html = text
         .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
         .replace(/\*(.+?)\*/g, "<em>$1</em>")
         .replace(/`(.+?)`/g, "<code>$1</code>")
         .replace(/• (.+)/g, "<li>$1</li>")
         .replace(/\\n/g, "<br/>");
+
+    // Auto-link email addresses
+    html = html.replace(
+        /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g,
+        '<a href="mailto:$1" class="chat-link chat-link--email">$1</a>'
+    );
+
+    // Auto-link URLs (http/https)
+    html = html.replace(
+        /(https?:\/\/[^\s<>"']+)/g,
+        '<a href="$1" target="_blank" rel="noopener noreferrer" class="chat-link chat-link--url">$1</a>'
+    );
+
+    // Make "Contact" page references clickable (internal route hint)
+    html = html.replace(
+        /\b(Contact page|Contact form|halaman Contact|form kontak|halaman Kontak)\b/gi,
+        '<a href="/contact" class="chat-link chat-link--internal">$1</a>'
+    );
+
+    return html;
 }
 
 // Monogram "R" avatar SVG

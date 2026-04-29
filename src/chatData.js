@@ -157,47 +157,85 @@ export const CHAT_KNOWLEDGE = [
         },
     },
 
-    // ---- AVAILABILITY ----
+    // ---- COLLABORATE / HIRE / CONTACT (merged, smart) ----
     {
-        group: "availability",
-        weight: 0.9,
+        group: "collaborate",
+        weight: 0.95,
         triggers: {
             en: [
-                "available", "free", "open", "busy", "status",
-                "can i hire", "hire raihan", "work with you", "collaborate",
-                "looking for project", "taking project", "accept project",
+                // Direct hire intent
+                "how can i hire", "how do i hire", "i want to hire",
+                "hire raihan", "can i hire", "want to hire you",
+                // Collaboration intent
+                "collaborate", "work together", "work with you",
+                "let's work", "lets work", "want to work with",
+                "i have a project", "have a project for",
+                "can you help me build", "can you build",
+                "i need a website", "i need a developer",
+                "looking for a developer", "looking for developer",
+                "need developer", "need a developer",
+                "are you available for", "taking new project",
+                "accepting new project", "taking on new",
+                "want to partner", "partnership", "team up",
+                // Contact intent
+                "how to contact", "how can i contact", "how do i contact",
+                "how to reach", "how can i reach", "get in touch",
+                "contact you", "contact raihan", "reach you",
+                "email address", "what's your email", "your email",
+                // Rate/pricing intent
+                "how much do you charge", "what is your rate",
+                "what do you charge", "your rates", "hourly rate",
+                "freelance rate", "how much for", "price for",
+                "cost to build", "budget for project",
+                // Availability intent
+                "are you free", "you available", "currently available",
+                "open for work", "accepting clients", "taking clients",
+                "open to", "available for hire",
+                // Natural inquiry variants
+                "want to discuss a project", "discuss project",
+                "interested in your services", "need help with",
+                "can you take on", "can you work on",
+                "join my project", "join our team",
+                "let's build something", "lets build",
+                "i'm looking for someone to",
+                "are you the right person for",
             ],
             id: [
-                "tersedia", "available", "sibuk", "status",
-                "bisa dihire", "hire raihan", "kerja sama", "kolaborasi",
-                "cari proyek", "terima project", "menerima proyek",
+                // Hire intent (ID)
+                "bagaimana cara hire", "cara hire", "mau hire",
+                "ingin hire", "bisa hire", "bisa dihire",
+                // Kolaborasi intent
+                "kolaborasi", "kerja sama", "kerjasama",
+                "bekerja sama", "kolaborasi dengan",
+                "mau kolaborasi", "ingin kolaborasi",
+                "mari bekerja sama", "ayo kerja sama",
+                "saya punya proyek", "saya ada proyek",
+                "ada proyek untuk", "punya project",
+                "butuh developer", "butuh web developer",
+                "cari developer", "mencari developer",
+                "butuh bantuan buat", "bisa bantu buat",
+                "menerima proyek", "terima project baru",
+                // Kontak intent
+                "cara menghubungi", "bagaimana menghubungi",
+                "kontak raihan", "hubungi raihan",
+                "email raihan", "alamat email",
+                "nomor telepon", "nomor hp",
+                "cara kontak", "hubung",
+                // Harga/biaya intent
+                "berapa harga", "berapa biaya",
+                "berapa rate", "rate freelance",
+                "harga pembuatan", "biaya buat website",
+                "tarif", "ongkos",
+                // Ketersediaan intent
+                "apakah tersedia", "kamu tersedia",
+                "masih tersedia", "sedang tersedia",
+                "bisa terima proyek", "menerima klien",
+                "open project", "buka jasa",
             ],
         },
         response: {
-            en: `Yes - Raihan is **currently available** for new projects and collaborations! 🚀\n\nFeel free to reach out with your project brief.`,
-            id: `Ya - Raihan **sedang tersedia** untuk proyek dan kolaborasi baru! 🚀\n\nSilakan kirimkan brief proyek Anda.`,
-        },
-    },
-
-    // ---- CONTACT / HIRE ----
-    {
-        group: "contact",
-        weight: 0.9,
-        triggers: {
-            en: [
-                "contact", "email", "reach out", "get in touch",
-                "hire", "rate", "price", "cost", "fee",
-                "how much", "pricing", "budget",
-            ],
-            id: [
-                "kontak", "email", "hubungi", "hubung",
-                "hire", "rate", "harga", "biaya", "fee",
-                "berapa harga", "pricing", "budget",
-            ],
-        },
-        response: {
-            en: `Interested in working with Raihan? The best way is through the **Contact** page or filling out the inquiry form.\n\nRaihan is **available for new projects** - freelance, contract, or full-time remote roles.`,
-            id: `Tertarik bekerja dengan Raihan? Cara terbaik adalah melalui halaman **Contact** atau mengisi form inquiry.\n\nRaihan **tersedia untuk proyek baru** - freelance, kontrak, atau full-time remote.`,
+            en: `Great news — Raihan is **currently available** for new projects and collaborations! 🚀\n\n**Here's how to reach him:**\n\n1️⃣ **Contact Form** — The fastest way! Go to the **Contact** page and fill out the form with your project details. Raihan usually responds within 24 hours.\n\n2️⃣ **Email** — Reach out directly at **raihanrafif1202@gmail.com**\n\n3️⃣ **LinkedIn** — Connect at [linkedin.com/in/raihan-rafif](https://www.linkedin.com/in/raihan-rafif-756809202/)\n\nPro tip: When reaching out, share a brief about your project (goals, timeline, budget range) — that helps Raihan respond faster with relevant insights!\n\nIs there anything specific you'd like to know about his skills or past projects?`,
+            id: `Kabar baik — Raihan **sedang tersedia** untuk proyek dan kolaborasi baru! 🚀\n\n**Ini cara menghubunginya:**\n\n1️⃣ **Form Kontak** — Cara tercepat! Buka halaman **Contact** dan isi form dengan detail proyek Anda. Raihan biasanya membalas dalam 24 jam.\n\n2️⃣ **Email** — Hubungi langsung di **raihanrafif1202@gmail.com**\n\n3️⃣ **LinkedIn** — Terhubung di [linkedin.com/in/raihan-rafif](https://www.linkedin.com/in/raihan-rafif-756809202/)\n\nTips: Saat menghubungi, ceritakan sekilas tentang proyek Anda (tujuan, timeline, budget) — itu membantu Raihan merespons lebih cepat dengan insight yang relevan!\n\nAda yang spesifik yang ingin kamu tanyakan tentang skill atau proyek-proyeknya?`,
         },
     },
 
@@ -291,6 +329,15 @@ export function detectLanguage(query) {
     return idScore > enScore ? "id" : "en";
 }
 
+// ---- Helper: check if pattern matches as whole word(s) ----
+function wordMatch(text, pattern) {
+    if (text === pattern) return true;
+    // Escape regex special chars and match as whole words
+    const escaped = pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`\\b${escaped}\\b`, 'i');
+    return re.test(text);
+}
+
 // ---- MAIN MATCHING ENGINE ----
 export function staticAnswer(query) {
     const q = query.toLowerCase().trim();
@@ -304,23 +351,13 @@ export function staticAnswer(query) {
     let bestScore = 0;
     const JACCARD_THRESHOLD = 0.25;
 
-    // === 1. EXACT MATCH (case-insensitive) ===
-    for (const entry of CHAT_KNOWLEDGE) {
-        const triggers = entry.triggers[lang] || entry.triggers.en;
-        for (const pattern of triggers) {
-            if (q === pattern || q.includes(pattern)) {
-                return entry.response[lang] || entry.response.en;
-            }
-        }
-    }
-
-    // === 2. PROJECT-SPECIFIC MATCHING ===
+    // === 1. PROJECT-SPECIFIC MATCHING (priority over general knowledge) ===
     for (const proj of PROJECT_QA) {
-        // Exact project name/id match
+        // Exact project name/id match (word-boundary or id contains query)
         for (const pattern of proj.exactPatterns) {
             if (!pattern) continue;
             const p = pattern.toLowerCase();
-            if (q === p || q.includes(p) || p.includes(q)) {
+            if (wordMatch(q, p) || p.includes(q)) {
                 return proj.answer[lang] || proj.answer.en;
             }
         }
@@ -337,6 +374,16 @@ export function staticAnswer(query) {
     }
     best = null;
     bestScore = 0;
+
+    // === 2. EXACT MATCH (case-insensitive, word-boundary) ===
+    for (const entry of CHAT_KNOWLEDGE) {
+        const triggers = entry.triggers[lang] || entry.triggers.en;
+        for (const pattern of triggers) {
+            if (wordMatch(q, pattern)) {
+                return entry.response[lang] || entry.response.en;
+            }
+        }
+    }
 
     // === 3. KEYWORD GROUP MATCHING (weighted) ===
     for (const entry of CHAT_KNOWLEDGE) {
@@ -357,6 +404,49 @@ export function staticAnswer(query) {
     }
 
     if (best && bestScore >= 0.18) {
+        return best;
+    }
+
+    // === 3.5. KEYWORD SPOTTING (single-token intent match) ===
+    // Catches queries where Jaccard fails due to token dilution
+    // e.g. "can we partner up?" → "partner" matches collaborate group
+    const INTENT_KEYWORDS = {
+        collaborate: {
+            en: ["hire", "collaborate", "partner", "contact", "email", "rate", "price", "budget", "available", "freelance", "client", "work", "team", "join", "build", "let", "discuss", "need", "service", "help", "looking"],
+            id: ["hire", "kolaborasi", "kontak", "email", "harga", "biaya", "rate", "tersedia", "klien", "freelance", "kerja", "tim", "proyek", "butuh", "bantuan", "cari", "hubung"],
+        },
+        projects_list: {
+            en: ["project", "portfolio", "work", "case", "study", "built", "showcase"],
+            id: ["proyek", "portofolio", "karya", "studi", "kasus"],
+        },
+        skills: {
+            en: ["skill", "tech", "stack", "technology", "tool", "framework", "language", "programming"],
+            id: ["skill", "teknologi", "tools", "framework", "bahasa"],
+        },
+        experience: {
+            en: ["experience", "background", "career", "journey", "about", "raihan", "who", "introduce", "profile"],
+            id: ["pengalaman", "latar", "karir", "perjalanan", "tentang", "raihan", "siapa", "profil"],
+        },
+    };
+
+    best = null;
+    bestScore = 0;
+    for (const entry of CHAT_KNOWLEDGE) {
+        const keywords = INTENT_KEYWORDS[entry.group];
+        if (!keywords) continue;
+        const kw = keywords[lang] || keywords.en;
+        const matchCount = qTokens.filter(t => kw.includes(t)).length;
+        if (matchCount > 0) {
+            // Score based on how many intent keywords matched
+            const score = matchCount * 0.22 * entry.weight;
+            if (score > bestScore) {
+                bestScore = score;
+                best = entry.response[lang] || entry.response.en;
+            }
+        }
+    }
+
+    if (best && bestScore >= 0.22) {
         return best;
     }
 

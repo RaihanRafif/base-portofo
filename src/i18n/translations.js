@@ -59,7 +59,7 @@ export const translations = {
           "A showcase of projects I've built to demonstrate my skills and problem-solving abilities",
       },
       cta: {
-        title: "Let's Build Something Great Together",
+        title: "Have a Project in Mind?",
         description1: "I'm currently available for freelance opportunities.",
         description2:
           "Whether you have a project in mind or just want to connect, I'd love to hear from you.",
@@ -271,7 +271,7 @@ export const translations = {
           "Kumpulan proyek yang saya bangun untuk menunjukkan skill dan kemampuan problem-solving",
       },
       cta: {
-        title: "Ayo Bangun Sesuatu yang Keren Bersama",
+        title: "Punya Ide Proyek?",
         description1: "Saat ini saya tersedia untuk pekerjaan freelance.",
         description2:
           "Kalau Anda punya ide proyek atau sekadar ingin terhubung, saya senang mendengarnya.",
@@ -482,7 +482,7 @@ export const translations = {
           "スキルと問題解決力を示すために制作したプロジェクトの一部をご紹介します",
       },
       cta: {
-        title: "一緒に素晴らしいものを作りましょう",
+        title: "プロジェクトをお考えですか？",
         description1: "現在、フリーランス案件に対応しています。",
         description2: "プロジェクトの相談でも、気軽な連絡でも大歓迎です。",
       },

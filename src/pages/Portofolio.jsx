@@ -221,15 +221,12 @@ export default function Portfolio() {
 
             {/* CTA Section */}
             <section className="portfolio-cta">
-                <div className="portfolio-cta__container">
-                    <h2 className="portfolio-cta__title">{t("portfolio.cta.title")}</h2>
-                    <p className="portfolio-cta__description">
-                        {t("portfolio.cta.description")}
-                    </p>
-                    <Link to="/contact" className="btn btn--primary">
-                        {t("buttons.getInTouch")}
-                    </Link>
-                </div>
+                <h2 className="portfolio-cta__title">
+                    <span className="cta-section__title-word">{t("portfolio.cta.title")}</span>
+                </h2>
+                <Link to="/contact" className="btn btn--primary">
+                    {t("buttons.getInTouch")}
+                </Link>
             </section>
         </main>
     );

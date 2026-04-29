@@ -244,10 +244,13 @@ export default function Home() {
                             <p className="home__name-profile--sub">RAFIF</p>
                         </div>
                         <div className="home__text">
-                            <p>{t("home.heroLine1")}</p>
-                            <p>
-                                {t("home.heroLine2a")}<br /> {t("home.heroLine2b")}
+                            <p className="home__text-line">
+                                <span className="home__text-gradient">{t("home.heroLine2a")}</span>
                             </p>
+                            <p className="home__text-line home__text-line--second">
+                                {t("home.heroLine2b")}
+                            </p>
+                            <span className="home__text-accent" aria-hidden="true"></span>
                         </div>
 
                         <div className="home__currently-status" role="status" aria-live="polite">
@@ -291,41 +294,33 @@ export default function Home() {
                 CONTACT/CTA SECTION
             ======================================== */}
                 <section id="contact" className="cta-section">
-                    <div className="cta-section__container">
-                        <div className="cta-section__content">
-                            <h2 className="cta-section__title">{t("home.cta.title")}</h2>
-                            <p className="cta-section__description">
-                                {t("home.cta.description1")} {t("home.cta.description2")}
-                            </p>
+                    <h2 className="cta-section__title">
+                        <span className="cta-section__title-word">{t("home.cta.title")}</span>
+                    </h2>
 
-                            <div className="cta-section__buttons">
-                                <Link to="/contact" className="btn btn--primary">
-                                    {t("buttons.getInTouch")}
-                                </Link>
-                                <a
-                                    href="/(CV)Curriculum Vitae_Raihan Rafif.pdf"  // Path dari public folder
-                                    download="Raihan-Rafif-CV.pdf"  // Nama file saat di-download
-                                    className="btn btn--secondary"
-                                >
-                                    {t("buttons.downloadResume")}
-                                </a>
-                            </div>
+                    <div className="cta-section__buttons">
+                        <Link to="/contact" className="btn btn--primary">
+                            {t("buttons.getInTouch")}
+                        </Link>
+                        <a
+                            href="/(CV)Curriculum Vitae_Raihan Rafif.pdf"
+                            download="Raihan-Rafif-CV.pdf"
+                            className="btn btn--secondary"
+                        >
+                            {t("buttons.downloadResume")}
+                        </a>
+                    </div>
 
-                            <div className="cta-section__socials">
-                                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                                    <i className="fab fa-github"></i>
-                                </a>
-                                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                    <i className="fab fa-linkedin"></i>
-                                </a>
-                                <a href="mailto:your.email@example.com" aria-label="Email">
-                                    <i className="fas fa-envelope"></i>
-                                </a>
-                                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                                    <i className="fab fa-twitter"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="cta-section__socials">
+                        <a href="https://github.com/RaihanRafif" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i className="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/raihan-rafif" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i className="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:raihanrafif1202@gmail.com" aria-label="Email">
+                            <i className="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </section>
 

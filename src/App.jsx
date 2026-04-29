@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import ScrollToHash from "./components/ScrollToHash";
@@ -11,24 +11,27 @@ import Portfolio from "./pages/Portofolio.jsx";
 import ChatFab from "./components/ChatFab.jsx";
 
 export default function App() {
+  const location = useLocation();
   return (
     <>
       <ScrollToHash />
       <ScrollToTop />
       <div className="container">
         <Header logoText="RAIHAN" logoHref="/" />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-        </Routes>
+        <div className="page-transition" key={location.pathname}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+          </Routes>
+        </div>
       </div>
 
       <ChatFab />
 
-      {/* <footer id="contact" className="bottom-container" role="contentinfo">
+      <footer id="contact" className="bottom-container" role="contentinfo">
         <div className="main-bottom-section">
           <div className="currently-status" aria-live="polite">
             <span className="icon-status" aria-hidden="true"></span>
@@ -42,26 +45,26 @@ export default function App() {
 
         <div className="bottom-nav">
           <div className="icon bottom-icon">
-            <Link to="/" aria-label="Raihan home">RAIHAN</Link>
-            </div>
+            <a href="/" aria-label="Raihan home">RAIHAN</a>
+          </div>
 
           <nav className="navs" aria-label="Footer">
-            <Link className="template-div-1 nav" to="/">Home</Link>
-            <Link className="template-div-1 nav" to="/about">About</Link>
-            <Link className="template-div-1 nav" to="/portfolio">Portfolio</Link>
-            <Link className="template-div-1 nav" to="/contact">Contact</Link>
+            <a className="template-div-1 nav" href="/">Home</a>
+            <a className="template-div-1 nav" href="/about">About</a>
+            <a className="template-div-1 nav" href="/portfolio">Portfolio</a>
+            <a className="template-div-1 nav" href="/contact">Contact</a>
           </nav>
 
           <div className="sosmed-icons">
-            <Link className="icon" href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+            <a className="icon" href="https://github.com/RaihanRafif" target="_blank" rel="noopener" aria-label="GitHub">
               <i className="fa-brands fa-github" aria-hidden="true"></i>
-            </Link>
-            <Link className="icon" href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            </a>
+            <a className="icon" href="https://www.linkedin.com/in/raihan-rafif-756809202/" target="_blank" rel="noopener" aria-label="LinkedIn">
               <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
-            </Link>
+            </a>
           </div>
         </div>
-      </footer> */}
+      </footer>
     </>
   );
 }
