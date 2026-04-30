@@ -9,7 +9,12 @@ const projects = portfolioData.projects || [];
 
 // ---- Helper: tokenize and clean ----
 function tokenize(text) {
-    return text.toLowerCase()
+    const raw = typeof text === "string"
+        ? text
+        : text && typeof text === "object"
+            ? (text.en || text.id || "")
+            : "";
+    return raw.toLowerCase()
         .replace(/[^\w\s]/g, " ")
         .split(/\s+/)
         .filter(w => w.length >= 2);
@@ -27,22 +32,30 @@ function jaccard(a, b) {
 function buildProjectAnswers() {
     const out = [];
     for (const p of projects) {
-        const titleTokens = tokenize(p.title || "");
-        const idTokens = tokenize(p.id || "");
-        const features = (p.keyfeatures || []).slice(0, 5).map(f => `• ${f}`).join("\n");
+        const titleStr = p.title?.en || p.title?.id || "";
+        const idStr = p.id || "";
+        const categoryStr = p.category?.en || p.category?.id || "Project";
+        const overviewStr = p.overview?.en || p.overview?.id || "";
+        const roleStr = p.role?.en || p.role?.id || "Developer";
+        const clientStr = p.client?.en || p.client?.id || "";
+
+        const titleTokens = tokenize(titleStr);
+        const idTokens = tokenize(idStr);
+        const features = (p.keyfeatures?.en || []).slice(0, 5).map(f => `• ${f}`).join("\n");
+        const featuresId = (p.keyfeatures?.id || []).slice(0, 5).map(f => `• ${f}`).join("\n");
         const tech = (p.tech || []).join(", ");
 
-        const enAnswer = `**${p.title}** (${p.category || "Project"})\n\n${p.overview || ""}\n\n**Role:** ${p.role || "Developer"}\n\n**Key Features:**\n${features}\n\n**Tech Stack:** ${tech}\n\n**Live Demo:** ${p.liveUrl || "N/A"}`;
+        const enAnswer = `**${titleStr}** (${categoryStr})\n\n${overviewStr}\n\n**Role:** ${roleStr}\n\n**Key Features:**\n${features}\n\n**Tech Stack:** ${tech}\n\n**Live Demo:** ${p.liveUrl || "N/A"}`;
 
-        const idAnswer = `**${p.title}** (${p.category || "Proyek"})\n\n${p.overview || ""}\n\n**Peran:** ${p.role || "Developer"}\n\n**Fitur Utama:**\n${features}\n\n**Tech Stack:** ${tech}\n\n**Live Demo:** ${p.liveUrl || "N/A"}`;
+        const idAnswer = `**${titleStr}** (${p.category?.id || "Proyek"})\n\n${p.overview?.id || overviewStr}\n\n**Peran:** ${p.role?.id || roleStr}\n\n**Fitur Utama:**\n${featuresId}\n\n**Tech Stack:** ${tech}\n\n**Live Demo:** ${p.liveUrl || "N/A"}`;
 
         // Multiple trigger groups per project
         out.push({
             tokens: [...new Set([...idTokens, ...titleTokens])],
             exactPatterns: [
-                p.id,
-                p.title,
-                p.title?.replace(/[^\w\s]/g, " ")?.replace(/\s+/g, " ")?.trim(),
+                idStr,
+                titleStr,
+                titleStr.replace(/[^\w\s]/g, " ")?.replace(/\s+/g, " ")?.trim(),
                 ...titleTokens.filter(t => t.length >= 3),
             ],
             answer: { en: enAnswer, id: idAnswer },
@@ -55,8 +68,8 @@ const PROJECT_QA = buildProjectAnswers();
 
 const allTech = [...new Set(projects.flatMap(p => p.tech || []))];
 const techList = allTech.map(t => `• ${t}`).join("\n");
-const projectList = projects.map((p, i) => `${i + 1}. **${p.title}** — ${p.category || "Project"}`).join("\n");
-const projectListId = projects.map((p, i) => `${i + 1}. **${p.title}** — ${p.category || "Proyek"}`).join("\n");
+const projectList = projects.map((p, i) => `${i + 1}. **${p.title?.en || p.title?.id || ""}** — ${p.category?.en || p.category?.id || "Project"}`).join("\n");
+const projectListId = projects.map((p, i) => `${i + 1}. **${p.title?.id || p.title?.en || ""}** — ${p.category?.id || p.category?.en || "Proyek"}`).join("\n");
 
 // ---- GLOBAL STATIC Q&A ----
 export const CHAT_KNOWLEDGE = [
