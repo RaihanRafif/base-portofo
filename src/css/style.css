@@ -569,14 +569,45 @@ header .nav--active:hover {
     font-size: clamp(4rem, 12vw, 6rem);
   }
 }
+header .logo a {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+header .logo a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #eb4141, transparent);
+  transition: width 0.35s ease, left 0.35s ease;
+}
+header .logo a:hover {
+  color: rgba(255,255,255,0.9);
+}
+header .logo a:hover::after {
+  width: 100%;
+  left: 0;
+}
+/* Hero name breathe animation */
 .home__name-profile p {
   margin: 0;
+  letter-spacing: 0;
+  animation: nameBreathe 5s ease-in-out infinite;
 }
 .home__name-profile--sub {
   background-color: rgba(235, 65, 65, 0.493);
   width: fit-content;
   transform: rotate(-3deg);
   padding: 0 1.6rem;
+  animation: nameBreathe 5s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+@keyframes nameBreathe {
+  0%, 100% { letter-spacing: 0; }
+  50% { letter-spacing: 0.08em; }
 }
 .home__text {
   font-size: clamp(1.6rem, 1.5vw, 2rem);
