@@ -130,7 +130,7 @@ app.post("/api/chat", async (req, res) => {
 /* ========== PRODUCTION STATIC ========== */
 if (IS_PROD) {
     app.use(express.static("dist"));
-    app.get("*", (_req, res) => {
+    app.get("{*splat}", (_req, res) => {
         res.sendFile("dist/index.html", { root: process.cwd() });
     });
 }

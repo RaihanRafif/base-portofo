@@ -256,6 +256,14 @@ export default function Home() {
                         <div className="home__currently-status" role="status" aria-live="polite">
                             <span className="icon-status" aria-hidden="true"></span>
                             <span className="status">{t("home.status")}</span>
+                            <span className="status-smiley" aria-hidden="true">
+                              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round">
+                                <circle cx="10" cy="10" r="9" opacity={0.7} />
+                                <ellipse className="smiley-eye-l" cx="7" cy="8" rx="1.5" ry="2" fill="currentColor" stroke="none" />
+                                <ellipse className="smiley-eye-r" cx="13" cy="8" rx="1.5" ry="2" fill="currentColor" stroke="none" />
+                                <path d="M5 13 Q10 17 15 13" />
+                              </svg>
+                            </span>
                         </div>
                     </div>
 
