@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Link } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import ScrollToHash from "./components/ScrollToHash";
@@ -53,14 +53,14 @@ export default function App() {
 
         <div className="bottom-nav">
           <div className="icon bottom-icon">
-            <a href="/" aria-label="Raihan home">RAIHAN</a>
+            <Link to="/" aria-label="Raihan home">RAIHAN</Link>
           </div>
 
           <nav className="navs" aria-label="Footer">
-            <a className="template-div-1 nav" href="/">Home</a>
-            <a className="template-div-1 nav" href="/about">About</a>
-            <a className="template-div-1 nav" href="/portfolio">Portfolio</a>
-            <a className="template-div-1 nav" href="/contact">Contact</a>
+            <Link className="template-div-1 nav" to="/">Home</Link>
+            <Link className="template-div-1 nav" to="/about">About</Link>
+            <Link className="template-div-1 nav" to="/portfolio">Portfolio</Link>
+            <Link className="template-div-1 nav" to="/contact">Contact</Link>
           </nav>
 
           <div className="sosmed-icons">
