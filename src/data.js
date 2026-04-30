@@ -1,40 +1,19 @@
-// Final English version of the portfolio data
+// Multilingual portfolio data (en/id/ja)
 export const portfolioData = {
     projects: [
         {
             "id": "kedai-kopi-ujung-langit",
             "date": "2026",
-            "title": "Kedai Kopi Di Ujung Langit - Landing Page",
-            "category": "WEB DEVELOPMENT",
-            "summary": "A clean, modern, and SEO-optimized landing page for a specialty coffee shop in Yogyakarta featuring menu showcase, gallery, location mapping, and direct WhatsApp integration for reservations.",
-            "client": "Kedai Kopi Di Ujung Langit (Personal Showcase)",
-            "overview": "Developed a fully responsive landing page for 'Kedai Kopi Di Ujung Langit', a specialty coffee shop in Sorosutan, Umbulharjo, Yogyakarta. The website features a dark, elegant design with smooth scroll animations, optimized performance, and direct WhatsApp integration for customer reservations. Built entirely with vanilla HTML, CSS, and JavaScript without any frameworks, focusing on lightweight, fast-loading, and accessible user experience.",
-            "role": "Frontend Developer",
-            "mission": "The goal of this project was to create a professional, high-converting landing page that effectively showcases the coffee shop's offerings while providing seamless customer interaction through WhatsApp integration. The website was designed to be lightweight, SEO-friendly, and easy to maintain without requiring complex frameworks or backend infrastructure.",
-            "impact": "The landing page successfully established a professional online presence for the coffee shop, making it easier for customers to discover the menu, view the venue, and make reservations. The direct WhatsApp integration streamlined the booking process, eliminating friction and increasing customer engagement. The lightweight design ensures fast loading times and excellent user experience across all devices.",
-            "contributions": [
-                "Designed and developed a fully responsive landing page with modern UI/UX principles and dark theme aesthetic.",
-                "Implemented smooth scroll-reveal animations using Intersection Observer API for enhanced user engagement.",
-                "Created an interactive contact form with client-side validation that integrates directly with WhatsApp.",
-                "Optimized images using WebP format with JPG fallback for improved performance and compatibility.",
-                "Implemented comprehensive SEO optimization including meta tags, Open Graph, and structured data (JSON-LD).",
-                "Built a mobile-first responsive design with hamburger navigation and smooth transitions.",
-                "Developed an accessible interface following WCAG guidelines with proper ARIA labels and keyboard navigation."
-            ],
-            "keyfeatures": [
-                "Responsive Design: Fully responsive layout that adapts seamlessly across desktop, tablet, and mobile devices.",
-                "Dark Theme UI: Modern dark theme with elegant gradient backgrounds and amber/green accent colors.",
-                "Scroll Reveal Animations: Smooth fade-in and slide-up animations triggered by Intersection Observer API.",
-                "WhatsApp Integration: Contact form that directly opens WhatsApp with pre-filled reservation message.",
-                "Interactive Menu Display: Well-organized menu cards showing drinks, filter coffee, and snacks with pricing.",
-                "Gallery Section: Asymmetric grid layout showcasing venue atmosphere with optimized images.",
-                "Google Maps Integration: Embedded map with exact location coordinates and direct navigation link.",
-                "FAQ Accordion: Expandable FAQ section using native HTML details/summary elements.",
-                "SEO Optimized: Complete meta tags, Open Graph, Twitter Cards, and structured data for search engines.",
-                "Performance Optimized: Image preloading, lazy loading, WebP support, and minimal JavaScript.",
-                "Accessibility Features: Skip link, ARIA labels, semantic HTML, and keyboard navigation support.",
-                "Sticky Navigation: Header that remains visible on scroll with backdrop blur effect."
-            ],
+            "title": {"en": "Kedai Kopi Di Ujung Langit - Landing Page", "id": "Kedai Kopi Di Ujung Langit - Landing Page", "ja": "Kedai Kopi Di Ujung Langit - ランディングページ"},
+            "category": {"en": "WEB DEVELOPMENT", "id": "PENGEMBANGAN WEB", "ja": "ウェブ開発"},
+            "summary": {"en": "A clean, modern, and SEO-optimized landing page for a specialty coffee shop in Yogyakarta featuring menu showcase, gallery, location mapping, and direct WhatsApp integration for reservations.", "id": "Landing page modern, bersih, dan SEO-optimized untuk kedai kopi khas di Yogyakarta dengan tampilan menu, galeri, peta lokasi, dan integrasi WhatsApp langsung untuk reservasi.", "ja": "ジョグジャカルタのスペシャルティコーヒーショップ向けの、メニュー展示、ギャラリー、地図、および予約用のWhatsApp連携を備えた、クリーンでモダンでSEO最適化されたランディングページ。"},
+            "client": {"en": "Kedai Kopi Di Ujung Langit (Personal Showcase)", "id": "Kedai Kopi Di Ujung Langit (Showcase Pribadi)", "ja": "Kedai Kopi Di Ujung Langit（個人展示）"},
+            "overview": {"en": "Developed a fully responsive landing page for 'Kedai Kopi Di Ujung Langit', a specialty coffee shop in Sorosutan, Umbulharjo, Yogyakarta. The website features a dark, elegant design with smooth scroll animations, optimized performance, and direct WhatsApp integration for customer reservations. Built entirely with vanilla HTML, CSS, and JavaScript without any frameworks, focusing on lightweight, fast-loading, and accessible user experience.", "id": "Mengembangkan landing page yang responsif sepenuhnya untuk 'Kedai Kopi Di Ujung Langit', sebuah kedai kopi khas di Sorosutan, Umbulharjo, Yogyakarta. Situs web ini memiliki desain gelap dan elegan dengan animasi scroll yang halus, performa yang dioptimalkan, dan integrasi WhatsApp langsung untuk reservasi pelanggan. Dibangun sepenuhnya dengan HTML, CSS, dan JavaScript vanilla tanpa framework apapun, dengan fokus pada pengalaman pengguna yang ringan, cepat dimuat, dan dapat diakses.", "ja": "ジョグジャカルタのソロスツタン、ウンブルハルジョにあるスペシャルティコーヒーショップ「Kedai Kopi Di Ujung Langit」向けに、完全にレスポンシブなランディングページを開発しました。Webサイトはダークでエレガントなデザインにスムーズなスクロールアニメーション、最適化されたパフォーマンス、そして顧客予約用の直接WhatsApp連携を備えています。軽量・高速・快適なユーザー体験に焦点を当て、フレームワークを一切使用せずバニラHTML/CSS/ JavaScriptのみで構築されています。"},
+            "role": {"en": "Frontend Developer", "id": "Frontend Developer", "ja": "フロントエンド開発者"},
+            "mission": {"en": "The goal of this project was to create a professional, high-converting landing page that effectively showcases the coffee shop's offerings while providing seamless customer interaction through WhatsApp integration. The website was designed to be lightweight, SEO-friendly, and easy to maintain without requiring complex frameworks or backend infrastructure.", "id": "Tujuan dari proyek ini adalah untuk membuat landing page profesional dengan konversi tinggi yang secara efektif menampilkan penawaran kedai kopi sambil menyediakan interaksi pelanggan yang mulus melalui integrasi WhatsApp. Website ini dirancang untuk menjadi ringan, ramah SEO, dan mudah untuk dipelihara tanpa memerlukan framework kompleks atau infrastruktur backend.", "ja": "このプロジェクトの目標は、コーヒーショップの商品を効果的に紹介しつつ、WhatsApp連携を通じてシームレスな顧客とのインタラクションを提供する、プロフェッショナルでコンバージョンの高いランディングページを作成することでした。Webサイトは軽量でSEOフレンドリーに設計され、複雑なフレームワークやバックエンドインフラを必要とせず、メンテナンスも簡単です。"},
+            "impact": {"en": "The landing page successfully established a professional online presence for the coffee shop, making it easier for customers to discover the menu, view the venue, and make reservations. The direct WhatsApp integration streamlined the booking process, eliminating friction and increasing customer engagement. The lightweight design ensures fast loading times and excellent user experience across all devices.", "id": "Landing page ini berhasil membentuk kehadiran online yang profesional untuk kedai kopi, memudahkan pelanggan untuk menemukan menu, melihat venue, dan melakukan reservasi. Integrasi WhatsApp langsung menyederhanakan proses pemesanan, menghilangkan hambatan, dan meningkatkan keterlibatan pelanggan. Desain yang ringan memastikan waktu muat yang cepat dan pengalaman pengguna yang sangat baik di semua perangkat.", "ja": "ランディングページは、コーヒーショップのプロフェッショナルなオンラインプレゼンスを確立し、顧客がメニューを見つけやすく、会場を閲覧し、予約できるようにしました。直接WhatsApp連携により予約プロセスが効率化され、摩擦がなくなり顧客エンゲージメントが向上しました。軽量なデザインにより、すべてのデバイスで高速な読み込みと優れたユーザー体験を実現しています。"},
+            "contributions": {"en": ["Designed and developed a fully responsive landing page with modern UI/UX principles and dark theme aesthetic.", "Implemented smooth scroll-reveal animations using Intersection Observer API for enhanced user engagement.", "Created an interactive contact form with client-side validation that integrates directly with WhatsApp.", "Optimized images using WebP format with JPG fallback for improved performance and compatibility.", "Implemented comprehensive SEO optimization including meta tags, Open Graph, and structured data (JSON-LD).", "Built a mobile-first responsive design with hamburger navigation and smooth transitions.", "Developed an accessible interface following WCAG guidelines with proper ARIA labels and keyboard navigation."], "id": ["Merancang dan mengembangkan landing page responsif sepenuhnya dengan prinsip UI/UX modern dan estetika tema gelap.", "Mengimplementasikan animasi scroll-reveal yang halus menggunakan Intersection Observer API untuk meningkatkan keterlibatan pengguna.", "Membuat formulir kontak interaktif dengan validasi di sisi klien yang terintegrasi langsung dengan WhatsApp.", "Mengoptimalkan gambar menggunakan format WebP dengan fallback JPG untuk performa dan kompatibilitas yang lebih baik.", "Mengimplementasikan optimasi SEO komprehensif termasuk meta tag, Open Graph, dan structured data (JSON-LD).", "Membangun desain responsif dengan pendekatan mobile-first yang memiliki navigasi hamburger dan transisi halus.", "Mengembangkan antarmuka yang dapat diakses sesuai panduan WCAG dengan ARIA label dan navigasi keyboard yang tepat."], "ja": ["モダンなUI/UX原則とダークテーマのデザインで完全にレスポンシブなランディングページを設計・開発。", "交差監視API（Intersection Observer API）を使用したスムーズなスクロール表示アニメーションを実装し、ユーザーとのエンゲージメントを高めました。", "WhatsAppと直接統合される、クライアントサイド検証付きの対話型お問い合わせフォームを作成しました。", "WebP形式で画像を最適化し、JPGフォールバックによりパフォーマンスと互換性を向上させました。", "メタタグ、Open Graph、および構造化データ（JSON-LD）を含む包括的なSEO最適化を実装しました。", "ハンバーガーメニューとスムーズなトランジションを備えた、モバイルファーストのレスポンシブデザインを構築しました。", "WCAGガイドラインに準拠し、適切なARIAラベルとキーボードナビゲーションを含む、アクセシビリティの高いインターフェースを開発しました。"]},
+            "keyfeatures": {"en": ["Responsive Design: Fully responsive layout that adapts seamlessly across desktop, tablet, and mobile devices.", "Dark Theme UI: Modern dark theme with elegant gradient backgrounds and amber/green accent colors.", "Scroll Reveal Animations: Smooth fade-in and slide-up animations triggered by Intersection Observer API.", "WhatsApp Integration: Contact form that directly opens WhatsApp with pre-filled reservation message.", "Interactive Menu Display: Well-organized menu cards showing drinks, filter coffee, and snacks with pricing.", "Gallery Section: Asymmetric grid layout showcasing venue atmosphere with optimized images.", "Google Maps Integration: Embedded map with exact location coordinates and direct navigation link.", "FAQ Accordion: Expandable FAQ section using native HTML details/summary elements.", "SEO Optimized: Complete meta tags, Open Graph, Twitter Cards, and structured data for search engines.", "Performance Optimized: Image preloading, lazy loading, WebP support, and minimal JavaScript.", "Accessibility Features: Skip link, ARIA labels, semantic HTML, and keyboard navigation support.", "Sticky Navigation: Header that remains visible on scroll with backdrop blur effect."], "id": ["Desain Responsif: Layout yang sepenuhnya responsif dan beradaptasi mulus di desktop, tablet, dan perangkat mobile.", "UI Tema Gelap: Tema gelap modern dengan latar gradasi yang elegan dan warna aksen amber/hijau.", "Animasi Scroll Reveal: Animasi fade-in dan slide-up yang halus yang ditrigger oleh Intersection Observer API.", "Integrasi WhatsApp: Formulir kontak yang langsung membuka WhatsApp dengan pesan reservasi yang sudah terisi.", "Tampilan Menu Interaktif: Kartu menu yang teratur rapi menampilkan minuman, kopi filter, dan cemilan beserta harganya.", "Bagian Galeri: Layout grid asimetris yang menampilkan atmosfer tempat dengan gambar yang dioptimalkan.", "Integrasi Google Maps: Peta terembed dengan koordinat lokasi persis dan tautan navigasi langsung.", "FAQ Accordion: Bagian FAQ yang dapat diekspand menggunakan elemen details/summary HTML native.", "SEO Optimized: Meta tag lengkap, Open Graph, Twitter Cards, dan structured data untuk mesin pencari.", "Performa Dioptimalkan: Preloading gambar, lazy loading, dukungan WebP, dan JavaScript minimal.", "Fitur Aksesibilitas: Skip link, ARIA labels, semantic HTML, dan support navigasi keyboard.", "Navigasi Sticky: Header yang tetap terlihat saat scroll dengan efek backdrop blur."], "ja": ["レスポンシブデザイン: デスクトップ、タブレット、モバイル端末にシームレスに対応する完全レスポンシブレイアウト。", "ダークテーマUI: 優雅なグラデーション背景とアンバー/グリーンのアクセントカラーを備えたモダンなダークテーマ。", "スクロール表示アニメーション: 交差監視APIでトリガーされるスムーズなフェードイン・スライドアップアニメーション。", "WhatsApp統合: 入力済み予約メッセージ付きで直接WhatsAppを開くお問い合わせフォーム。", "インタラクティブなメニュー表示: 飲み物、ドリップコーヒー、お菓子と価格を表示する整然としたメニューカード。", "ギャラリーセクション: 最適化された画像で会場の雰囲気を紹介する非対称グリッドレイアウト。", "Google Maps統合: 正確な位置座標と直接ナビゲーションリンクを備えた埋め込みマップ。", "FAQアコーディオン: ネイティブHTML details/summary要素を使用した展開可能なFAQセクション。", "SEO最適化: メタタグ、Open Graph、Twitter Card、構造化データを完全に実装した検索エンジン対策。", "パフォーマンス最適化: 画像プリロード、遅延読み込み、WebP対応、最小限のJavaScript。", "アクセシビリティ機能: スキップリンク、ARIAラベル、セマンティックHTML、キーボードナビゲーション対応。", "ステッキーナビゲーション: スクロール時に表示され続け、背景ぼかし効果を備えたヘッダー。"]},
             "assets": {
                 "video": null,
                 "youtubeId": null,
@@ -68,39 +47,16 @@ export const portfolioData = {
         {
             "id": "inventory-berkah-jaya",
             "date": "2026",
-            "title": "Inventory Management System",
-            "category": "FULLSTACK WEB DEVELOPMENT",
-            "summary": "A full-featured inventory & POS web app with dual light/dark theme for a grocery store (toko sembako), featuring role-based access, product & user management, supplier handling, purchase/sales transactions with automatic stock control, and analytics dashboards with charts.",
-            "client": "Toko Sembako Berkah Jaya (Personal Showcase)",
-            "overview": "Built an Inventory Management System for a small-to-mid retail grocery store workflow: master data (products, categories, suppliers, users), POS checkout, purchases & sales transactions, and analytical reporting. The app uses Next.js 14 (App Router) with TypeScript, MySQL + Sequelize for data persistence, NextAuth for authentication, and interactive charts (Recharts/Chart.js) for dashboard insights. Database setup is supported by fixed SQL schema + seed data for fast local onboarding.",
-            "role": "Fullstack Developer",
-            "mission": "Create a reliable internal system that reduces stock mistakes and speeds up daily operations: cashier transactions (POS), incoming stock (purchases), outgoing stock (sales), and real-time inventory visibility. The project emphasizes clean API design, RBAC security, and dashboards that help store owners make quick decisions.",
-            "impact": "Improves operational accuracy by enforcing stock validation on POS, centralizing product data, and providing clear performance analytics (revenue, profit, transaction trends). With seed + schema scripts, the app is easy to bootstrap for testing, demos, and iterative development.",
-            "contributions": [
-                "Designed the app architecture using Next.js 14 App Router with TypeScript and a modular dashboard layout with sidebar navigation.",
-                "Implemented authentication flow using NextAuth (Credentials Provider) with protected routes and session management.",
-                "Built role-based navigation (RBAC) to restrict access for admin, manager, and staff users.",
-                "Developed POS flow: product search & filter by category, cart operations, real-time stock validation, discount options (percentage/fixed), and payment modal.",
-                "Created CRUD modules for products, categories, suppliers, users, purchases, and sales through REST-style API routes.",
-                "Built user management with role assignment and activity tracking.",
-                "Implemented category management with custom ordering, description fields, and status toggle (active/inactive).",
-                "Integrated analytics endpoints and dashboards with interactive charts (Recharts + Chart.js) for revenue, profit, and transaction trends.",
-                "Prepared database schema + seed data (fixed SQL) and Sequelize models for consistent local setup.",
-                "Added API documentation support using Swagger (swagger-jsdoc + swagger-ui)."
-            ],
-            "keyfeatures": [
-                "Authentication & RBAC: Secure login with role-based navigation for admin, manager, and staff.",
-                "Dashboard: KPI cards, revenue trends, transaction analytics, and best-selling product charts.",
-                "POS Module: Category-filtered product grid, cart management, real-time stock validation, discount options (percentage/fixed), and payment modal.",
-                "Inventory Control: Product catalog with search, category & stock status filtering, low-stock alerts, and pagination.",
-                "Category Management: Organize products with custom order, descriptions, and active/inactive status toggle.",
-                "User Management: CRUD users with role assignment and activity tracking.",
-                "Transactions: Purchases & sales records with detail items, totals, and status tracking.",
-                "Analytics Charts: Revenue, profit, and transaction trends with Recharts + Chart.js.",
-                "Database Ready: MySQL + Sequelize with fixed schema + seed scripts for fast onboarding and demos.",
-                "API Documentation: Swagger endpoint for easier API exploration and collaboration.",
-                "Modern UI: Customizable light/dark mode, Tailwind-based responsive dashboard layout optimized for desktop management."
-            ],
+            "title": {"en": "Inventory Management System", "id": "Sistem Manajemen Inventori", "ja": "在庫管理システム"},
+            "category": {"en": "FULLSTACK WEB DEVELOPMENT", "id": "PENGEMBANGAN WEB FULLSTACK", "ja": "フルスタックウェブ開発"},
+            "summary": {"en": "A full-featured inventory & POS web app with dual light/dark theme for a grocery store (toko sembako), featuring role-based access, product & user management, supplier handling, purchase/sales transactions with automatic stock control, and analytics dashboards with charts.", "id": "Aplikasi web inventori & POS full-fitur dengan tema terang/gelap untuk toko sembako, dilengkapi akses berbasis peran, manajemen produk & pengguna, pengelolaan supplier, transaksi pembelian/penjualan dengan kontrol stok otomatis, dan dashboard analitik dengan grafik.", "ja": "食料品店（toko sembako）向けにライト/ダーク両テーマを備えた完全機能の在庫・POS Webアプリ。役割ベースのアクセス制御、商品・ユーザー管理、仕入先管理、自動在庫管理付き購入/販売処理、およびチャート付き分析ダッシュボードを搭載しています。"},
+            "client": {"en": "Toko Sembako Berkah Jaya (Personal Showcase)", "id": "Toko Sembako Berkah Jaya (Showcase Pribadi)", "ja": "Toko Sembako Berkah Jaya（個人展示）"},
+            "overview": {"en": "Built an Inventory Management System for a small-to-mid retail grocery store workflow: master data (products, categories, suppliers, users), POS checkout, purchases & sales transactions, and analytical reporting. The app uses Next.js 14 (App Router) with TypeScript, MySQL + Sequelize for data persistence, NextAuth for authentication, and interactive charts (Recharts/Chart.js) for dashboard insights. Database setup is supported by fixed SQL schema + seed data for fast local onboarding.", "id": "Membangun Sistem Manajemen Inventori untuk workflow toko sembako skala kecil-menengah: master data (produk, kategori, supplier, pengguna), checkout POS, transaksi pembelian & penjualan, dan pelaporan analitis. Aplikasi menggunakan Next.js 14 (App Router) dengan TypeScript, MySQL + Sequelize untuk persistensi data, NextAuth untuk autentikasi, dan grafik interaktif (Recharts/Chart.js) untuk insight dashboard. Setup database didukung oleh skema SQL tetap + seed data untuk onboarding lokal yang cepat.", "ja": "小〜中規模の食料品店のワークフロー向けに在庫管理システムを構築しました。マスターデータ（商品、カテゴリー、仕入先、ユーザー）、POS会計、購入・販売取引、および分析レポートを含みます。アプリはNext.js 14（App Router）+ TypeScriptを使用し、データ永続化にMySQL + Sequelize、認証にNextAuth、ダッシュボード分析にインタラクティブチャート（Recharts/Chart.js）を採用しています。データベース設定は固定SQLスキーマ + シードデータで高速にローカル環境を構築できます。"},
+            "role": {"en": "Fullstack Developer", "id": "Fullstack Developer", "ja": "フルスタック開発者"},
+            "mission": {"en": "Create a reliable internal system that reduces stock mistakes and speeds up daily operations: cashier transactions (POS), incoming stock (purchases), outgoing stock (sales), and real-time inventory visibility. The project emphasizes clean API design, RBAC security, and dashboards that help store owners make quick decisions.", "id": "Membuat sistem internal yang andal untuk mengurangi kesalahan stok dan mempercepat operasional harian: transaksi kasir (POS), stok masuk (pembelian), stok keluar (penjualan), dan visibilitas inventori real-time. Proyek ini menekankan desain API yang bersih, keamanan RBAC, dan dashboard yang membantu pemilik toko dalam mengambil keputusan cepat.", "ja": "在庫ミスを減らし、日次業務（POS会計、入庫＝購入、出庫＝販売、リアルタイム在庫可視化）を高速化する信頼性の高い社内システムを構築すること。本プロジェクトは、クリーンなAPI設計、RBACセキュリティ、および店主の迅速な意思決定を支援するダッシュボードを重視しています。"},
+            "impact": {"en": "Improves operational accuracy by enforcing stock validation on POS, centralizing product data, and providing clear performance analytics (revenue, profit, transaction trends). With seed + schema scripts, the app is easy to bootstrap for testing, demos, and iterative development.", "id": "Meningkatkan akurasi operasional dengan menerapkan validasi stok pada POS, menyentralisasi data produk, dan menyediakan analitik performa yang jelas (pendapatan, laba, tren transaksi). Dengan seed + schema scripts, aplikasi mudah di-bootstrap untuk testing, demo, dan pengembangan iteratif.", "ja": "POSでの在庫検証を徹底し、商品データを一元管理し、明確なパフォーマンス分析（収益、利益、取引トレンド）を提供することで、業務の正確性を向上させます。シード + スキーマスクリプトにより、テスト、デモ、反復開発のために簡単に初期構築できます。"},
+            "contributions": {"en": ["Designed the app architecture using Next.js 14 App Router with TypeScript and a modular dashboard layout with sidebar navigation.", "Implemented authentication flow using NextAuth (Credentials Provider) with protected routes and session management.", "Built role-based navigation (RBAC) to restrict access for admin, manager, and staff users.", "Developed POS flow: product search & filter by category, cart operations, real-time stock validation, discount options (percentage/fixed), and payment modal.", "Created CRUD modules for products, categories, suppliers, users, purchases, and sales through REST-style API routes.", "Built user management with role assignment and activity tracking.", "Implemented category management with custom ordering, description fields, and status toggle (active/inactive).", "Integrated analytics endpoints and dashboards with interactive charts (Recharts + Chart.js) for revenue, profit, and transaction trends.", "Prepared database schema + seed data (fixed SQL) and Sequelize models for consistent local setup.", "Added API documentation support using Swagger (swagger-jsdoc + swagger-ui)."], "id": ["Merancang arsitektur aplikasi menggunakan Next.js 14 App Router dengan TypeScript dan layout dashboard modular dengan navigasi sidebar.", "Mengimplementasikan flow autentikasi menggunakan NextAuth (Credentials Provider) dengan protected routes dan session management.", "Membangun navigasi berbasis peran (RBAC) untuk membatasi akses pengguna admin, manager, dan staff.", "Mengembangkan flow POS: pencarian produk & filter berdasarkan kategori, operasi keranjang, validasi stok real-time, opsi diskon (persentase/fixed), dan modal pembayaran.", "Membuat modul CRUD untuk produk, kategori, supplier, pengguna, pembelian, dan penjualan melalui API routes bergaya REST.", "Membangun manajemen pengguna dengan role assignment dan activity tracking.", "Mengimplementasikan manajemen kategori dengan custom ordering, field deskripsi, dan status toggle (aktif/nonaktif).", "Mengintegrasikan endpoint analytics dan dashboard dengan grafik interaktif (Recharts + Chart.js) untuk tren pendapatan, laba, dan transaksi.", "Menyiapkan database schema + seed data (SQL tetap) dan model Sequelize untuk setup lokal yang konsisten.", "Menambahkan support dokumentasi API menggunakan Swagger (swagger-jsdoc + swagger-ui)."], "ja": ["Next.js 14 App Router + TypeScriptを使用したアプリアーキテクチャと、サイドバーナビゲーションを備えたモジュラーダッシュボードレイアウトを設計しました。", "NextAuth（Credentials Provider）を用いた認証フローを実装し、保護されたルートとセッション管理を行いました。", "管理者、マネージャー、スタッフのユーザーのアクセスを制限する、役割ベースのナビゲーション（RBAC）を構築しました。", "POSフローを開発しました: カテゴリーによる商品検索・フィルタリング、カート操作、リアルタイム在庫検証、割引オプション（パーセンテージ/定額）、および支払いモーダル。", "RESTスタイルのAPIルートで、商品、カテゴリー、仕入先、ユーザー、購入、販売のCRUDモジュールを作成しました。", "ロール割り当てとアクティビティトラッキングを備えたユーザー管理機能を構築しました。", "カスタム順序、説明フィールド、およびステータス切り替え（有効/無効）を備えたカテゴリー管理を実装しました。", "Recharts + Chart.jsを使用したインタラクティブチャートで、収益、利益、取引トレンドの分析エンドポイントとダッシュボードを統合しました。", "一貫したローカル環境セットアップのために、データベーススキーマ + シードデータ（固定SQL）およびSequelizeモデルを準備しました。", "Swagger（swagger-jsdoc + swagger-ui）を使用したAPIドキュメントのサポートを追加しました。"]},
+            "keyfeatures": {"en": ["Authentication & RBAC: Secure login with role-based navigation for admin, manager, and staff.", "Dashboard: KPI cards, revenue trends, transaction analytics, and best-selling product charts.", "POS Module: Category-filtered product grid, cart management, real-time stock validation, discount options (percentage/fixed), and payment modal.", "Inventory Control: Product catalog with search, category & stock status filtering, low-stock alerts, and pagination.", "Category Management: Organize products with custom order, descriptions, and active/inactive status toggle.", "User Management: CRUD users with role assignment and activity tracking.", "Transactions: Purchases & sales records with detail items, totals, and status tracking.", "Analytics Charts: Revenue, profit, and transaction trends with Recharts + Chart.js.", "Database Ready: MySQL + Sequelize with fixed schema + seed scripts for fast onboarding and demos.", "API Documentation: Swagger endpoint for easier API exploration and collaboration.", "Modern UI: Customizable light/dark mode, Tailwind-based responsive dashboard layout optimized for desktop management."], "id": ["Autentikasi & RBAC: Login aman dengan navigasi berbasis peran untuk admin, manager, dan staff.", "Dashboard: Kartu KPI, tren pendapatan, analitik transaksi, dan grafik produk terlaris.", "Modul POS: Grid produk dengan filter kategori, manajemen keranjang, validasi stok real-time, opsi diskon (persentase/fixed), dan modal pembayaran.", "Kontrol Inventori: Katalog produk dengan pencarian, filter kategori & status stok, alert stok rendah, dan pagination.", "Manajemen Kategori: Mengorganisir produk dengan custom order, deskripsi, dan status toggle aktif/nonaktif.", "Manajemen Pengguna: CRUD pengguna dengan role assignment dan activity tracking.", "Transaksi: Catatan pembelian & penjualan dengan detail item, total, dan status tracking.", "Grafik Analitik: Tren pendapatan, laba, dan transaksi dengan Recharts + Chart.js.", "Database Ready: MySQL + Sequelize dengan skema tetap + seed scripts untuk onboarding dan demo yang cepat.", "Dokumentasi API: Endpoint Swagger untuk eksplorasi dan kolaborasi API yang lebih mudah.", "UI Modern: Mode terang/gelap yang dapat dikustomisasi, layout dashboard responsif berbasis Tailwind yang dioptimalkan untuk manajemen desktop."], "ja": ["認証 & RBAC: 管理者、マネージャー、スタッフ向けの役割ベースナビゲーションを備えた安全なログイン。", "ダッシュボード: KPIカード、収益トレンド、取引分析、およびベストセラー商品チャート。", "POSモジュール: カテゴリー別商品グリッド、カート管理、リアルタイム在庫検証、割引オプション（パーセンテージ/定額）、および支払いモーダル。", "在庫管理: 検索機能付き商品カタログ、カテゴリー・在庫ステータスフィルタリング、低在庫アラート、およびページネーション。", "カテゴリー管理: カスタム順序、説明、および有効/無効のステータス切り替えで商品を整理。", "ユーザー管理: ロール割り当てとアクティビティトラッキングを備えたユーザーのCRUD。", "取引: 詳細項目、合計、およびステータストラッキングを含む購入・販売記録。", "分析チャート: Recharts + Chart.jsでの収益、利益、および取引トレンド。", "データベース対応: スキーマ固定 + シードスクリプト付きのMySQL + Sequelizeで、高速なオンボーディングとデモが可能。", "APIドキュメント: APIの探索と共同作業を容易にするためのSwaggerエンドポイント。", "モダンUI: カスタマイズ可能なライト/ダークモード、デスクトップ管理に最適化されたTailwindベースのレスポンシブダッシュボードレイアウト。"]},
             "assets": {
                 "video": null,
                 "youtubeId": null,
@@ -127,7 +83,6 @@ export const portfolioData = {
                 "Swagger (OpenAPI)"
             ],
             "liveUrl": "https://inventoryberkahjaya.raihanrafif.com/products",
-            // "repoUrl": "",
             "theme": {
                 "bg": "bg-blue-50",
                 "text": "text-blue-700",
@@ -141,40 +96,16 @@ export const portfolioData = {
         {
             "id": "medically-ai",
             "date": "2026",
-            "title": "Medically AI — Healthcare Assistant Web App",
-            "category": "FULLSTACK WEB DEVELOPMENT",
-            "summary": "An AI-powered healthcare web application featuring an intelligent health chatbot, AI symptom checker, doctor appointment booking system, health statistics dashboard, and health article browsing — designed for accessible health consultation and wellness tracking.",
-            "client": "Medically AI (Personal Showcase)",
-            "overview": "Developed a comprehensive healthcare platform combining AI-powered chat assistance, symptom analysis, and medical appointment management. The app enables users to consult health concerns through an AI assistant, check symptoms with intelligent analysis, browse nearby hospitals, book doctor appointments, and manage health profiles — all through a modern, mobile-responsive interface.",
-            "role": "Fullstack Developer",
-            "mission": "To build an accessible healthcare platform that leverages AI to provide health information and streamline patient-doctor interactions. The goal was to create a user-friendly tool for preliminary health consultation, symptom tracking, and appointment booking without barriers.",
-            "impact": "Successfully delivered an AI-powered healthcare platform where users can interact with a health chatbot, assess symptoms, and book doctor appointments. The integration of AI assistance with hospital browsing and appointment management creates a practical, single-page healthcare hub for preliminary consultation and wellness awareness.",
-            "contributions": [
-                "Architected and built a fullstack healthcare platform with React + Vite frontend and Node.js + Express + SQLite backend.",
-                "Integrated Ollama AI for local inference powering the health chat assistant and AI symptom checker.",
-                "Designed and implemented an AI chat widget with persistent chat sessions, user-friendly health assistant persona, and symptom analysis flow.",
-                "Built doctor directory with appointment booking system including patient-doctor matchmaking and status tracking.",
-                "Created hospital browsing section with interactive hospital cards and navigation features.",
-                "Implemented health statistics dashboard with animated counters and real-time data display.",
-                "Developed health articles section with categorized content, search, and featured articles.",
-                "Designed and built responsive mobile navigation and footer with WhatsApp integration.",
-                "Configured Cloudflare Tunnel deployment for custom domain access (medically.raihanrafif.com).",
-                "Implemented CORS, JWT authentication, rate limiting, and security middleware for production API."
-            ],
-            "keyfeatures": [
-                "AI Health Chatbot: Conversational AI assistant powered by Ollama local inference for health Q\u0026A and general wellness advice.",
-                "AI Symptom Checker: Intelligent symptom analysis tool that takes symptoms, age, gender, and duration to generate health insights.",
-                "Appointment Booking System: Full booking flow allowing patients to schedule appointments with available doctors including appointment tracking.",
-                "Doctor Directory: Interactive doctor cards with specialties, ratings, and direct booking integration.",
-                "Hospital Browser: Nearby hospital discovery with detailed information cards and navigation.",
-                "Health Statistics Dashboard: Animated KPI cards showing platform statistics with smooth counting animations.",
-                "Health Articles Section: Categorized health content with search functionality and featured article cards.",
-                "Responsive Design: Mobile-first approach with hamburger navigation and touch-friendly UI.",
-                "Persistent Chat Sessions: SQLite-backed chat history allowing users to resume previous conversations.",
-                "Modern UI/UX: Clean healthcare-inspired design with teal/blue color palette, smooth scroll animations, and accessible components.",
-                "Production Deployment: Deployed on Jetson Nano with Cloudflare Tunnel for public access.",
-                "Security Hardened: Helmet.js, CORS configuration, rate limiting, and JWT authentication."
-            ],
+            "title": {"en": "Medically AI — Healthcare Assistant Web App", "id": "Medically AI - Aplikasi Web Asisten Kesehatan", "ja": "Medically AI - ヘルスケアアシスタントWebアプリ"},
+            "category": {"en": "FULLSTACK WEB DEVELOPMENT", "id": "PENGEMBANGAN WEB FULLSTACK", "ja": "フルスタックウェブ開発"},
+            "summary": {"en": "An AI-powered healthcare web application featuring an intelligent health chatbot, AI symptom checker, doctor appointment booking system, health statistics dashboard, and health article browsing — designed for accessible health consultation and wellness tracking.", "id": "Aplikasi web kesehatan berbasis AI yang dilengkapi chatbot kesehatan cerdas, pemeriksa gejala AI, sistem pemesanan janji dokter, dashboard statistik kesehatan, dan penjelajahan artikel kesehatan — dirancang untuk konsultasi kesehatan yang mudah diakses dan pelacakan wellness.", "ja": "インテリジェントな健康チャットボット、AI症状チェッカー、医者の予約システム、健康統計ダッシュボード、および健康記事ブラウジングを備えたAI駆動のヘルスケアWebアプリケーション — アクセシブルな健康相談とウェルネストラッキングを目的としています。"},
+            "client": {"en": "Medically AI (Personal Showcase)", "id": "Medically AI (Showcase Pribadi)", "ja": "Medically AI（個人展示）"},
+            "overview": {"en": "Developed a comprehensive healthcare platform combining AI-powered chat assistance, symptom analysis, and medical appointment management. The app enables users to consult health concerns through an AI assistant, check symptoms with intelligent analysis, browse nearby hospitals, book doctor appointments, and manage health profiles — all through a modern, mobile-responsive interface.", "id": "Mengembangkan platform kesehatan komprehensif yang menggabungkan asisten chat berbasis AI, analisis gejala, dan manajemen janji medis. Aplikasi ini memungkinkan pengguna untuk berkonsultasi tentang masalah kesehatan melalui asisten AI, memeriksa gejala dengan analisis cerdas, menjelajahi rumah sakit terdekat, memesan janji dokter, dan mengelola profil kesehatan — semuanya melalui antarmuka modern yang responsif mobile.", "ja": "AI搭載のチャット支援、症状分析、医療予約管理を組み合わせた包括的なヘルスケアプラットフォームを開発しました。アプリを通じて、ユーザーはAIアシスタントによる健康相談、インテリジェントな症状チェック、近くの病院の閲覧、医者の予約、および健康プロファイルの管理をすべてモダンでモバイル対応のインターフェースから行えます。"},
+            "role": {"en": "Fullstack Developer", "id": "Fullstack Developer", "ja": "フルスタック開発者"},
+            "mission": {"en": "To build an accessible healthcare platform that leverages AI to provide health information and streamline patient-doctor interactions. The goal was to create a user-friendly tool for preliminary health consultation, symptom tracking, and appointment booking without barriers.", "id": "Membangun platform kesehatan yang dapat diakses yang memanfaatkan AI untuk menyediakan informasi kesehatan dan menyederhanakan interaksi pasien-dokter. Tujuannya adalah untuk membuat alat yang ramah pengguna untuk konsultasi kesehatan awal, pelacakan gejala, dan pemesanan janji tanpa hambatan.", "ja": "AIを活用して健康情報を提供し、患者と医師のやり取りを効率化する、アクセシブルなヘルスケアプラットフォームを構築すること。健康相談、症状追跡、障壁のない予約を行うためのユーザーフレンドリーなツールを作成することが目標でした。"},
+            "impact": {"en": "Successfully delivered an AI-powered healthcare platform where users can interact with a health chatbot, assess symptoms, and book doctor appointments. The integration of AI assistance with hospital browsing and appointment management creates a practical, single-page healthcare hub for preliminary consultation and wellness awareness.", "id": "Berhasil menghadirkan platform kesehatan berbasis AI di mana pengguna dapat berinteraksi dengan chatbot kesehatan, menilai gejala, dan memesan janji dokter. Integrasi asisten AI dengan penjelajahan rumah sakit dan manajemen janji membuat hub kesehatan praktis untuk konsultasi awal dan kesadaran wellness.", "ja": "ユーザーが健康チャットボットと対話し、症状を評価し、医者の予約を行えるAI駆動のヘルスケアプラットフォームを正常に提供しました。AI支援と病院閲覧・予約管理の統合により、予備的な相談と健康意識向上のための実用的なワンページヘルスケアハブを実現しました。"},
+            "contributions": {"en": ["Architected and built a fullstack healthcare platform with React + Vite frontend and Node.js + Express + SQLite backend.", "Integrated Ollama AI for local inference powering the health chat assistant and AI symptom checker.", "Designed and implemented an AI chat widget with persistent chat sessions, user-friendly health assistant persona, and symptom analysis flow.", "Built doctor directory with appointment booking system including patient-doctor matchmaking and status tracking.", "Created hospital browsing section with interactive hospital cards and navigation features.", "Implemented health statistics dashboard with animated counters and real-time data display.", "Developed health articles section with categorized content, search, and featured articles.", "Designed and built responsive mobile navigation and footer with WhatsApp integration.", "Configured Cloudflare Tunnel deployment for custom domain access (medically.raihanrafif.com).", "Implemented CORS, JWT authentication, rate limiting, and security middleware for production API."], "id": ["Mengarsitekturng dan membangun platform kesehatan fullstack dengan frontend React + Vite dan backend Node.js + Express + SQLite.", "Mengintegrasikan AI Ollama untuk inferensi lokal yang memerankan asisten chat kesehatan dan pemeriksa gejala AI.", "Merancang dan mengimplementasikan widget chat AI dengan session chat persisten, persona asisten kesehatan yang ramah pengguna, dan flow analisis gejala.", "Membangun direktori dokter dengan sistem pemesanan janji termasuk matchmaking pasien-dokter dan status tracking.", "Membuat bagian penjelajahan rumah sakit dengan kartu rumah sakit interaktif dan fitur navigasi.", "Mengimplementasikan dashboard statistik kesehatan dengan animasi counter dan tampilan data real-time.", "Mengembangkan bagian artikel kesehatan dengan konten terkategori, pencarian, dan artikel unggulan.", "Merancang dan membangun navigasi mobile responsif dan footer dengan integrasi WhatsApp.", "Mengkonfigurasi deployment Cloudflare Tunnel untuk akses domain custom (medically.raihanrafif.com).", "Mengimplementasikan CORS, autentikasi JWT, rate limiting, dan security middleware untuk API produksi."], "ja": ["React + ViteフロントエンドとNode.js + Express + SQLiteバックエンドで、フルスタックのヘルスケアプラットフォームを設計・構築しました。", "健康チャットアシスタントとAI症状チェッカーを動かすローカル推論用にOllama AIを統合しました。", "永続的なチャットセッション、ユーザーフレンドリーな健康アシスタントのペルソナ、および症状分析フローを備えたAIチャットウィジェットを設計・実装しました。", "患者と医師のマッチングとステータストラッキングを含む、予約機能付きの医師ディレクトリを構築しました。", "インタラクティブな病院カードとナビゲーション機能を備えた病院閲覧セクションを作成しました。", "アニメーション付きカウンターとリアルタイムデータ表示を備えた健康統計ダッシュボードを実装しました。", "カテゴリー別コンテンツ、検索、および特集記事を備えた健康記事セクションを開発しました。", "WhatsApp統合を備えた、レスポンシブなモバイルナビゲーションとフッターを設計・構築しました。", "カスタムドメインアクセス（medically.raihanrafif.com）のためのCloudflare Tunnelデプロイを設定しました。", "本番APIのためにCORS、JWT認証、レート制限、およびセキュリティミドルウェアを実装しました。"]},
+            "keyfeatures": {"en": ["AI Health Chatbot: Conversational AI assistant powered by Ollama local inference for health Q&A and general wellness advice.", "AI Symptom Checker: Intelligent symptom analysis tool that takes symptoms, age, gender, and duration to generate health insights.", "Appointment Booking System: Full booking flow allowing patients to schedule appointments with available doctors including appointment tracking.", "Doctor Directory: Interactive doctor cards with specialties, ratings, and direct booking integration.", "Hospital Browser: Nearby hospital discovery with detailed information cards and navigation.", "Health Statistics Dashboard: Animated KPI cards showing platform statistics with smooth counting animations.", "Health Articles Section: Categorized health content with search functionality and featured article cards.", "Responsive Design: Mobile-first approach with hamburger navigation and touch-friendly UI.", "Persistent Chat Sessions: SQLite-backed chat history allowing users to resume previous conversations.", "Modern UI/UX: Clean healthcare-inspired design with teal/blue color palette, smooth scroll animations, and accessible components.", "Production Deployment: Deployed on Jetson Nano with Cloudflare Tunnel for public access.", "Security Hardened: Helmet.js, CORS configuration, rate limiting, and JWT authentication."], "id": ["Chatbot Kesehatan AI: Asisten AI konversasional yang didukung oleh inferensi lokal Ollama untuk Q&A kesehatan dan saran wellness umum.", "Pemeriksa Gejala AI: Alat analisis gejala cerdas yang mengambil gejala, umur, gender, dan durasi untuk menghasilkan insight kesehatan.", "Sistem Pemesanan Janji: Flow pemesanan lengkap yang memungkinkan pasien menjadwalkan janji dengan dokter yang tersedia termasuk tracking janji.", "Direktori Dokter: Kartu dokter interaktif dengan spesialisasi, rating, dan integrasi booking langsung.", "Browser Rumah Sakit: Penemuan rumah sakit terdekat dengan kartu informasi detail dan navigasi.", "Dashboard Statistik Kesehatan: Kartu KPI animasi yang menampilkan statistik platform dengan animasi counting yang halus.", "Bagian Artikel Kesehatan: Konten kesehatan terkategori dengan fungsionalitas pencarian dan kartu artikel unggulan.", "Desain Responsif: Pendekatan mobile-first dengan navigasi hamburger dan UI yang ramah sentuh.", "Sesi Chat Persisten: Riwayat chat yang didukung SQLite memungkinkan pengguna melanjutkan percakapan sebelumnya.", "UI/UX Modern: Desain bersih terinspirasi kesehatan dengan palet warna teal/biru, animasi scroll halus, dan komponen yang dapat diakses.", "Deployment Produksi: Dideploy di Jetson Nano dengan Cloudflare Tunnel untuk akses publik.", "Security Ditingkatkan: Helmet.js, konfigurasi CORS, rate limiting, dan autentikasi JWT."], "ja": ["AI健康チャットボット: Ollamaローカル推論で動作する対話型AIアシスタントで、健康Q&Aと一般的なウェルネスアドバイスを提供。", "AI症状チェッカー: 症状、年齢、性別、持続期間を入力して健康インサイトを生成するインテリジェントな症状分析ツール。", "予約システム: 利用可能な医者と予約をスケジュールし、予約トラッキングも含む完全な予約フローを提供。", "医師ディレクトリ: 専門、評価、直接予約統合を備えたインタラクティブな医師カード。", "病院ブラウザー: 詳細な情報カードとナビゲーションを備えた近隣病院の発見機能。", "健康統計ダッシュボード: スムーズなカウンティングアニメーションでプラットフォーム統計を表示するアニメーションKPIカード。", "健康記事セクション: 検索機能と特集記事カードを備えたカテゴリー別健康コンテンツ。", "レスポンシブデザイン: ハンバーガーナビゲーションとタッチフレンドリーUIを採用したモバイルファーストアプローチ。", "永続的なチャットセッション: SQLiteバックエンドのチャット履歴により、以前の会話を再開可能。", "モダンUI/UX: ティール/ブルーカラーパレット、スムーズなスクロールアニメーション、アクセシブルなコンポーネントを備えたクリーンな医療インスパイアのデザイン。", "本番デプロイ: Jetson NanoにCloudflare Tunnelで公開アクセス可能にデプロイ。", "セキュリティ強化: Helmet.js、CORS設定、レート制限、およびJWT認証。"]},
             "assets": {
                 "video": null,
                 "youtubeId": null,
@@ -211,234 +142,6 @@ export const portfolioData = {
                 "fill": "#0D9488"
             },
             "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"{FILL_COLOR}\"><path d=\"M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z\"/></svg>"
-        }
-
-        // {
-        //     "id": "ai-chatbot",
-        //     "date": "2025",
-        //     "title": "AI Customer Support Suite",
-        //     "category": "AI & CUSTOMER EXPERIENCE",
-        //     "summary": "Developed an end-to-end AI customer service platform with an intelligent RAG-based chatbot integrated with knowledge management and real-time stock, enabling non-technical staff to manage content and data.",
-        //     "client": "KopaKopi (Personal Showcase)",
-        //     "overview": "Facing repetitive customer inquiries and inaccurate stock information, this platform was developed for 'KopaKopi'. The solution is an integrated suite with a smart RAG-based chatbot that provides accurate answers from internal documents and real-time stock data. An intuitive admin dashboard was also created to empower non-technical staff to independently update the knowledge base and stock data.",
-        //     "role": "Fullstack Developer",
-        //     "mission": "The goal of this project was to develop an intelligent, easy-to-manage AI customer support system that could deliver accurate, real-time responses while reducing the dependency on technical staff. The platform was designed to streamline customer interactions, ensure data accuracy, and empower businesses to manage their own knowledge base efficiently.",
-        //     "impact": "The AI Customer Support Suite significantly improved customer response time and accuracy by integrating real-time stock data and a knowledge-based RAG chatbot. It reduced manual workload for support teams, minimized misinformation, and enhanced user satisfaction. The intuitive dashboard enabled non-technical staff to maintain and update data independently, fostering operational efficiency and smoother customer experiences.",
-        //     "contributions": [
-        //         "Implemented a Retrieval-Augmented Generation (RAG) architecture for highly accurate and context-aware answers.",
-        //         "Designed and developed an intuitive admin dashboard for non-technical users to independently manage the knowledge base (PDF, TXT files).",
-        //         "Enabled conversational memory to allow for natural and effective follow-up dialogues, and implemented a conversation history feature as a basic CRM.",
-        //         "Integrated a real-time database to enable the chatbot to provide always-accurate product stock information.",
-        //         "Implemented response streaming to enhance user interaction and deliver a premium, ChatGPT-like user experience."
-        //     ],
-        //     "keyfeatures": [
-        //         "RAG-Powered Chatbot: Utilizes Retrieval-Augmented Generation to deliver accurate, context-aware answers based on internal documents and real-time data.",
-        //         "Real-Time Stock Checking: The chatbot connects directly to the product database to provide always up-to-date stock information.",
-        //         "Admin Dashboard: A user-friendly interface that allows non-technical staff to manage the knowledge base and stock data easily.",
-        //         "Conversational Memory: Enables the chatbot to remember conversation context and store chat history as a simple CRM feature.",
-        //         "Response Streaming: Displays chatbot responses in real-time typing mode for a natural, ChatGPT-like user experience.",
-        //         "Secure Data Management: Employs PostgreSQL and Prisma to ensure data security, reliability, and consistency.",
-        //         "Scalable Architecture: Built with Next.js, Node.js, and the OpenAI API to support scalability and seamless system integration."
-        //     ],
-        //     "assets": {
-        //         "video": '/assets/projects/kopakopi/v-1.webm',
-        //         "youtubeId": null,
-        //         "images": [
-        //             '/assets/projects/kopakopi/1.png',
-        //             '/assets/projects/kopakopi/2.png',
-        //         ]
-        //     },
-        //     "tech": [
-        //         "React",
-        //         "Next.js",
-        //         "Node.js",
-        //         "Express.js",
-        //         "PostgreSQL",
-        //         "Prisma",
-        //         "Pinecone/ChromaDB",
-        //         "OpenAI API",
-        //         "RAG"
-        //     ],
-        //     "liveUrl": "http://103.250.11.76:3000/",
-        //     "repoUrl": "https://github.com/RaihanRafif/coffeeshop-chatbot-porto",
-        //     "theme": {
-        //         "bg": "bg-gray-700",
-        //         "text": "text-purple-400",
-        //         "hover": "hover:text-purple-300",
-        //         "buttonBg": "bg-white/5",
-        //         "buttonHover": "hover:bg-white/10",
-        //         "fill": "#A78BFA"
-        //     },
-        //     "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"{FILL_COLOR}\"><path d=\"M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM12.5 13.5L11 15.8V12H9v5h2v-2.8l1.5-2.2H15V17h2v-5h-4.5zM9.5 9.5l1.5-2.2L13 9.8V7h2v5h-2v-2.8l-1.5 2.2H9V7h2v2.8L9.5 9.5z\"/></svg>"
-        // },
-        // {
-        //     "id": "semantic-search",
-        //     "date": "2025",
-        //     "title": "Semantic Product Search",
-        //     "category": "AI & E-COMMERCE",
-        //     "summary": "Designed a semantic search system that understands user intent to deliver highly relevant results and increase sales conversions.",
-        //     "client": "Fashion Store (Personal Showcase)",
-        //     "overview": "Standard keyword search often fails to capture user intent, leading to poor product discovery. For a fictional fashion store, I built a semantic search engine that uses vector embeddings to understand the meaning behind a query like 'warm clothes for rainy season,' returning relevant items like waterproof jackets and wool sweaters, even if the keywords don't match exactly.",
-        //     "role": "Fullstack Developer",
-        //     "mission": "The mission was to transform the traditional keyword-based product search into an intelligent semantic experience that understands context and intent. By interpreting the actual meaning behind user queries, the system aimed to enhance product discovery, reduce customer frustration, and drive higher engagement and conversion rates in online shopping.",
-        //     "impact": "The Semantic Product Search system revolutionized how users explore and find products. It improved search relevance, reduced bounce rates, and significantly increased conversion opportunities by showing customers products they truly wanted — even without exact keyword matches. The recommendation engine based on semantic similarity further boosted cross-selling and personalization, offering a smarter, more satisfying shopping experience.",
-        //     "keyfeatures": [
-        //         "Semantic Query Understanding: Interprets user intent beyond literal keywords using OpenAI’s embedding models.",
-        //         "Vector-Based Search Engine: Employs FAISS for efficient similarity matching among thousands of product vectors.",
-        //         "Smart Product Recommendations: Suggests semantically related products through a 'You Might Also Like' feature.",
-        //         "Contextual Relevance: Delivers accurate, intent-driven results for complex queries such as 'outfits for cold rainy days'.",
-        //         "Seamless Integration: Built with Next.js and Laravel for a responsive and performant fullstack architecture.",
-        //         "Scalable Vector Infrastructure: Designed to handle large product catalogs while maintaining search speed and precision."
-        //     ],
-        //     "contributions": [
-        //         "Implemented semantic search using OpenAI's embedding models to convert product descriptions into meaningful vectors.",
-        //         "Built a backend service to perform efficient vector similarity searches using FAISS.",
-        //         "Developed a 'You might also like' recommendation feature based on semantic product similarity, not just popularity.",
-        //         "Revolutionized product discovery, directly increasing sales conversion opportunities through a superior shopping experience."
-        //     ],
-        //     "assets": {
-        //         "video": "/assets/projects/fashong/v-1.webm",
-        //         "youtubeId": null,
-        //         "images": [
-        //             "/assets/projects/fashong/1.png",
-        //             "/assets/projects/fashong/2.png",
-        //             "/assets/projects/fashong/3.png"
-        //         ]
-        //     },
-        //     "tech": [
-        //         "Next.js",
-        //         "Laravel",
-        //         "OpenAI Embeddings",
-        //         "Vector Search",
-        //         "FAISS"
-        //     ],
-        //     "liveUrl": "http://103.250.11.76:3005/",
-        //     "repoUrl": "https://github.com/RaihanRafif/fashong-porto",
-        //     "theme": {
-        //         "bg": "bg-gray-700",
-        //         "text": "text-indigo-400",
-        //         "hover": "hover:text-indigo-300",
-        //         "buttonBg": "bg-white/5",
-        //         "buttonHover": "hover:bg-white/10",
-        //         "fill": "#818CF8"
-        //     },
-        //     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='{FILL_COLOR}'><path d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/></svg>"
-        // },
-        // {
-        //     "id": "content-generator",
-        //     "date": "2025",
-        //     "title": "AI Content Generator",
-        //     "category": "AI & MARKETING AUTOMATION",
-        //     "summary": "Built an AI dashboard that helps marketing teams drastically reduce content creation time by transforming long-form text into various social media formats.",
-        //     "client": "Digital Creator (Personal Showcase)",
-        //     "overview": "Digital creators and marketing teams spend hours repurposing content for different platforms. This tool solves that problem. By inputting a long article or text, my application uses AI to generate a variety of content formats, saving time and ensuring brand consistency across platforms.",
-        //     "role": "Fullstack Developer",
-        //     "mission": "The goal of this project was to empower marketing teams and content creators to work smarter by automating the repetitive process of content repurposing. Instead of rewriting and reformatting for every platform, the AI Content Generator delivers tailored outputs instantly, ensuring a consistent brand voice across Instagram, Twitter, and other channels.",
-        //     "impact": "This platform reduced content creation time by up to 80%, allowing marketers to focus on strategy rather than manual rewriting. By maintaining tone consistency and generating ready-to-post formats, it enhanced overall brand cohesion and productivity. The AI-driven workflow brought structure, speed, and creativity to social media content production.",
-        //     "keyfeatures": [
-        //         "Automated Content Repurposing: Converts long-form text or articles into short-form formats for multiple platforms.",
-        //         "AI-Powered Summarization: Generates concise bullet-point summaries ideal for blog intros or newsletters.",
-        //         "Social Media Optimization: Produces Instagram captions with hashtag suggestions and Twitter/X threads with structured flow.",
-        //         "Persona Customization: Allows users to generate content in different tones such as 'witty', 'professional', or 'educational' to match brand personality.",
-        //         "Instant Multi-Platform Output: One-click export for Instagram, Twitter, and LinkedIn-ready posts.",
-        //         "Responsive Dashboard: Built with React and Tailwind CSS for smooth, user-friendly interaction across devices."
-        //     ],
-        //     "contributions": [
-        //         "Generates concise, easy-to-read bullet-point summaries of long articles.",
-        //         "Creates multiple engaging Instagram caption variants, complete with relevant hashtag suggestions.",
-        //         "Automatically formats content into a post-ready Twitter/X thread structure.",
-        //         "Allows for output customization based on a 'persona' (e.g., 'witty,' 'professional') to maintain brand voice consistency."
-        //     ],
-        //     "assets": {
-        //         "video": "/assets/projects/atherium/v-1.webm",
-        //         "youtubeId": null,
-        //         "images": [
-        //             "/assets/projects/atherium/1.png",
-        //             "/assets/projects/atherium/2.png",
-        //             "/assets/projects/atherium/3.png",
-        //             "/assets/projects/atherium/4.png",
-        //             "/assets/projects/atherium/5.png"
-        //         ]
-        //     },
-        //     "tech": [
-        //         "React",
-        //         "Node.js",
-        //         "AI APIs",
-        //         "Tailwind CSS"
-        //     ],
-        //     "liveUrl": "http://103.250.11.76:3007/",
-        //     "repoUrl": "https://github.com/RaihanRafif/AI-digital-marketer-assistan",
-        //     "theme": {
-        //         "bg": "bg-gray-700",
-        //         "text": "text-teal-400",
-        //         "hover": "hover:text-teal-300",
-        //         "buttonBg": "bg-white/5",
-        //         "buttonHover": "hover:bg-white/10",
-        //         "fill": "#5EEAD4"
-        //     },
-        //     "icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='{FILL_COLOR}'><path d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6zM8 15h8v2H8v-2zm0-4h8v2H8v-2z'/></svg>"
-        // }
-        // {
-        //     "id": 'nakayama',
-        // "date": "2025",
-        //     "title": 'Real-Time Monitoring & Control',
-        //     "category": 'DATA VISUALIZATION & ROBOTICS',
-        //     "summary": 'Acted as the primary problem-solver, revitalizing critical stalled projects and developing real-time monitoring systems from scratch, proving fast and efficient execution in a professional environment.',
-        //     "client": 'NAKAYAMA IRON WORKS, LTD.',
-        //     "overview": 'As an Intern Researcher, I was tasked with several high-impact projects, including reviving stalled initiatives and developing new systems from scratch. I successfully transformed Figma designs into functional web apps and created critical interfaces for data monitoring and robotic control.',
-        //     "role": "Fullstack Developer",
-        //     "contributions": [
-        //         'Took ownership of and completed a 3-month stalled Energy Monitoring website in just one week.',
-        //         'Revived a 10-month delayed robotics project in just three weeks, from concept to functional implementation.',
-        //         'Designed and developed a LiDAR monitoring interface for map visualization and robotic navigation.',
-        //         'Integrated ROS Web Tools to create real-time interaction between the web UI and robotic systems.'
-        //     ],
-        //     "tech": ['React.js', 'Next.js', 'PHP', 'Python', 'C', 'ROS', 'Chart.js', 'jQuery'],
-        //     "repoUrl": '#', // <-- REPLACE WITH YOUR GITHUB REPO URL (if applicable)
-        //     "theme": {
-        //         "bg": 'bg-gray-700',
-        //         "text": 'text-blue-400', "hover": 'hover:text-blue-300',
-        //         "buttonBg": 'bg-white/5', "buttonHover": 'hover:bg-white/10',
-        //         "fill": '#60A5FA'
-        //     },
-        //     "icon": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.09-.34.13-.53.13s-.37-.04-.53-.13l-7.9-4.44A.991.991 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.09.34-.13.53-.13s.37-.04-.53-.13l7.9 4.44c.32.17.53.5.53.88v9zm-9-11.34l-6.27 3.53L12 12.22l6.27-3.53L12 5.16zm.53 13.62l6.27-3.52v-7.06l-6.27 3.52v7.06zm-1.06 0v-7.06L5.2 8.18v7.06l6.27 3.54z"/></svg>`
-        // },
-        // {
-        //     "id": 'cakra',
-        // "date": "2025",
-        //     "title": 'Marketplace Sync & Bundling',
-        //     "category": 'E-COMMERCE & AUTOMATION',
-        //     "summary": 'Designed an item bundling feature and data synchronization system to increase average order value (AOV) and streamline sales across multiple marketplaces.',
-        //     "client": 'CAKRA MOTOR COMPANY (FREELANCE)',
-        //     "overview": 'As a freelance developer, I was hired to build custom features to enhance sales strategies and expand market reach. The primary goals were to enable product bundling and automate data synchronization with major online marketplaces.',
-        //     "role": "Fullstack Developer",
-        //     "contributions": [
-        //         'Developed an "Item Bundling" feature to allow for dynamic product packaging to boost sales strategies.',
-        //         'Built a synchronization system to automatically align company product data across Tokopedia, Shopee, and Bukalapak.',
-        //         'Ensured product listing and pricing consistency across all platforms, expanding market reach and reducing manual errors.'
-        //     ],
-        //     "tech": ['React.js', 'Node.js', 'Express.js', 'Handlebars'],
-        //     "theme": {
-        //         "bg": 'bg-gray-700',
-        //         "text": 'text-orange-400', "hover": 'hover:text-orange-300',
-        //         "buttonBg": 'bg-white/5', "buttonHover": 'hover:bg-white/10',
-        //         "fill": '#F97316'
-        //     },
-        //     icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{FILL_COLOR}"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v2h-2zm0 4h2v6h-2z"/></svg>`
-        // }
-    ],
-    skills: [
-        {
-            "title": 'Frontend',
-            "items": ['JavaScript (ES6+) & TypeScript', 'ReactJS, Next.js, Vue.js', 'React Native, ElectronJs', 'HTML, SCSS, TailwindCSS']
         },
-        {
-            "title": 'Backend',
-            "items": ['Node.js (Express, HapiJs)', 'Python (Flask, FastAPI)', 'PHP (Laravel)', 'Go (Gin-Gonic)', 'SQL (PostgreSQL, MySQL)']
-        },
-        {
-            "title": 'AI & Specialized Tools',
-            "items": ['AI/LLM APIs (OpenAI)', 'Vector Databases (Pinecone, ChromaDB)', 'RAG Architecture', 'Semantic Search', 'Git, GitHub, Vercel']
-        }
     ]
 };
