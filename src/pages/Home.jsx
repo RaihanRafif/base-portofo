@@ -323,7 +323,7 @@ export default function Home() {
                         <a href="https://github.com/RaihanRafif" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <i className="fab fa-github"></i>
                         </a>
-                        <a href="https://linkedin.com/in/raihan-rafif" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/raihan-rafif-756809202/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <i className="fab fa-linkedin"></i>
                         </a>
                         <a href="mailto:raihanrafif1202@gmail.com" aria-label="Email">
