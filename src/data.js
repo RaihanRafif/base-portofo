@@ -3,6 +3,7 @@ export const portfolioData = {
     projects: [
         {
             "id": "kedai-kopi-ujung-langit",
+            "categoryKey": "web-development",
             "date": "2026",
             "title": {"en": "Kedai Kopi Di Ujung Langit - Landing Page", "id": "Kedai Kopi Di Ujung Langit - Landing Page", "ja": "Kedai Kopi Di Ujung Langit - ランディングページ"},
             "category": {"en": "WEB DEVELOPMENT", "id": "PENGEMBANGAN WEB", "ja": "ウェブ開発"},
@@ -32,8 +33,8 @@ export const portfolioData = {
                 "Google Maps API",
                 "WhatsApp API"
             ],
-            "liveUrl": "https://raihanrafif.github.io/base-portofo/projects/landing-page(dummy)/kopi-kapsul/",
-            "repoUrl": "https://github.com/RaihanRafif/base-portofo/tree/main/projects/landing-page(dummy)/kopi-kapsul",
+            "liveUrl": "https://raihanrafif.com/projects/kedai-kopi/",
+            "repoUrl": "https://github.com/RaihanRafif/base-portofo",
             "theme": {
                 "bg": "bg-gray-900",
                 "text": "text-amber-400",
@@ -46,6 +47,7 @@ export const portfolioData = {
         },
         {
             "id": "inventory-berkah-jaya",
+            "categoryKey": "fullstack-web-development",
             "date": "2026",
             "title": {"en": "Inventory Management System", "id": "Sistem Manajemen Inventori", "ja": "在庫管理システム"},
             "category": {"en": "FULLSTACK WEB DEVELOPMENT", "id": "PENGEMBANGAN WEB FULLSTACK", "ja": "フルスタックウェブ開発"},
@@ -95,6 +97,7 @@ export const portfolioData = {
         },
         {
             "id": "medically-ai",
+            "categoryKey": "fullstack-web-development",
             "date": "2026",
             "title": {"en": "Medically AI — Healthcare Assistant Web App", "id": "Medically AI - Aplikasi Web Asisten Kesehatan", "ja": "Medically AI - ヘルスケアアシスタントWebアプリ"},
             "category": {"en": "FULLSTACK WEB DEVELOPMENT", "id": "PENGEMBANGAN WEB FULLSTACK", "ja": "フルスタックウェブ開発"},

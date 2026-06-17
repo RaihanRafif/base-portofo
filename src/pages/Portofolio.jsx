@@ -13,10 +13,10 @@ export default function Portfolio() {
     const [activeFilter, setActiveFilter] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
 
-    // Get unique categories
+    // Get unique categories from categoryKey
     const categories = useMemo(() => {
         const keys = portfolioData.projects
-            .map(p => p.category)
+            .map(p => p.categoryKey)
             .filter(Boolean);
         return ['all', ...new Set(keys)];
     }, []);
@@ -33,7 +33,7 @@ export default function Portfolio() {
 
         // Filter by category
         if (activeFilter !== 'all') {
-            filtered = filtered.filter(p => p.category === activeFilter);
+            filtered = filtered.filter(p => p.categoryKey === activeFilter);
         }
 
         // Filter by search query
