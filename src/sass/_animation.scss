@@ -130,3 +130,42 @@
   0%, 100% { opacity: 0.4; }
   50%      { opacity: 0.8; }
 }
+
+// Glitch effect — RGB split + scanline + jitter
+@keyframes glitch1 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  10%      { clip-path: inset(20% 0 60% 0); transform: translate(-0.3rem, 0.2rem); }
+  20%      { clip-path: inset(50% 0 30% 0); transform: translate(0.3rem, -0.1rem); }
+  30%      { clip-path: inset(10% 0 70% 0); transform: translate(-0.2rem, 0.15rem); }
+  40%      { clip-path: inset(60% 0 10% 0); transform: translate(0.15rem, -0.2rem); }
+  50%      { clip-path: inset(40% 0 40% 0); transform: translate(-0.25rem, 0.1rem); }
+  60%      { clip-path: inset(0 0 0 0); transform: translate(0); }
+}
+
+@keyframes glitch2 {
+  0%, 100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+  10%      { clip-path: inset(60% 0 20% 0); transform: translate(0.3rem, -0.15rem); }
+  20%      { clip-path: inset(30% 0 50% 0); transform: translate(-0.2rem, 0.25rem); }
+  30%      { clip-path: inset(70% 0 10% 0); transform: translate(0.25rem, 0.1rem); }
+  40%      { clip-path: inset(10% 0 60% 0); transform: translate(-0.15rem, -0.25rem); }
+  50%      { clip-path: inset(50% 0 30% 0); transform: translate(0.2rem, 0.15rem); }
+  60%      { clip-path: inset(0 0 0 0); transform: translate(0); }
+}
+
+@keyframes glitchSkew {
+  0%, 100% { transform: skewX(0deg); }
+  15%      { transform: skewX(-2deg); }
+  30%      { transform: skewX(3deg); }
+  45%      { transform: skewX(-1deg); }
+  60%      { transform: skewX(0deg); }
+}
+
+@keyframes glitchFlicker {
+  0%, 100% { opacity: 1; }
+  7%       { opacity: 0.85; }
+  10%      { opacity: 1; }
+  27%      { opacity: 0.9; }
+  30%      { opacity: 1; }
+  52%      { opacity: 0.88; }
+  55%      { opacity: 1; }
+}

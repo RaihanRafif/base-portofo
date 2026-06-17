@@ -47,7 +47,7 @@ export default function App() {
           </div>
 
           <div className="email">
-            <a href="mailto:raihanrafif1202@gmail.com">RAIHANRAFIF1202@GMAIL.COM</a>
+            <a href="mailto:raihanrafif1202@gmail.com" data-text="RAIHANRAFIF1202@GMAIL.COM">RAIHANRAFIF1202@GMAIL.COM</a>
           </div>
         </div>
 
