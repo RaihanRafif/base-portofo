@@ -7,17 +7,24 @@
     position: sticky;
     top: calc(10rem + $spacing-xl);
     padding: $spacing-xl;
-    background: linear-gradient(
-      135deg,
-      rgba($color-text-white, 0.03) 0%,
-      rgba($color-text-white, 0.01) 100%
-    );
-    border: 1px solid rgba($color-text-white, 0.08);
-    border-radius: 2rem;
-    backdrop-filter: blur(10px);
+    background: $color-bg-dark;
+    border: 1px solid rgba($color-text-white, 0.1);
+    border-radius: 0;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: 1px solid rgba($color-text-white, 0.08);
+    height: 100%;
+    min-height: 50rem;
+    display: flex;
+    flex-direction: column;
 
     @media (max-width: $breakpoint-desktop) {
       position: static;
+      border-radius: $radius-md;
+      border: 1px solid rgba($color-text-white, 0.08);
+      height: auto;
+      min-height: auto;
     }
 
     @media (max-width: $breakpoint-mobile) {
@@ -25,14 +32,23 @@
     }
   }
 
+  // Red accent bar at top
+  &__accent-bar {
+    width: 6rem;
+    height: 4px;
+    background: $color-higlighter-red;
+    border-radius: 2px;
+    margin-bottom: $spacing-lg;
+  }
+
   &__title {
-    font-size: 2.4rem;
-    font-weight: 700;
+    font-size: 2.6rem;
+    font-weight: 800;
     color: $color-text-white;
     margin-bottom: $spacing-sm;
 
     @media (max-width: $breakpoint-mobile) {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
   }
 
@@ -46,7 +62,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: $spacing-lg;
+    gap: $spacing-md;
     margin-bottom: $spacing-xl;
   }
 
@@ -55,15 +71,11 @@
     align-items: flex-start;
     gap: $spacing-md;
     padding: $spacing-md;
-    background-color: rgba($color-text-white, 0.02);
-    border: 1px solid rgba($color-text-white, 0.06);
-    border-radius: 1.2rem;
-    transition: all 0.3s ease;
+    @include card-surface($radius-sm, 0);
+    border-left: 3px solid transparent;
 
     &:hover {
-      background-color: rgba($color-text-white, 0.04);
-      border-color: rgba($color-text-white, 0.1);
-      transform: translateX(0.4rem);
+      border-left-color: $color-higlighter-red;
     }
 
     .info-icon {
@@ -73,10 +85,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba($color-higlighter-red, 0.1);
-      border: 1px solid rgba($color-higlighter-red, 0.2);
-      border-radius: 1rem;
-      color: $color-higlighter-red;
+      background-color: $color-higlighter-red;
+      border-radius: $radius-sm;
+      color: $color-text-white;
 
       svg {
         width: 2rem;
@@ -117,6 +128,7 @@
   &__socials {
     padding-top: $spacing-lg;
     border-top: 1px solid rgba($color-text-white, 0.08);
+    margin-top: auto;
 
     .socials-label {
       font-size: 1.4rem;
@@ -136,21 +148,37 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 4.5rem;
-      height: 4.5rem;
-      background-color: rgba($color-text-white, 0.05);
+      width: 5rem;
+      height: 5rem;
+      background-color: rgba($color-text-white, 0.06);
       border: 1px solid rgba($color-text-white, 0.1);
-      border-radius: 1rem;
+      border-radius: $radius-sm;
       color: rgba($color-text-white, 0.7);
       font-size: 2rem;
       text-decoration: none;
       transition: all 0.3s ease;
 
       &:hover {
-        background-color: rgba($color-text-white, 0.1);
-        border-color: rgba($color-text-white, 0.2);
+        background-color: $color-higlighter-red;
+        border-color: $color-higlighter-red;
         color: $color-text-white;
-        transform: translateY(-0.2rem);
+        transform: translateY(-0.3rem);
+      }
+
+      &[aria-label="GitHub"]:hover {
+        background-color: rgba(#333, 0.9);
+        border-color: #333;
+      }
+
+      &[aria-label="LinkedIn"]:hover {
+        background-color: #0077b5;
+        border-color: #0077b5;
+      }
+
+      @media (max-width: $breakpoint-mobile) {
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 1.8rem;
       }
     }
   }

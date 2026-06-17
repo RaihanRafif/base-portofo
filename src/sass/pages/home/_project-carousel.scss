@@ -244,18 +244,10 @@
 // PROJECT CARD (Updated for Carousel)
 // ========================================
 .projects-container {
+  @include card-surface(2rem, 0);
   display: flex;
   flex-direction: column;
-  background-color: rgba($color-text-white, 0.02);
-  border: 1px solid rgba($color-text-white, 0.08);
-  border-radius: 2rem;
   overflow: hidden;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: rgba($color-text-white, 0.04);
-    border-color: rgba($color-text-white, 0.12);
-  }
 
   .image-container {
     position: relative;

@@ -302,33 +302,37 @@ export default function Home() {
                 CONTACT/CTA SECTION
             ======================================== */}
                 <section id="contact" className="cta-section">
-                    <h2 className="cta-section__title">
-                        <span className="cta-section__title-word">{t("home.cta.title")}</span>
-                    </h2>
+                    <div className="cta-section__container">
+                        <div className="cta-section__content">
+                            <h2 className="cta-section__title">
+                                <span className="cta-section__title-word">{t("home.cta.title")}</span>
+                            </h2>
 
-                    <div className="cta-section__buttons">
-                        <Link to="/contact" className="btn btn--primary">
-                            {t("buttons.getInTouch")}
-                        </Link>
-                        <a
-                            href="/(CV)Curriculum Vitae_Raihan Rafif.pdf"
-                            download="Raihan-Rafif-CV.pdf"
-                            className="btn btn--secondary"
-                        >
-                            {t("buttons.downloadResume")}
-                        </a>
-                    </div>
+                            <div className="cta-section__buttons">
+                                <Link to="/contact" className="btn btn--primary">
+                                    {t("buttons.getInTouch")}
+                                </Link>
+                                <a
+                                    href="/(CV)Curriculum Vitae_Raihan Rafif.pdf"
+                                    download="Raihan-Rafif-CV.pdf"
+                                    className="btn btn--secondary"
+                                >
+                                    {t("buttons.downloadResume")}
+                                </a>
+                            </div>
 
-                    <div className="cta-section__socials">
-                        <a href="https://github.com/RaihanRafif" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i className="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/raihan-rafif-756809202/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i className="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:raihanrafif1202@gmail.com" aria-label="Email">
-                            <i className="fas fa-envelope"></i>
-                        </a>
+                            <div className="cta-section__socials">
+                                <a href="https://github.com/RaihanRafif" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                    <i className="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/raihan-rafif-756809202/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                    <i className="fab fa-linkedin"></i>
+                                </a>
+                                <a href="mailto:raihanrafif1202@gmail.com" aria-label="Email">
+                                    <i className="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </section>
 

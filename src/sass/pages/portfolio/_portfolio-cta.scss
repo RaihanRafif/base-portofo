@@ -1,29 +1,114 @@
+// ========================================
+// PORTFOLIO CTA — Rotating gradient background (matches Home)
+// ========================================
 .portfolio-cta {
-  padding-block: $spacing-3xl;
-  border-top: 1px solid rgba($color-text-white, 0.08);
-  text-align: center;
+  padding-block: $spacing-md;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  // Rotating conic gradient
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -90%;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      rgba($color-higlighter-red, 0.1) 0deg,
+      transparent 90deg,
+      rgba($color-higlighter-red, 0.05) 180deg,
+      transparent 270deg,
+      rgba($color-higlighter-red, 0.1) 360deg
+    );
+    animation: rotate 20s linear infinite;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      $color-primary-dark 70%
+    );
+    pointer-events: none;
+  }
 
   @media (max-width: $breakpoint-tablet) {
+    min-height: 35vh;
     padding-block: $spacing-2xl;
   }
 
   &__container {
-    max-width: 80rem;
+    max-width: 90rem;
     margin-inline: auto;
     width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    text-align: center;
+    padding: $spacing-3xl;
+    @include card-surface(3rem, 0);
+    position: relative;
+    overflow: hidden;
+
+    // Gradient overlay
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba($color-text-white, 0.03) 0%,
+        transparent 50%,
+        rgba($color-higlighter-red, 0.03) 100%
+      );
+      pointer-events: none;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      padding: $spacing-2xl $spacing-lg;
+      border-radius: 2rem;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-xl $spacing-md;
+    }
   }
 
   &__title {
-    font-size: clamp(3.2rem, 5vw, 4.8rem);
+    font-size: clamp(3rem, 5vw, 4.8rem);
     font-weight: 900;
     color: $color-text-white;
     margin-bottom: $spacing-md;
+
+    background: linear-gradient(
+      135deg,
+      $color-text-white 0%,
+      rgba($color-text-white, 0.8) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   &__description {
     font-size: clamp(1.6rem, 2vw, 2rem);
-    line-height: 1.6;
+    line-height: 1.7;
     color: rgba($color-text-white, 0.7);
     margin-bottom: $spacing-xl;
+    max-width: 60ch;
+    margin-inline: auto;
   }
 }

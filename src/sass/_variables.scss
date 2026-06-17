@@ -42,10 +42,31 @@ $radius-full: 10rem;
 $transition-base: 0.3s ease;
 $transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-$shadow-fab: 0 0.8rem 2rem rgba(235, 65, 65, 0.3), 
+$shadow-fab: 0 0.8rem 2rem rgba(235, 65, 65, 0.3),
              inset 0 1px 0 rgba(255, 255, 255, 0.2);
-$shadow-fab-hover: 0 1.2rem 3rem rgba(235, 65, 65, 0.4), 
+$shadow-fab-hover: 0 1.2rem 3rem rgba(235, 65, 65, 0.4),
                    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 $shadow-panel: 0 2rem 6rem rgba(17, 17, 17, 0.9),
                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+// Secondary accent — formalizes ad-hoc #60a5fa already used in about-experience/skills
+$color-accent-secondary: #60a5fa;
+$color-accent-secondary-soft: rgba(96, 165, 250, 0.493);
+
+// Ambient atmosphere tokens (extremely low alpha for restraint)
+$ambient-red: rgba(235, 65, 65, 0.06);
+$ambient-blue: rgba(96, 165, 250, 0.05);
+$ambient-warm: rgba(235, 65, 65, 0.04);
+
+// Glow shadows (reusable, depth without per-component hardcoding)
+$glow-red-soft: 0 0 4rem rgba(235, 65, 65, 0.12);
+$glow-blue-soft: 0 0 4rem rgba(96, 165, 250, 0.10);
+
+// Card surface tokens (single source of truth)
+$card-bg: rgba(255, 255, 255, 0.02);
+$card-bg-hover: rgba(255, 255, 255, 0.045);
+$card-border: rgba(255, 255, 255, 0.08);
+$card-border-hover: rgba(255, 255, 255, 0.18);
+$card-glow-hover: 0 1.2rem 3rem rgba(0, 0, 0, 0.45),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.08);
 

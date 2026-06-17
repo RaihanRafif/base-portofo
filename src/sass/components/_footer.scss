@@ -1,0 +1,260 @@
+// ========================================
+// FOOTER
+// ========================================
+.bottom-container {
+  margin-top: $spacing-3xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  color: $color-text-white;
+  font-family: "Inter", sans-serif;
+
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: $spacing-2xl;
+  }
+}
+
+.main-bottom-section {
+  @include ambient-glow($x: 50%, $y: 0%, $color: $ambient-red, $size: 60rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-lg;
+  min-height: 40rem;
+  width: 100%;
+  background-color: $color-bg-dark;
+  padding: $spacing-3xl $spacing-lg;
+  position: relative;
+  // Gradient top border
+  border-top: 1px solid transparent;
+  background-image: linear-gradient($color-bg-dark, $color-bg-dark),
+    linear-gradient(90deg, transparent, rgba($color-higlighter-red, 0.3), transparent);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  @media (max-width: $breakpoint-tablet) {
+    min-height: 30rem;
+    padding: $spacing-2xl $spacing-md;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    min-height: 25rem;
+    padding: $spacing-xl $spacing-md;
+  }
+}
+
+.currently-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 2.4rem;
+  background-color: rgba($color-text-white, 0.05);
+  border: 1px solid rgba($color-text-white, 0.1);
+  border-radius: 10rem;
+  width: fit-content;
+  box-shadow: 0 0 20px rgba(#00ff88, 0.1),
+    inset 0 1px 0 rgba($color-text-white, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba($color-text-white, 0.08);
+    border-color: rgba(#00ff88, 0.3);
+    box-shadow: 0 0 30px rgba(#00ff88, 0.2),
+      inset 0 1px 0 rgba($color-text-white, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .icon-status {
+    width: 1rem;
+    height: 1rem;
+    background-color: #00ff88;
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background-color: #00ff88;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+  }
+
+  .status {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $color-text-white;
+    letter-spacing: 0.05em;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .status-smiley {
+    width: 2.2rem;
+    height: 2.2rem;
+    display: inline-grid;
+    place-items: center;
+    color: rgba($color-text-white, 0.55);
+
+    svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+  }
+}
+
+.email {
+  font-size: clamp(2rem, 4vw, 5.6rem);
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+
+  a {
+    color: $color-text-white;
+    text-decoration: none;
+    transition: color 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(1.1) drop-shadow(0 0 0.8rem rgba($color-higlighter-red, 0.3));
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: clamp(1.4rem, 6vw, 2.4rem);
+    }
+  }
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 121.6rem;
+  width: 100%;
+  margin-inline: auto;
+  padding-bottom: $spacing-lg;
+  border-bottom: 1px solid rgba($color-text-white, 0.1);
+
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    gap: $spacing-md;
+    padding-bottom: $spacing-md;
+  }
+
+  .icon.bottom-icon {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: $color-text-white;
+
+    a {
+      color: $color-text-white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-higlighter-red;
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 2.4rem;
+    }
+  }
+
+  .navs {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-mobile) {
+      justify-content: center;
+    }
+  }
+
+  .nav {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.7);
+    text-decoration: none;
+    border-radius: 10rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $color-text-white;
+      background-color: rgba($color-text-white, 0.05);
+    }
+
+    &--active {
+      color: $color-text-white;
+      background-color: rgba($color-text-white, 0.1);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.3rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+}
+
+.sosmed-icons {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    gap: 1rem;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgba($color-text-white, 0.05);
+    border: 1px solid rgba($color-text-white, 0.1);
+    color: rgba($color-text-white, 0.7);
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: rgba($color-text-white, 0.1);
+      border-color: rgba($color-text-white, 0.2);
+      color: $color-text-white;
+      transform: translateY(-0.4rem);
+      box-shadow: 0 1rem 2rem rgba($color-primary-dark, 0.3);
+    }
+
+    &[aria-label="GitHub"]:hover {
+      background-color: rgba(#333, 0.2);
+      border-color: rgba(#333, 0.3);
+    }
+
+    &[aria-label="LinkedIn"]:hover {
+      background-color: rgba(#0077b5, 0.2);
+      border-color: rgba(#0077b5, 0.3);
+    }
+
+    &[aria-label="Email"]:hover {
+      background-color: rgba($color-higlighter-red, 0.2);
+      border-color: rgba($color-higlighter-red, 0.3);
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 4.5rem;
+      height: 4.5rem;
+      font-size: 1.8rem;
+    }
+  }
+}

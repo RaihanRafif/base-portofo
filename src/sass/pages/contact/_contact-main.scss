@@ -1,8 +1,9 @@
 .contact-main {
-  padding-block: $spacing-3xl;
+  @include ambient-glow($x: 15%, $y: 20%, $color: $ambient-blue, $size: 45rem);
+  padding-block: 0 $spacing-3xl;
 
   @media (max-width: $breakpoint-tablet) {
-    padding-block: $spacing-2xl;
+    padding-block: 0 $spacing-2xl;
   }
 
   &__container {
@@ -10,12 +11,14 @@
     margin-inline: auto;
     width: 100%;
     display: grid;
-    grid-template-columns: 35rem 1fr;
-    gap: $spacing-3xl;
+    grid-template-columns: 38rem 1fr;
+    gap: 0;
+    min-height: 60rem;
 
     @media (max-width: $breakpoint-desktop) {
       grid-template-columns: 1fr;
       gap: $spacing-2xl;
+      min-height: auto;
     }
   }
 }

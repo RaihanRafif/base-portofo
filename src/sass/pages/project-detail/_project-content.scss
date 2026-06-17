@@ -2,6 +2,7 @@
 // PROJECT CONTENT SECTION
 // ========================================
 .project-content {
+  @include ambient-glow($x: 10%, $y: 20%, $color: $ambient-warm, $size: 45rem);
   padding-block: $spacing-3xl;
   border-top: 1px solid rgba($color-text-white, 0.08);
 
@@ -35,9 +36,7 @@
     position: sticky;
     top: calc(10rem + $spacing-xl);
     padding: $spacing-lg;
-    background-color: rgba($color-text-white, 0.02);
-    border: 1px solid rgba($color-text-white, 0.08);
-    border-radius: 2rem;
+    @include card-surface(2rem, 0);
 
     @media (max-width: $breakpoint-desktop) {
       position: static;
@@ -126,6 +125,7 @@
   .content-title {
     font-size: clamp(2.8rem, 4vw, 3.6rem);
     font-weight: 800;
+    color: $color-text-white;
     color: $color-text-white;
     margin-bottom: $spacing-md;
     position: relative;

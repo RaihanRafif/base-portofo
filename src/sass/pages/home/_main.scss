@@ -2,6 +2,7 @@
   // Hero Container - Full Viewport Height
   // ----------------------------------------
   &__hero-container {
+    @include ambient-glow($x: 50%, $y: 30%, $color: rgba(235, 65, 65, 0.04), $size: 70rem, $animated: true);
     min-height: 100vh;
     min-height: 100dvh; // Dynamic viewport height (better for mobile)
     display: flex;
@@ -49,6 +50,7 @@
     flex-shrink: 0;
     max-width: 45rem;
     width: 100%;
+    animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
 
     @media (min-width: 1000px) and (max-width: 1200px) {
       max-width: 38rem;
@@ -111,9 +113,12 @@
   // Name Profile
   // ----------------------------------------
   &__name-profile {
+    color: $color-text-white;
+    text-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.3);
     font-size: clamp(6rem, 8vw, 12rem);
     font-weight: 900;
     line-height: 0.9;
+    animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.25s both;
 
     @media (min-width: 1000px) and (max-width: 1200px) {
       font-size: clamp(5rem, 7vw, 9rem);
@@ -142,6 +147,7 @@
   // Text Description
   // ----------------------------------------
   &__text {
+    animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
     font-size: clamp(1.6rem, 1.5vw, 2rem);
     line-height: 1.6;
     max-width: 60ch;
@@ -171,6 +177,7 @@
   // Status Badge
   // ----------------------------------------
   &__currently-status {
+    animation: revealUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.55s both;
     display: inline-flex;
     align-items: center;
     gap: 1.2rem;

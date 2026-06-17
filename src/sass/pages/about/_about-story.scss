@@ -1,4 +1,8 @@
+// ========================================
+// ABOUT STORY — Left-aligned with accent bar
+// ========================================
 .about-story {
+  @include ambient-glow($x: 10%, $y: 50%, $color: $ambient-warm, $size: 50rem);
   padding-block: $spacing-3xl;
 
   @media (max-width: $breakpoint-tablet) {
@@ -12,19 +16,38 @@
   }
 
   &__content {
-    .section-title {
-      text-align: center;
-      margin-bottom: $spacing-xl;
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 3px 1fr;
+      gap: $spacing-md;
     }
   }
 
-  .story-text {
-    font-size: clamp(1.6rem, 2vw, 1.8rem);
-    line-height: 1.8;
+  // Red vertical accent bar
+  &__accent-bar {
+    width: 4px;
+    border-radius: 2px;
+    background: linear-gradient(
+      to bottom,
+      $color-higlighter-red 0%,
+      rgba($color-higlighter-red, 0.3) 100%
+    );
+
+    @media (max-width: $breakpoint-mobile) {
+      width: 3px;
+    }
+  }
+
+  &__text {
+    font-size: clamp(1.6rem, 1.8vw, 1.9rem);
+    line-height: 1.85;
     color: rgba($color-text-white, 0.8);
 
     p {
-      margin-bottom: $spacing-lg;
+      margin-bottom: $spacing-md;
 
       &:last-child {
         margin-bottom: 0;

@@ -1,65 +1,63 @@
+// ========================================
+// ABOUT STATS — Horizontal strip (editorial, not cards)
+// ========================================
 .about-stats {
-  padding-block: $spacing-2xl;
-  border-block: 1px solid rgba($color-text-white, 0.08);
+  padding-block: $spacing-xl $spacing-2xl;
+  border-top: 1px solid rgba($color-text-white, 0.08);
+  border-bottom: 1px solid rgba($color-text-white, 0.08);
 
   @media (max-width: $breakpoint-tablet) {
-    padding-block: $spacing-xl;
+    padding-block: $spacing-lg $spacing-xl;
   }
 
   &__container {
     max-width: 120rem;
     margin-inline: auto;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: $spacing-lg;
+    display: flex;
+    justify-content: center;
+    gap: $spacing-3xl;
 
     @media (max-width: $breakpoint-tablet) {
-      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-xl;
+      flex-wrap: wrap;
     }
 
     @media (max-width: $breakpoint-mobile) {
-      grid-template-columns: 1fr;
-      gap: $spacing-md;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-lg;
     }
   }
 }
 
-.about-stat-card {
+.about-stat-item {
   text-align: center;
-  padding: $spacing-xl;
-  background-color: rgba($color-text-white, 0.02);
-  border: 1px solid rgba($color-text-white, 0.08);
-  border-radius: 2rem;
-  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 0;
+  padding: $spacing-md 0;
 
-  &:hover {
-    background-color: rgba($color-text-white, 0.04);
-    border-color: rgba($color-text-white, 0.12);
-    transform: translateY(-0.4rem);
-  }
-
-  @media (max-width: $breakpoint-mobile) {
-    padding: $spacing-lg;
-  }
-
-  .stat-number {
-    font-size: clamp(4rem, 6vw, 5.6rem);
+  &__number {
+    font-size: clamp(3.6rem, 5vw, 5.2rem);
     font-weight: 900;
     color: $color-higlighter-red;
     line-height: 1;
-    margin-bottom: $spacing-sm;
-  }
-
-  .stat-label {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: rgba($color-text-white, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
 
     @media (max-width: $breakpoint-mobile) {
-      font-size: 1.4rem;
+      font-size: 3.2rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgba($color-text-white, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.2rem;
     }
   }
 }

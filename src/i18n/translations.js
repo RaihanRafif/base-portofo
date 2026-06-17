@@ -67,6 +67,7 @@ export const translations = {
     },
     about: {
       hero: {
+        label: "Who I Am",
         title: "About Me",
         subtitle:
           "Passionate web developer transforming ideas into polished digital solutions through clean code and thoughtful design.",
@@ -128,7 +129,9 @@ export const translations = {
     },
     contact: {
       hero: {
+        label: "Get In Touch",
         title: "Get In Touch",
+        titleAccent: "Let's",
         subtitle1:
           "Have a project in mind or just want to connect? I'd love to hear from you.",
         subtitle2: "Let's collaborate and bring your ideas to life.",
@@ -170,7 +173,9 @@ export const translations = {
     },
     portfolio: {
       hero: {
+        label: "My Work",
         title: "My Portfolio",
+        titleAccent: "Portfolio",
         subtitle:
           "Discover my diverse portfolio showcasing polished digital solutions crafted across various industries and technologies.",
       },
@@ -279,6 +284,7 @@ export const translations = {
     },
     about: {
       hero: {
+        label: "Siapa Saya",
         title: "Tentang Saya",
         subtitle:
           "Web developer yang antusias mengubah ide menjadi solusi digital yang rapi melalui kode yang bersih dan desain yang matang.",
@@ -340,7 +346,9 @@ export const translations = {
     },
     contact: {
       hero: {
+        label: "Hubungi Saya",
         title: "Hubungi Saya",
+        titleAccent: "Ayo",
         subtitle1:
           "Punya ide proyek atau sekadar ingin berkenalan? Saya senang mendengarnya.",
         subtitle2: "Mari kolaborasi dan wujudkan ide Anda.",
@@ -382,7 +390,9 @@ export const translations = {
     },
     portfolio: {
       hero: {
+        label: "Karya Saya",
         title: "Portofolio Saya",
+        titleAccent: "Portofolio",
         subtitle:
           "Jelajahi portofolio saya yang menampilkan berbagai solusi digital yang rapi di beragam industri dan teknologi.",
       },
@@ -489,6 +499,7 @@ export const translations = {
     },
     about: {
       hero: {
+        label: "自己紹介",
         title: "私について",
         subtitle:
           "クリーンなコードと丁寧なデザインで、アイデアを洗練されたデジタルソリューションへと形にします。",
@@ -550,7 +561,9 @@ export const translations = {
     },
     contact: {
       hero: {
+        label: "お問い合わせ",
         title: "お問い合わせ",
+        titleAccent: "お気軽に",
         subtitle1:
           "プロジェクトの相談や、ちょっとしたご連絡でも大歓迎です。",
         subtitle2: "一緒にアイデアを形にしましょう。",
@@ -592,7 +605,9 @@ export const translations = {
     },
     portfolio: {
       hero: {
+        label: "私の作品",
         title: "ポートフォリオ",
+        titleAccent: "ポートフォリオ",
         subtitle:
           "さまざまな業界・技術で制作した、洗練されたデジタルソリューションをご覧ください。",
       },

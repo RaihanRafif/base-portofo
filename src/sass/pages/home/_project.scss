@@ -2,6 +2,7 @@
 // PROJECTS SECTION
 // ========================================
 .projects-section {
+  @include ambient-glow($x: 85%, $y: 10%, $color: $ambient-red, $size: 70rem);
   padding-block: $spacing-3xl;
   position: relative;
 

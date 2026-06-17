@@ -78,6 +78,32 @@ header {
       border-radius: 0 0 2rem 2rem;
     }
 
+    // Bottom glow line — fades in when scrolled
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba($color-higlighter-red, 0.5) 50%,
+        transparent 100%
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      animation: glowLinePulse 3s ease-in-out infinite;
+      animation-play-state: paused;
+    }
+
+    // Activate glow line
+    &::after {
+      opacity: 0.6;
+      animation-play-state: running;
+    }
+
     // Slightly smaller logo when scrolled
     .logo {
       font-size: 2.8rem;

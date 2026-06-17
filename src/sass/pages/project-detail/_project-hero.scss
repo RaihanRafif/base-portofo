@@ -2,6 +2,7 @@
 // PROJECT HERO SECTION
 // ========================================
 .project-hero {
+  @include ambient-glow($x: 50%, $y: 40%, $color: $ambient-red, $size: 60rem);
   padding-block: $spacing-3xl;
   padding-top: calc($spacing-3xl + 10rem); // Space for fixed header
   position: relative;
@@ -135,14 +136,23 @@
   // Hero Image
   // ----------------------------------------
   &__image {
+    @include card-surface(2rem, 0);
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 2rem;
     overflow: hidden;
     cursor: zoom-in;
-    background-color: rgba($color-text-white, 0.02);
-    border: 1px solid rgba($color-text-white, 0.08);
+
+    // Permanent depth overlay (darken bottom for visual depth)
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom, transparent 60%, rgba(17, 17, 17, 0.2) 100%);
+      pointer-events: none;
+      border-radius: inherit;
+    }
 
     img {
       width: 100%;

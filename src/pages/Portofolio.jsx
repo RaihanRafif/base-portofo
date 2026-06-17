@@ -39,7 +39,7 @@ export default function Portfolio() {
         // Filter by search query
         if (searchQuery.trim()) {
             const query = searchQuery.toLowerCase();
-            filtered = filtered.filter(p => 
+            filtered = filtered.filter(p =>
                 String(l(p.title) ?? "").toLowerCase().includes(query) ||
                 String(l(p.summary) ?? "").toLowerCase().includes(query) ||
                 String(l(p.role) ?? "").toLowerCase().includes(query) ||
@@ -52,12 +52,18 @@ export default function Portfolio() {
         return filtered;
     }, [activeFilter, searchQuery, l]);
 
+    const featured = filteredProjects[0];
+    const rest = filteredProjects.slice(1);
+
     return (
         <main className="portfolio-page" id="portfolio">
             {/* Hero Section */}
             <section className="portfolio-hero">
                 <div className="portfolio-hero__container">
-                    <h1 className="portfolio-hero__title">{t("portfolio.hero.title")}</h1>
+                    <span className="portfolio-hero__label">{t("portfolio.hero.label") || "My Work"}</span>
+                    <h1 className="portfolio-hero__title">
+                        <span className="portfolio-hero__title-accent">{t("portfolio.hero.titleAccent") || "Portfolio"}</span>
+                    </h1>
                     <p className="portfolio-hero__subtitle">
                         {t("portfolio.hero.subtitle")}
                     </p>
@@ -76,7 +82,7 @@ export default function Portfolio() {
                             className="search-input"
                         />
                         {searchQuery && (
-                            <button 
+                            <button
                                 className="search-clear"
                                 onClick={() => setSearchQuery('')}
                                 aria-label={t("aria.clearSearch")}
@@ -86,7 +92,7 @@ export default function Portfolio() {
                         )}
                     </div>
 
-                    {/* Stats */}
+                    {/* Stats — integrated into hero */}
                     <div className="portfolio-stats">
                         <div className="stat-item">
                             <span className="stat-number">{portfolioData.projects.length}</span>
@@ -125,18 +131,18 @@ export default function Portfolio() {
             <section className="portfolio-grid-section">
                 <div className="portfolio-grid__container">
                     {filteredProjects.length > 0 ? (
-                        <div className="portfolio-grid">
-                            {filteredProjects.map((project, index) => (
+                        <>
+                            {/* Featured project — first item, spans 2 columns */}
+                            {featured && (
                                 <Link
-                                    key={project.id}
-                                    to={`/projects/${project.id}`}
-                                    className="portfolio-card"
-                                    style={{ animationDelay: `${index * 0.1}s` }}
+                                    key={featured.id}
+                                    to={`/projects/${featured.id}`}
+                                    className="portfolio-card portfolio-card--featured"
                                 >
                                     <div className="portfolio-card__image">
-                                        <img 
-                                            src={getFirstImage(project)} 
-                                            alt={t("portfolio.projectPreviewAlt", { title: l(project.title) })}
+                                        <img
+                                            src={getFirstImage(featured)}
+                                            alt={t("portfolio.projectPreviewAlt", { title: l(featured.title) })}
                                             loading="lazy"
                                         />
                                         <div className="portfolio-card__overlay">
@@ -151,43 +157,43 @@ export default function Portfolio() {
 
                                     <div className="portfolio-card__content">
                                         <div className="portfolio-card__header">
-                                            <h3 className="portfolio-card__title">{l(project.title)}</h3>
-                                            {project.category && (
+                                            <h3 className="portfolio-card__title">{l(featured.title)}</h3>
+                                            {featured.category && (
                                                 <span className="portfolio-card__category">
-                                                    {l(project.category)}
+                                                    {l(featured.category)}
                                                 </span>
                                             )}
                                         </div>
 
-                                        {project.summary && (
+                                        {featured.summary && (
                                             <p className="portfolio-card__summary">
                                                 {(() => {
-                                                    const s = String(l(project.summary) ?? "");
-                                                    return s.length > 100 ? `${s.substring(0, 100)}...` : s;
+                                                    const s = String(l(featured.summary) ?? "");
+                                                    return s.length > 160 ? `${s.substring(0, 160)}...` : s;
                                                 })()}
                                             </p>
                                         )}
 
                                         <div className="portfolio-card__footer">
                                             <div className="portfolio-card__tags">
-                                                {project.role && (
-                                                    <span className="tag">{l(project.role)}</span>
+                                                {featured.role && (
+                                                    <span className="tag">{l(featured.role)}</span>
                                                 )}
-                                                {project.client && (
-                                                    <span className="tag">{l(project.client)}</span>
+                                                {featured.client && (
+                                                    <span className="tag">{l(featured.client)}</span>
                                                 )}
                                             </div>
 
-                                            {project.tech && project.tech.length > 0 && (
+                                            {featured.tech && featured.tech.length > 0 && (
                                                 <div className="portfolio-card__tech">
-                                                    {project.tech.slice(0, 3).map((tech, i) => (
+                                                    {featured.tech.slice(0, 4).map((tech, i) => (
                                                         <span key={i} className="tech-badge">
                                                             {tech}
                                                         </span>
                                                     ))}
-                                                    {project.tech.length > 3 && (
+                                                    {featured.tech.length > 4 && (
                                                         <span className="tech-badge more">
-                                                            +{project.tech.length - 3}
+                                                            +{featured.tech.length - 4}
                                                         </span>
                                                     )}
                                                 </div>
@@ -195,17 +201,91 @@ export default function Portfolio() {
                                         </div>
                                     </div>
                                 </Link>
-                            ))}
-                        </div>
+                            )}
+
+                            {/* Rest of the projects in standard grid */}
+                            <div className="portfolio-grid portfolio-grid--rest">
+                                {rest.map((project, index) => (
+                                    <Link
+                                        key={project.id}
+                                        to={`/projects/${project.id}`}
+                                        className="portfolio-card"
+                                        style={{ animationDelay: `${index * 0.08}s` }}
+                                    >
+                                        <div className="portfolio-card__image">
+                                            <img
+                                                src={getFirstImage(project)}
+                                                alt={t("portfolio.projectPreviewAlt", { title: l(project.title) })}
+                                                loading="lazy"
+                                            />
+                                            <div className="portfolio-card__overlay">
+                                                <span className="view-project">
+                                                    {t("portfolio.overlayViewProject")}
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                        <path d="M5 12h14M12 5l7 7-7 7" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="portfolio-card__content">
+                                            <div className="portfolio-card__header">
+                                                <h3 className="portfolio-card__title">{l(project.title)}</h3>
+                                                {project.category && (
+                                                    <span className="portfolio-card__category">
+                                                        {l(project.category)}
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            {project.summary && (
+                                                <p className="portfolio-card__summary">
+                                                    {(() => {
+                                                        const s = String(l(project.summary) ?? "");
+                                                        return s.length > 100 ? `${s.substring(0, 100)}...` : s;
+                                                    })()}
+                                                </p>
+                                            )}
+
+                                            <div className="portfolio-card__footer">
+                                                <div className="portfolio-card__tags">
+                                                    {project.role && (
+                                                        <span className="tag">{l(project.role)}</span>
+                                                    )}
+                                                    {project.client && (
+                                                        <span className="tag">{l(project.client)}</span>
+                                                    )}
+                                                </div>
+
+                                                {project.tech && project.tech.length > 0 && (
+                                                    <div className="portfolio-card__tech">
+                                                        {project.tech.slice(0, 3).map((tech, i) => (
+                                                            <span key={i} className="tech-badge">
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                        {project.tech.length > 3 && (
+                                                            <span className="tech-badge more">
+                                                                +{project.tech.length - 3}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </>
                     ) : (
                         <div className="no-results">
                             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <circle cx="11" cy="11" r="8" />
                                 <path d="m21 21-4.35-4.35" />
                             </svg>
-                            <h3>{t("portfolio.noResultsTitle")}</h3>
-                            <p>{t("portfolio.noResultsDesc")}</p>
-                            <button 
+                            <h3>{t("portfolio.noResults.title") || "No projects found"}</h3>
+                            <p>{t("portfolio.noResults.description") || "Try adjusting your search or filter"}</p>
+                            <button
                                 className="btn btn--secondary"
                                 onClick={() => {
                                     setSearchQuery('');
@@ -219,14 +299,21 @@ export default function Portfolio() {
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/* CTA — Rotating gradient background (matches Home) */}
             <section className="portfolio-cta">
-                <h2 className="portfolio-cta__title">
-                    <span className="cta-section__title-word">{t("portfolio.cta.title")}</span>
-                </h2>
-                <Link to="/contact" className="btn btn--primary">
-                    {t("buttons.getInTouch")}
-                </Link>
+                <div className="portfolio-cta__container">
+                    <div className="portfolio-cta__content">
+                        <h2 className="portfolio-cta__title">
+                            {t("portfolio.cta.title")}
+                        </h2>
+                        <p className="portfolio-cta__description">
+                            {t("portfolio.cta.description")}
+                        </p>
+                        <Link to="/contact" className="btn btn--primary">
+                            {t("buttons.getInTouch")}
+                        </Link>
+                    </div>
+                </div>
             </section>
         </main>
     );

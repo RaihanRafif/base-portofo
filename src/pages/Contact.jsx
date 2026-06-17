@@ -16,7 +16,7 @@ export default function Contact() {
 
     // EmailJS Configuration
     const EMAILJS_SERVICE_ID = 'service_smayihj';
-    const EMAILJS_TEMPLATE_ID = 'template_k592ylu'; // Ganti dengan template ID Anda
+    const EMAILJS_TEMPLATE_ID = 'template_k592ylu';
     const EMAILJS_PUBLIC_KEY = 'aPuAYDlqGVRWlwA-v';
 
     const contactInfo = [
@@ -91,7 +91,6 @@ export default function Contact() {
             return;
         }
 
-        // Check honeypot
         if (form.hp) {
             setStatus({
                 loading: false,
@@ -104,12 +103,11 @@ export default function Contact() {
         setStatus({ loading: true, success: null, message: '' });
 
         try {
-            // EmailJS send
             const templateParams = {
                 from_name: form.name.trim(),
                 from_email: form.email.trim(),
                 message: form.message.trim(),
-                to_name: 'Raihan Rafif', // Optional: your name
+                to_name: 'Raihan Rafif',
                 reply_to: form.email.trim(),
             };
 
@@ -120,8 +118,6 @@ export default function Contact() {
                 EMAILJS_PUBLIC_KEY
             );
 
-            console.log('EmailJS Response:', response);
-
             if (response.status === 200) {
                 setStatus({
                     loading: false,
@@ -131,7 +127,6 @@ export default function Contact() {
                 setForm({ name: '', email: '', message: '', hp: '' });
                 setErrors({});
 
-                // Auto-clear success message after 5 seconds
                 setTimeout(() => {
                     setStatus({ loading: false, success: null, message: '' });
                 }, 5000);
@@ -139,7 +134,6 @@ export default function Contact() {
                 throw new Error('Failed to send message');
             }
         } catch (error) {
-            console.error('EmailJS Error:', error);
             setStatus({
                 loading: false,
                 success: false,
@@ -150,10 +144,14 @@ export default function Contact() {
 
     return (
         <main className="contact-page" id="contact">
-            {/* Hero Section */}
+            {/* Hero — Bold statement with accent */}
             <section className="contact-hero">
                 <div className="contact-hero__container">
-                    <h1 className="contact-hero__title">{t("contact.hero.title")}</h1>
+                    <span className="contact-hero__label">{t("contact.hero.label") || "Drop a Line"}</span>
+                    <h1 className="contact-hero__title">
+                        <span className="contact-hero__title-accent">{t("contact.hero.titleAccent") || "Let's"}</span>{" "}
+                        {t("contact.hero.title")}
+                    </h1>
                     <p className="contact-hero__subtitle">
                         {t("contact.hero.subtitle1")}<br />
                         {t("contact.hero.subtitle2")}
@@ -161,12 +159,13 @@ export default function Contact() {
                 </div>
             </section>
 
-            {/* Main Contact Section */}
+            {/* Main Contact Section — Split screen */}
             <section className="contact-main">
                 <div className="contact-main__container">
 
                     <aside className="contact-info">
                         <div className="contact-info__card">
+                            <div className="contact-info__accent-bar"></div>
                             <h2 className="contact-info__title">{t("contact.info.title")}</h2>
                             <p className="contact-info__description">
                                 {t("contact.info.description")}
@@ -205,7 +204,6 @@ export default function Contact() {
                                             {social.icon}
                                         </a>
                                     ))}
-
                                 </div>
                             </div>
                         </div>

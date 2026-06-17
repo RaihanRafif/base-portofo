@@ -10,6 +10,13 @@ a {
   }
 }
 
+// Selection
+::selection {
+  background: rgba($color-higlighter-red, 0.3);
+  color: $color-text-white;
+  text-shadow: none;
+}
+
 // Reduced motion
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -18,6 +25,12 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  // Ensure reveal elements are never hidden
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -36,23 +49,102 @@ img {
   padding: 0;
 }
 
-/* Body */
+/* Body — layered atmosphere */
 body {
   background-color: $color-primary-dark;
+  // Subtle radial vignette: warmth from top center, fading to edges
+  // Fixed so it acts as a static light source, not a scrolling texture
+  background-image: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    $ambient-warm 0%,
+    transparent 60%
+  );
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
+
+  // Mobile: simpler background (fixed attachment can cause jank)
+  @media (max-width: $breakpoint-tablet) {
+    background-image: radial-gradient(
+      ellipse 100% 40% at 50% 0%,
+      $ambient-warm 0%,
+      transparent 50%
+    );
+    background-attachment: scroll;
+  }
 }
 
+// Smooth scroll
 html {
   font-size: 62.5%; // 10px base
   font-family: Inter, "Inter Placeholder", sans-serif;
+  scroll-behavior: smooth;
 
   // Responsive font sizing
   @media (max-width: $breakpoint-tablet) {
-    font-size: 56.25%; // 9px base (sedikit lebih kecil di tablet)
+    font-size: 56.25%; // 9px base
   }
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: 50%; // 8px base (lebih kecil di mobile)
+    font-size: 50%; // 8px base
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba($color-text-white, 0.015);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($color-text-white, 0.1);
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  background-clip: content-box;
+
+  &:hover {
+    background: rgba($color-higlighter-red, 0.4);
+    background-clip: content-box;
+  }
+}
+
+// Firefox scrollbar
+html {
+  scrollbar-color: rgba($color-text-white, 0.15) rgba($color-text-white, 0.015);
+  scrollbar-width: thin;
+}
+
+// ========================================
+// Scroll-reveal utilities
+// ========================================
+.reveal {
+  opacity: 0;
+  transform: translateY(2.4rem);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: var(--stagger, 0s);
+
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal--right {
+  transform: translateX(2.4rem);
+
+  &.is-visible {
+    transform: none;
+  }
+}
+
+.reveal--scale {
+  transform: scale(0.96);
+
+  &.is-visible {
+    transform: none;
   }
 }

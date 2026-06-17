@@ -1,0 +1,92 @@
+// ========================================
+// MIXINS — Reusable design patterns
+// ========================================
+
+// Card surface — replaces flat rgba(white,0.02)+rgba(white,0.08) recipe
+// Adds vertical gradient bg, inset top sheen, hover lift + glow
+@mixin card-surface($radius: $radius-md, $hover-lift: -0.4rem) {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.035) 0%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  border: 1px solid $card-border;
+  border-radius: $radius;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              background 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    border-color: $card-border-hover;
+    transform: translateY($hover-lift);
+    box-shadow: $card-glow-hover;
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &:hover {
+      transform: translateY(#{if($hover-lift != 0, "-0.2rem", "0")});
+    }
+  }
+}
+
+// Ambient glow — contained radial glow behind a section
+// Modeled on the proven CTA technique but scaled WAY down for restraint
+// $x/$y position the glow, $color picks red/blue/warm, $size controls spread
+// $animated enables slow drift (disable on mobile for performance)
+@mixin ambient-glow($x: 50%, $y: 0%, $color: $ambient-red, $size: 60rem, $animated: false) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: $x;
+    top: $y;
+    width: $size;
+    height: $size;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, $color 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(2rem);
+
+    @if $animated {
+      animation: ambientDrift 18s ease-in-out infinite alternate;
+    }
+  }
+
+  // Ensure content sits above the glow
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Mobile: reduce glow size and disable animation
+  @media (max-width: $breakpoint-tablet) {
+    &::before {
+      width: calc(#{$size} * 0.5);
+      height: calc(#{$size} * 0.5);
+      filter: blur(1.5rem);
+
+      @if $animated {
+        animation: none;
+      }
+    }
+  }
+}
+
+// Gradient text — extends CTA title pattern to any heading
+@mixin gradient-text($from: $color-text-white, $to: rgba(255, 255, 255, 0.7)) {
+  background: linear-gradient(135deg, $from 0%, $to 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; // fallback
+}

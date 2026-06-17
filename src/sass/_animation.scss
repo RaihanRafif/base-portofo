@@ -112,3 +112,21 @@
     transform: translateY(-0.6rem);
   }
 }
+
+// Slow drift for ambient glows — gentle, not distracting
+@keyframes ambientDrift {
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-45%, -55%) scale(1.15); }
+}
+
+// Scroll-reveal entrance (triggered by .is-visible class)
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(2.4rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// Header bottom glow line pulse
+@keyframes glowLinePulse {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.8; }
+}

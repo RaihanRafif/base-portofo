@@ -55,9 +55,7 @@
   &__content {
     text-align: center;
     padding: $spacing-3xl;
-    background-color: rgba($color-text-white, 0.02);
-    border: 1px solid rgba($color-text-white, 0.08);
-    border-radius: 3rem;
+    @include card-surface(3rem, 0);
     position: relative;
     overflow: hidden;
 

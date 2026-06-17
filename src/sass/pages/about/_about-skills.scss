@@ -1,10 +1,14 @@
+// ========================================
+// ABOUT SKILLS — Visual skill bars
+// ========================================
 .about-skills {
-  padding-block: $spacing-3xl;
+  @include ambient-glow($x: 50%, $y: 0%, $color: $ambient-blue, $size: 60rem);
+  padding-block: $spacing-2xl;
   background-color: rgba($color-text-white, 0.01);
   border-block: 1px solid rgba($color-text-white, 0.08);
 
   @media (max-width: $breakpoint-tablet) {
-    padding-block: $spacing-2xl;
+    padding-block: $spacing-xl;
   }
 
   &__container {
@@ -13,81 +17,139 @@
     width: 100%;
   }
 
-  .section-title {
-    text-align: center;
-    margin-bottom: $spacing-xl;
-  }
-
   .skills-grid {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: $spacing-xl;
 
+    @media (max-width: $breakpoint-desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
     @media (max-width: $breakpoint-mobile) {
+      grid-template-columns: 1fr;
       gap: $spacing-lg;
     }
   }
 }
 
 .skill-category {
-  padding: $spacing-xl;
-  background-color: rgba($color-text-white, 0.02);
-  border: 1px solid rgba($color-text-white, 0.08);
-  border-radius: 2rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: rgba($color-text-white, 0.04);
-    border-color: rgba($color-text-white, 0.12);
-  }
+  padding: $spacing-lg;
+  @include card-surface($radius-md, -0.3rem);
 
   @media (max-width: $breakpoint-mobile) {
-    padding: $spacing-lg;
+    padding: $spacing-md;
   }
 
   &__title {
     display: flex;
     align-items: center;
     gap: $spacing-sm;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-weight: 700;
     color: $color-text-white;
     margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-sm;
+    border-bottom: 2px solid rgba($color-text-white, 0.08);
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1.8rem;
+      margin-bottom: $spacing-md;
+    }
+
+    // Color variants
+    &--red {
+      border-bottom-color: rgba($color-higlighter-red, 0.3);
+    }
+
+    &--blue {
+      border-bottom-color: rgba(#60a5fa, 0.3);
+    }
+
+    &--green {
+      border-bottom-color: rgba(#4ade80, 0.3);
+    }
 
     svg {
-      color: $color-higlighter-red;
-    }
-
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 2rem;
+      flex-shrink: 0;
     }
   }
+}
 
-  .skill-tags {
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.skill-bar {
+  &__header {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.6rem;
   }
 
-  .skill-tag {
-    padding: 1rem 1.8rem;
-    background-color: rgba($color-text-white, 0.05);
-    border: 1px solid rgba($color-text-white, 0.1);
-    border-radius: 10rem;
-    font-size: 1.5rem;
+  &__name {
+    font-size: 1.4rem;
     font-weight: 600;
-    color: rgba($color-text-white, 0.8);
-    transition: all 0.3s ease;
+    color: rgba($color-text-white, 0.85);
+  }
 
-    &:hover {
-      background-color: rgba($color-text-white, 0.08);
-      border-color: rgba($color-text-white, 0.15);
-      color: $color-text-white;
-      transform: translateY(-0.2rem);
+  &__percent {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba($color-text-white, 0.5);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__track {
+    width: 100%;
+    height: 6px;
+    background-color: rgba($color-text-white, 0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    border-radius: 3px;
+    width: var(--target-width);
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    // Start at 0, animate via IntersectionObserver or on mount
+    animation: skillFill 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+    &--red {
+      background: linear-gradient(
+        90deg,
+        $color-higlighter-red 0%,
+        lighten($color-higlighter-red, 8%) 100%
+      );
     }
 
-    @media (max-width: $breakpoint-mobile) {
-      padding: 0.8rem 1.4rem;
-      font-size: 1.4rem;
+    &--blue {
+      background: linear-gradient(
+        90deg,
+        #3b82f6 0%,
+        #60a5fa 100%
+      );
     }
+
+    &--green {
+      background: linear-gradient(
+        90deg,
+        #22c55e 0%,
+        #4ade80 100%
+      );
+    }
+  }
+}
+
+@keyframes skillFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
   }
 }
