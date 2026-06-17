@@ -100,8 +100,8 @@ export default function ProjectDetail() {
         return (
             <main className="project-detail project-detail--not-found">
                 <div className="not-found-container">
-                    <h1>{t("project.notFoundTitle")}</h1>
-                    <p>{t("project.notFoundDesc")}</p>
+                    <h1>{t("project.notFound.title")}</h1>
+                    <p>{t("project.notFound.description")}</p>
                     <Link to="/" className="btn btn--primary">
                         {t("buttons.backToHome")}
                     </Link>
